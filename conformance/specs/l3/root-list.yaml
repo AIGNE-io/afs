@@ -1,0 +1,24 @@
+# L3 — Root listing
+# Tests that listing the root path returns mounted providers.
+
+---
+name: "root list - returns mount points"
+operation: list
+params:
+  path: "/"
+expect:
+  success: true
+  data:
+    data:
+      type: "array"
+---
+name: "root list - explain at root returns provider info"
+operation: explain
+params:
+  path: "/"
+expect:
+  success: true
+  data:
+    format: "markdown"
+    content:
+      type: "string"

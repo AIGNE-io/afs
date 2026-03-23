@@ -1,0 +1,29 @@
+{
+  "name": "json",
+  "description": "JSON or YAML file — navigate and edit structured data as a tree.\n- Objects and arrays become directories, primitives become leaf nodes\n- Read/write individual values, search across structure\n- Path structure: `/{key}/{nested-key}` (arrays indexed by position)",
+  "uriTemplate": "json://{localPath+}",
+  "category": "structured-data",
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "localPath": {
+        "type": "string"
+      }
+    },
+    "required": ["localPath"],
+    "additionalProperties": false
+  },
+  "tags": ["json", "yaml", "structured-data"],
+  "capabilityTags": ["read-write", "crud", "search", "auth:none", "local"],
+  "security": {
+    "riskLevel": "sandboxed",
+    "resourceAccess": []
+  },
+  "capabilities": {
+    "filesystem": {
+      "read": true,
+      "write": true
+    }
+  }
+}

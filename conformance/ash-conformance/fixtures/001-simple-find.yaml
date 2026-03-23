@@ -1,0 +1,14 @@
+name: "simple find returns all records"
+script: |
+  job fetch {
+    find /data
+  }
+mockWorld:
+  read:
+    /data:
+      - { id: 1, name: "alice" }
+      - { id: 2, name: "bob" }
+      - { id: 3, name: "carol" }
+expected:
+  status: "ok"
+  recordCount: 3

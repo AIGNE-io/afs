@@ -1,0 +1,32 @@
+{
+  "name": "fs",
+  "description": "Local filesystem directory access.\n- Browse directories, read/write files, search content by pattern\n- Exec actions: `archive` (create tar.gz/zip), `checksum` (MD5/SHA)\n- Path structure: direct filesystem paths (e.g., `/docs/guide.md`)",
+  "uriTemplate": "fs://{localPath+}",
+  "category": "storage",
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "localPath": {
+        "type": "string"
+      }
+    },
+    "required": ["localPath"],
+    "additionalProperties": false
+  },
+  "tags": ["local", "filesystem"],
+  "capabilityTags": ["read-write", "crud", "search", "auth:none", "local"],
+  "security": {
+    "riskLevel": "local",
+    "resourceAccess": ["local-filesystem"],
+    "dataSensitivity": ["code"],
+    "notes": ["Exposes a local directory — scope is limited to the configured localPath"]
+  },
+  "capabilities": {
+    "filesystem": {
+      "read": true,
+      "write": true,
+      "allowedPaths": ["${localPath}/**"]
+    }
+  }
+}

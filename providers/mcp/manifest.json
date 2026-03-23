@@ -1,0 +1,44 @@
+{
+  "name": "mcp-stdio",
+  "description": "MCP (Model Context Protocol) server — access external tools and resources via stdio.\n- Discover and execute tools exposed by the MCP server\n- Browse resources as virtual files, access prompt templates\n- Path structure: `/tools/{name}`, `/resources/{uri}`, `/prompts/{name}`",
+  "uriTemplate": "mcp+stdio://{command+}",
+  "category": "bridge",
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "command": {
+        "type": "string"
+      },
+      "args": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "env": {
+        "type": "object",
+        "propertyNames": {
+          "type": "string"
+        },
+        "additionalProperties": {
+          "type": "string"
+        }
+      }
+    },
+    "required": ["command"],
+    "additionalProperties": false
+  },
+  "tags": ["mcp", "stdio", "integration"],
+  "capabilityTags": ["read-write", "search", "auth:none", "stdio"],
+  "security": {
+    "riskLevel": "system",
+    "resourceAccess": ["process-spawn"],
+    "notes": ["Spawns a child process — the MCP server has full access to the host"]
+  },
+  "capabilities": {
+    "process": {
+      "spawn": true
+    }
+  }
+}

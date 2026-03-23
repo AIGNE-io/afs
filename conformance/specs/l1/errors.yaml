@@ -1,0 +1,7 @@
+name: "error - unsupported method"
+description: "Request with an unknown method should return an error"
+operation: "nonexistent_method"
+params:
+  path: "/"
+expect:
+  success: false

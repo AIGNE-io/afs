@@ -1,0 +1,128 @@
+name: "search - multiple results for shared keyword"
+steps:
+  - name: write file 1
+    operation: write
+    params:
+      path: "/integ-search-multi/one.txt"
+      content:
+        content: "xsearch-shared-kw-9e2b in file one"
+    expect:
+      success: true
+  - name: write file 2
+    operation: write
+    params:
+      path: "/integ-search-multi/two.txt"
+      content:
+        content: "xsearch-shared-kw-9e2b in file two"
+    expect:
+      success: true
+  - name: write file 3
+    operation: write
+    params:
+      path: "/integ-search-multi/three.txt"
+      content:
+        content: "xsearch-shared-kw-9e2b in file three"
+    expect:
+      success: true
+  - name: search for shared keyword
+    operation: search
+    params:
+      path: "/integ-search-multi/"
+      query: "xsearch-shared-kw-9e2b"
+    expect:
+      success: true
+      data:
+        data:
+          type: "array"
+  - name: cleanup
+    operation: delete
+    params:
+      path: "/integ-search-multi/"
+      options:
+        recursive: true
+---
+name: "search - case sensitivity"
+steps:
+  - name: write file with mixed case
+    operation: write
+    params:
+      path: "/integ-search-case/target.txt"
+      content:
+        content: "The keyword is HelloWorldCase here"
+    expect:
+      success: true
+  - name: case-sensitive search should not find lowercase
+    operation: search
+    params:
+      path: "/integ-search-case/"
+      query: "helloworldcase"
+      options:
+        caseSensitive: true
+    expect:
+      success: true
+      data:
+        data:
+          length: 0
+  - name: case-insensitive search should find it
+    operation: search
+    params:
+      path: "/integ-search-case/"
+      query: "helloworldcase"
+      options:
+        caseSensitive: false
+    expect:
+      success: true
+      data:
+        data:
+          type: "array"
+  - name: cleanup
+    operation: delete
+    params:
+      path: "/integ-search-case/"
+      options:
+        recursive: true
+---
+name: "search - limit constrains result count"
+steps:
+  - name: write file 1
+    operation: write
+    params:
+      path: "/integ-search-limit/a.txt"
+      content:
+        content: "xlimit-token-4d7c match here"
+    expect:
+      success: true
+  - name: write file 2
+    operation: write
+    params:
+      path: "/integ-search-limit/b.txt"
+      content:
+        content: "xlimit-token-4d7c match here too"
+    expect:
+      success: true
+  - name: write file 3
+    operation: write
+    params:
+      path: "/integ-search-limit/c.txt"
+      content:
+        content: "xlimit-token-4d7c match here also"
+    expect:
+      success: true
+  - name: search with limit 1
+    operation: search
+    params:
+      path: "/integ-search-limit/"
+      query: "xlimit-token-4d7c"
+      options:
+        limit: 1
+    expect:
+      success: true
+      data:
+        data:
+          length: 1
+  - name: cleanup
+    operation: delete
+    params:
+      path: "/integ-search-limit/"
+      options:
+        recursive: true

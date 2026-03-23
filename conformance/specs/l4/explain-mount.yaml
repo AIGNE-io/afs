@@ -1,0 +1,66 @@
+# L4 — Core explain generation
+# Tests that AFS core auto-generates explain output for mounted providers.
+#
+# Uses the L3 multi-mount server: /alpha, /beta
+
+---
+name: "explain - root returns markdown with provider listing"
+operation: explain
+params:
+  path: "/"
+expect:
+  success: true
+  data:
+    format: "markdown"
+    content:
+      contains: "Mounted Providers"
+---
+name: "explain - root mentions all mount points"
+steps:
+  - name: explain root
+    operation: explain
+    params:
+      path: "/"
+    store:
+      explainContent: "$.data.content"
+    expect:
+      success: true
+      data:
+        content:
+          contains: "alpha"
+---
+name: "explain - mount root returns provider explain"
+operation: explain
+params:
+  path: "/alpha"
+expect:
+  success: true
+  data:
+    format: "markdown"
+    content:
+      type: "string"
+---
+name: "explain - file path returns stat-based explain"
+operation: explain
+params:
+  path: "/alpha/hello.txt"
+expect:
+  success: true
+  data:
+    format: "markdown"
+    content:
+      type: "string"
+---
+name: "explain - nonexistent path returns error"
+operation: explain
+params:
+  path: "/alpha/does-not-exist.txt"
+expect:
+  success: false
+---
+name: "explain - nonexistent mount returns error"
+operation: explain
+params:
+  path: "/gamma"
+expect:
+  success: false

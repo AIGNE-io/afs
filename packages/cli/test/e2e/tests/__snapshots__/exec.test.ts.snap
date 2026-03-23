@@ -1,0 +1,529 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`exec command - MCP tools tools directory view=human ls /mcp/tools lists available tools: exec-human-mcp-tools-list 1`] = `
+"└── 📁 mcp
+    └── 📁 tools
+        ├── 📄 echo (mcp:tool)
+        ├── 📄 get-annotated-message (mcp:tool)
+        ├── 📄 get-env (mcp:tool)
+        ├── 📄 get-resource-links (mcp:tool)
+        ├── 📄 get-resource-reference (mcp:tool)
+        ├── 📄 get-structured-content (mcp:tool)
+        ├── 📄 get-sum (mcp:tool)
+        ├── 📄 get-tiny-image (mcp:tool)
+        ├── 📄 gzip-file-as-resource (mcp:tool)
+        ├── 📄 toggle-simulated-logging (mcp:tool)
+        ├── 📄 toggle-subscriber-updates (mcp:tool)
+        ├── 📄 trigger-long-running-operation (mcp:tool)
+        └── 📄 simulate-research-query (mcp:tool)"
+`;
+
+exports[`exec command - MCP tools tools directory view=llm ls /mcp/tools lists available tools: exec-llm-mcp-tools-list 1`] = `
+"ENTRY /mcp/tools/echo KIND=mcp:tool
+ENTRY /mcp/tools/get-annotated-message KIND=mcp:tool
+ENTRY /mcp/tools/get-env KIND=mcp:tool
+ENTRY /mcp/tools/get-resource-links KIND=mcp:tool
+ENTRY /mcp/tools/get-resource-reference KIND=mcp:tool
+ENTRY /mcp/tools/get-structured-content KIND=mcp:tool
+ENTRY /mcp/tools/get-sum KIND=mcp:tool
+ENTRY /mcp/tools/get-tiny-image KIND=mcp:tool
+ENTRY /mcp/tools/gzip-file-as-resource KIND=mcp:tool
+ENTRY /mcp/tools/toggle-simulated-logging KIND=mcp:tool
+ENTRY /mcp/tools/toggle-subscriber-updates KIND=mcp:tool
+ENTRY /mcp/tools/trigger-long-running-operation KIND=mcp:tool
+ENTRY /mcp/tools/simulate-research-query KIND=mcp:tool
+TOTAL 13"
+`;
+
+exports[`exec command - MCP tools tools directory view=json ls /mcp/tools lists available tools: exec-json-mcp-tools-list 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/mcp/tools/echo",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Echoes back the input string",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string",
+              "description": "Message to echo"
+            }
+          },
+          "required": [
+            "message"
+          ],
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "echo"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/get-annotated-message",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Demonstrates how annotations can be used to provide metadata about content.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "messageType": {
+              "type": "string",
+              "enum": [
+                "error",
+                "success",
+                "debug"
+              ],
+              "description": "Type of message to demonstrate different annotation patterns"
+            },
+            "includeImage": {
+              "default": false,
+              "description": "Whether to include an example image",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "messageType"
+          ],
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "get-annotated-message"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/get-env",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Returns all environment variables, helpful for debugging MCP server configuration",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "get-env"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/get-resource-links",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Returns up to ten resource links that reference different types of resources",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "count": {
+              "default": 3,
+              "description": "Number of resource links to return (1-10)",
+              "type": "number",
+              "minimum": 1,
+              "maximum": 10
+            }
+          },
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "get-resource-links"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/get-resource-reference",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Returns a resource reference that can be used by MCP clients",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "resourceType": {
+              "default": "Text",
+              "type": "string",
+              "enum": [
+                "Text",
+                "Blob"
+              ]
+            },
+            "resourceId": {
+              "default": 1,
+              "description": "ID of the text resource to fetch",
+              "type": "number"
+            }
+          },
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "get-resource-reference"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/get-structured-content",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Returns structured content along with an output schema for client data validation",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "location": {
+              "type": "string",
+              "enum": [
+                "New York",
+                "Chicago",
+                "Los Angeles"
+              ],
+              "description": "Choose city"
+            }
+          },
+          "required": [
+            "location"
+          ],
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "get-structured-content"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/get-sum",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Returns the sum of two numbers",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "a": {
+              "type": "number",
+              "description": "First number"
+            },
+            "b": {
+              "type": "number",
+              "description": "Second number"
+            }
+          },
+          "required": [
+            "a",
+            "b"
+          ],
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "get-sum"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/get-tiny-image",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Returns a tiny MCP logo image.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "get-tiny-image"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/gzip-file-as-resource",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Compresses a single file using gzip compression. Depending upon the selected output type, returns either the compressed data as a gzipped resource or a resource link, allowing it to be downloaded in a subsequent request during the current session.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "default": "README.md.gz",
+              "type": "string",
+              "description": "Name of the output file"
+            },
+            "data": {
+              "default": "https://raw.githubusercontent.com/modelcontextprotocol/servers/refs/heads/main/README.md",
+              "type": "string",
+              "format": "uri",
+              "description": "URL or data URI of the file content to compress"
+            },
+            "outputType": {
+              "default": "resourceLink",
+              "description": "How the resulting gzipped file should be returned. 'resourceLink' returns a link to a resource that can be read later, 'resource' returns a full resource object.",
+              "type": "string",
+              "enum": [
+                "resourceLink",
+                "resource"
+              ]
+            }
+          },
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "gzip-file-as-resource"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/toggle-simulated-logging",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Toggles simulated, random-leveled logging on or off.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "toggle-simulated-logging"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/toggle-subscriber-updates",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Toggles simulated resource subscription updates on or off.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "toggle-subscriber-updates"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/trigger-long-running-operation",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Demonstrates a long running operation with progress updates.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "duration": {
+              "default": 10,
+              "description": "Duration of the operation in seconds",
+              "type": "number"
+            },
+            "steps": {
+              "default": 5,
+              "description": "Number of steps in the operation",
+              "type": "number"
+            }
+          },
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "trigger-long-running-operation"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/simulate-research-query",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Simulates a deep research operation that gathers, analyzes, and synthesizes information. Demonstrates MCP task-based operations with progress through multiple stages. If 'ambiguous' is true and client supports elicitation, sends an elicitation request for clarification.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "topic": {
+              "type": "string",
+              "description": "The research topic to investigate"
+            },
+            "ambiguous": {
+              "default": false,
+              "description": "Simulate an ambiguous query that requires clarification (triggers input_required status)",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "topic"
+          ],
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "simulate-research-query"
+        }
+      }
+    }
+  ],
+  "total": 13
+}"
+`;
+
+exports[`exec command - MCP tools tool info view=human read /mcp/tools/echo shows tool info: exec-human-mcp-tool-echo-info 1`] = `
+"Path: /mcp/tools/echo
+Metadata:
+  kind: mcp:tool
+  kinds: ["mcp:tool","afs:executable","afs:node"]
+  description: Echoes back the input string
+  inputSchema: {"type":"object","properties":{"message":{"type":"string","description":"Message to echo"}},"required":["message"],"$schema":"http://json-schema.org/draft-07/schema#"}
+  mcp: {"name":"echo"}"
+`;
+
+exports[`exec command - MCP tools tool info view=llm read /mcp/tools/echo shows tool info: exec-llm-mcp-tool-echo-info 1`] = `
+"NODE /mcp/tools/echo
+KIND mcp:tool
+KINDS mcp:tool afs:executable afs:node"
+`;
+
+exports[`exec command - MCP tools tool info view=json read /mcp/tools/echo shows tool info: exec-json-mcp-tool-echo-info 1`] = `
+"{
+  "data": {
+    "id": "/tools/echo",
+    "path": "/mcp/tools/echo",
+    "summary": "Echoes back the input string",
+    "meta": {
+      "kind": "mcp:tool",
+      "kinds": [
+        "mcp:tool",
+        "afs:executable",
+        "afs:node"
+      ],
+      "description": "Echoes back the input string",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Message to echo"
+          }
+        },
+        "required": [
+          "message"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "mcp": {
+        "name": "echo"
+      }
+    },
+    "actions": []
+  }
+}"
+`;
+
+exports[`exec command - MCP tools tool execution view=human exec /mcp/tools/echo with message: exec-human-mcp-echo 1`] = `
+"Executed: /mcp/tools/echo
+
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Echo: Hello from E2E test"
+    }
+  ]
+}"
+`;
+
+exports[`exec command - MCP tools tool execution view=llm exec /mcp/tools/echo with message: exec-llm-mcp-echo 1`] = `
+"EXEC /mcp/tools/echo
+STATUS SUCCESS
+DATA {"content":[{"type":"text","text":"Echo: Hello from E2E test"}]}"
+`;
+
+exports[`exec command - MCP tools tool execution view=json exec /mcp/tools/echo with message: exec-json-mcp-echo 1`] = `
+"{
+  "success": true,
+  "data": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Echo: Hello from E2E test"
+      }
+    ]
+  }
+}"
+`;
+
+exports[`exec command - MCP tools tool help exec /mcp/tools/echo --help shows usage: exec-mcp-echo-help 1`] = `
+"afs exec /mcp/tools/echo
+
+Echoes back the input string
+
+Action Parameters:
+      --message  Message to echo                             [string] [required]
+
+Positionals:
+  executable_path  Action path to execute                    [string] [required]
+
+Options:
+      --json     Output in JSON format                                 [boolean]
+      --yaml     Output in YAML format                                 [boolean]
+      --view     Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --args     JSON arguments: --args '{"key": "value"}'              [string]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]"
+`;

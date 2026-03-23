@@ -1,0 +1,14 @@
+packages:
+  - scripts
+  - typescript-config
+  - packages/*
+  - providers/*
+  - examples/*
+  - services/*
+  - conformance
+  - blocklets/*
+
+onlyBuiltDependencies:
+  - '@vscode/ripgrep'
+  - esbuild
+  - simple-git-hooks

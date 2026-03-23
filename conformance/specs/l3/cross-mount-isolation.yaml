@@ -1,0 +1,71 @@
+# L3 — Cross-mount isolation
+# Tests that write operations to one mount do not affect another mount.
+
+---
+name: "cross-mount isolation - write to A does not appear in B"
+steps:
+  - name: write file to alpha
+    operation: write
+    params:
+      path: "/alpha/isolation-test.txt"
+      content:
+        content: "written to alpha"
+    expect:
+      success: true
+  - name: verify file exists in alpha
+    operation: read
+    params:
+      path: "/alpha/isolation-test.txt"
+    expect:
+      success: true
+      data:
+        data:
+          content: "written to alpha"
+  - name: verify file does NOT exist in beta
+    operation: read
+    params:
+      path: "/beta/isolation-test.txt"
+    expect:
+      success: false
+  - name: cleanup
+    operation: delete
+    params:
+      path: "/alpha/isolation-test.txt"
+---
+name: "cross-mount isolation - delete from A does not affect B"
+steps:
+  - name: write to alpha
+    operation: write
+    params:
+      path: "/alpha/delete-iso-test.txt"
+      content:
+        content: "alpha file"
+    expect:
+      success: true
+  - name: write same name to beta
+    operation: write
+    params:
+      path: "/beta/delete-iso-test.txt"
+      content:
+        content: "beta file"
+    expect:
+      success: true
+  - name: delete from alpha
+    operation: delete
+    params:
+      path: "/alpha/delete-iso-test.txt"
+    expect:
+      success: true
+  - name: beta file still exists
+    operation: read
+    params:
+      path: "/beta/delete-iso-test.txt"
+    expect:
+      success: true
+      data:
+        data:
+          content: "beta file"
+  - name: cleanup beta
+    operation: delete
+    params:
+      path: "/beta/delete-iso-test.txt"

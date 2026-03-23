@@ -1,0 +1,104 @@
+# L6 — Core events: observable change propagation
+# Tests that changes propagate correctly through the AFS core.
+#
+# While the event subscribe() API is in-process only, the effects
+# of the event system are observable via HTTP:
+# - Knowledge cache invalidation (explain reflects changes)
+# - State consistency after write/delete sequences
+
+---
+name: "change propagation - write updates explain output"
+description: >
+  After writing a new file, explain should reflect the updated state.
+  This implicitly tests that the knowledge cache is invalidated.
+steps:
+  - name: write new file
+    operation: write
+    params:
+      path: "/alpha/event-test.txt"
+      content:
+        content: "event propagation test"
+    expect:
+      success: true
+  - name: stat shows new file
+    operation: stat
+    params:
+      path: "/alpha/event-test.txt"
+    expect:
+      success: true
+      data:
+        data:
+          meta:
+            size:
+              gte: 1
+  - name: cleanup
+    operation: delete
+    params:
+      path: "/alpha/event-test.txt"
+---
+name: "change propagation - delete removes from listing"
+steps:
+  - name: write temp file
+    operation: write
+    params:
+      path: "/beta/event-del-test.txt"
+      content:
+        content: "will be deleted"
+    expect:
+      success: true
+  - name: verify exists
+    operation: stat
+    params:
+      path: "/beta/event-del-test.txt"
+    expect:
+      success: true
+  - name: delete file
+    operation: delete
+    params:
+      path: "/beta/event-del-test.txt"
+    expect:
+      success: true
+  - name: verify gone
+    operation: stat
+    params:
+      path: "/beta/event-del-test.txt"
+    expect:
+      success: false
+---
+name: "change propagation - cross-mount write then search"
+description: >
+  Write to one mount, then search from root. The search should
+  find the newly written content across all mounts.
+steps:
+  - name: write unique content
+    operation: write
+    params:
+      path: "/alpha/event-search-test.txt"
+      content:
+        content: "l6-unique-propagation-token-xyz"
+    expect:
+      success: true
+  - name: search from root finds it
+    operation: search
+    params:
+      path: "/"
+      query: "l6-unique-propagation-token-xyz"
+    expect:
+      success: true
+      data:
+        data:
+          type: "array"
+  - name: delete from alpha only
+    operation: delete
+    params:
+      path: "/alpha/event-search-test.txt"
+  - name: search from root no longer finds it
+    operation: search
+    params:
+      path: "/"
+      query: "l6-unique-propagation-token-xyz"
+    expect:
+      success: true
+      data:
+        data:
+          length: 0

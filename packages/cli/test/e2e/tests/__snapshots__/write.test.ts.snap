@@ -1,0 +1,158 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`write command FS Provider view=human content only create new file: write-human-content-fs-create 1`] = `"Successfully wrote to /fs/write-test-human-content.txt (36 bytes)"`;
+
+exports[`write command FS Provider view=human content only update existing file: write-human-content-fs-update 1`] = `"Successfully wrote to /fs/docs/guide.md (32 bytes)"`;
+
+exports[`write command FS Provider view=human content + metadata create new file: write-human-both-fs-create 1`] = `"Successfully wrote to /fs/write-test-human-both.txt (33 bytes) [meta: author, version]"`;
+
+exports[`write command FS Provider view=human content + metadata update existing file: write-human-both-fs-update 1`] = `"Successfully wrote to /fs/docs/guide.md (29 bytes) [meta: updated_by]"`;
+
+exports[`write command FS Provider view=llm content only create new file: write-llm-content-fs-create 1`] = `
+"WRITE /fs/write-test-llm-content.txt
+STATUS SUCCESS
+SIZE 34"
+`;
+
+exports[`write command FS Provider view=llm content only update existing file: write-llm-content-fs-update 1`] = `
+"WRITE /fs/docs/guide.md
+STATUS SUCCESS
+SIZE 30"
+`;
+
+exports[`write command FS Provider view=llm content + metadata create new file: write-llm-both-fs-create 1`] = `
+"WRITE /fs/write-test-llm-both.txt
+STATUS SUCCESS
+SIZE 31
+FIELDS author,version
+SIDE_EFFECT META_UPDATED"
+`;
+
+exports[`write command FS Provider view=llm content + metadata update existing file: write-llm-both-fs-update 1`] = `
+"WRITE /fs/docs/guide.md
+STATUS SUCCESS
+SIZE 27
+FIELDS updated_by
+SIDE_EFFECT META_UPDATED"
+`;
+
+exports[`write command FS Provider view=json content only create new file: write-json-content-fs-create 1`] = `
+"{
+  "path": "/fs/write-test-json-content.txt",
+  "success": true,
+  "size": 35
+}"
+`;
+
+exports[`write command FS Provider view=json content only update existing file: write-json-content-fs-update 1`] = `
+"{
+  "path": "/fs/docs/guide.md",
+  "success": true,
+  "size": 31
+}"
+`;
+
+exports[`write command FS Provider view=json content + metadata create new file: write-json-both-fs-create 1`] = `
+"{
+  "path": "/fs/write-test-json-both.txt",
+  "success": true,
+  "size": 32,
+  "fields": [
+    "author",
+    "version"
+  ]
+}"
+`;
+
+exports[`write command FS Provider view=json content + metadata update existing file: write-json-both-fs-update 1`] = `
+"{
+  "path": "/fs/docs/guide.md",
+  "success": true,
+  "size": 28,
+  "fields": [
+    "updated_by"
+  ]
+}"
+`;
+
+exports[`write command JSON Provider view=human content only create new key: write-human-content-json-create 1`] = `"Successfully wrote to /json/config/key_human_content"`;
+
+exports[`write command JSON Provider view=human content only update existing value: write-human-content-json-update 1`] = `"Successfully wrote to /json/config/name"`;
+
+exports[`write command JSON Provider view=human content + metadata create new key: write-human-both-json-create 1`] = `"Successfully wrote to /json/config/key_human_both [meta: meta_key]"`;
+
+exports[`write command JSON Provider view=human content + metadata update existing value: write-human-both-json-update 1`] = `"Successfully wrote to /json/config/name [meta: last_updated]"`;
+
+exports[`write command JSON Provider view=llm content only create new key: write-llm-content-json-create 1`] = `
+"WRITE /json/config/key_llm_content
+STATUS SUCCESS"
+`;
+
+exports[`write command JSON Provider view=llm content only update existing value: write-llm-content-json-update 1`] = `
+"WRITE /json/config/name
+STATUS SUCCESS"
+`;
+
+exports[`write command JSON Provider view=llm content + metadata create new key: write-llm-both-json-create 1`] = `
+"WRITE /json/config/key_llm_both
+STATUS SUCCESS
+FIELDS meta_key
+SIDE_EFFECT META_UPDATED"
+`;
+
+exports[`write command JSON Provider view=llm content + metadata update existing value: write-llm-both-json-update 1`] = `
+"WRITE /json/config/name
+STATUS SUCCESS
+FIELDS last_updated
+SIDE_EFFECT META_UPDATED"
+`;
+
+exports[`write command JSON Provider view=json content only create new key: write-json-content-json-create 1`] = `
+"{
+  "path": "/json/config/key_json_content",
+  "success": true
+}"
+`;
+
+exports[`write command JSON Provider view=json content only update existing value: write-json-content-json-update 1`] = `
+"{
+  "path": "/json/config/name",
+  "success": true
+}"
+`;
+
+exports[`write command JSON Provider view=json content + metadata create new key: write-json-both-json-create 1`] = `
+"{
+  "path": "/json/config/key_json_both",
+  "success": true,
+  "fields": [
+    "meta_key"
+  ]
+}"
+`;
+
+exports[`write command JSON Provider view=json content + metadata update existing value: write-json-both-json-update 1`] = `
+"{
+  "path": "/json/config/name",
+  "success": true,
+  "fields": [
+    "last_updated"
+  ]
+}"
+`;
+
+exports[`write command append mode view=human append to existing file: write-human-fs-append 1`] = `"Successfully wrote to /fs/README.md (109 bytes)"`;
+
+exports[`write command append mode view=llm append to existing file: write-llm-fs-append 1`] = `
+"WRITE /fs/README.md
+STATUS SUCCESS
+SIZE 127"
+`;
+
+exports[`write command append mode view=json append to existing file: write-json-fs-append 1`] = `
+"{
+  "path": "/fs/README.md",
+  "success": true,
+  "size": 145
+}"
+`;

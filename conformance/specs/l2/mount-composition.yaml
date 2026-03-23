@@ -1,0 +1,116 @@
+name: "mount composition - write to nested path, list parent"
+steps:
+  - name: write nested file
+    operation: write
+    params:
+      path: "/integ-mount/deep/nested/file.txt"
+      content:
+        content: "nested content here"
+    expect:
+      success: true
+  - name: list parent directory
+    operation: list
+    params:
+      path: "/integ-mount/deep/nested/"
+    expect:
+      success: true
+      data:
+        data:
+          type: "array"
+  - name: cleanup nested file
+    operation: delete
+    params:
+      path: "/integ-mount/deep/nested/file.txt"
+    expect:
+      success: true
+  - name: cleanup nested dir
+    operation: delete
+    params:
+      path: "/integ-mount/"
+      options:
+        recursive: true
+---
+name: "mount composition - multiple files in same directory"
+steps:
+  - name: write file 1
+    operation: write
+    params:
+      path: "/integ-multi/alpha.txt"
+      content:
+        content: "file alpha"
+    expect:
+      success: true
+  - name: write file 2
+    operation: write
+    params:
+      path: "/integ-multi/beta.txt"
+      content:
+        content: "file beta"
+    expect:
+      success: true
+  - name: write file 3
+    operation: write
+    params:
+      path: "/integ-multi/gamma.txt"
+      content:
+        content: "file gamma"
+    expect:
+      success: true
+  - name: list dir with limit
+    operation: list
+    params:
+      path: "/integ-multi/"
+      options:
+        limit: 10
+    expect:
+      success: true
+      data:
+        data:
+          type: "array"
+  - name: cleanup
+    operation: delete
+    params:
+      path: "/integ-multi/"
+      options:
+        recursive: true
+---
+name: "mount composition - operations across directories"
+steps:
+  - name: write file in dir-a
+    operation: write
+    params:
+      path: "/integ-cross-a/note.txt"
+      content:
+        content: "xmount-unique-token-7f3a"
+    expect:
+      success: true
+  - name: write file in dir-b
+    operation: write
+    params:
+      path: "/integ-cross-b/note.txt"
+      content:
+        content: "unrelated content only"
+    expect:
+      success: true
+  - name: search root for unique string
+    operation: search
+    params:
+      path: "/"
+      query: "xmount-unique-token-7f3a"
+    expect:
+      success: true
+      data:
+        data:
+          type: "array"
+  - name: cleanup dir-a
+    operation: delete
+    params:
+      path: "/integ-cross-a/"
+      options:
+        recursive: true
+  - name: cleanup dir-b
+    operation: delete
+    params:
+      path: "/integ-cross-b/"
+      options:
+        recursive: true

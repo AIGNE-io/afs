@@ -1,0 +1,33 @@
+name: "multiple jobs run independently"
+script: |
+  job first {
+    find /alpha
+    | save /out_alpha
+  }
+  job second {
+    find /beta
+    | save /out_beta
+  }
+mockWorld:
+  read:
+    /alpha:
+      - { a: 1 }
+    /beta:
+      - { b: 2 }
+      - { b: 3 }
+jobs:
+  - name: "first"
+    expected:
+      status: "ok"
+      recordCount: 0
+      writes:
+        /out_alpha:
+          - { a: 1 }
+  - name: "second"
+    expected:
+      status: "ok"
+      recordCount: 0
+      writes:
+        /out_beta:
+          - { b: 2 }
+          - { b: 3 }

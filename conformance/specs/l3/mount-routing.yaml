@@ -1,0 +1,123 @@
+# L3 — Core mount routing
+# Tests that an AFS compositor correctly routes operations
+# to the right provider based on mount path prefixes.
+#
+# Fixture layout (launched by L3 launcher):
+#   /alpha  → provider-a/  (hello.txt, shared-name.txt)
+#   /beta   → provider-b/  (world.txt, shared-name.txt, nested/deep.txt)
+
+---
+name: "mount routing - read from provider A"
+operation: read
+params:
+  path: "/alpha/hello.txt"
+expect:
+  success: true
+  data:
+    data:
+      content:
+        contains: "provider A"
+---
+name: "mount routing - read from provider B"
+operation: read
+params:
+  path: "/beta/world.txt"
+expect:
+  success: true
+  data:
+    data:
+      content:
+        contains: "provider B"
+---
+name: "mount routing - same filename resolves to different providers"
+description: >
+  Both providers have shared-name.txt but with different content.
+  Routing must dispatch to the correct provider.
+steps:
+  - name: read from alpha
+    operation: read
+    params:
+      path: "/alpha/shared-name.txt"
+    expect:
+      success: true
+      data:
+        data:
+          content:
+            contains: "provider A"
+  - name: read from beta
+    operation: read
+    params:
+      path: "/beta/shared-name.txt"
+    expect:
+      success: true
+      data:
+        data:
+          content:
+            contains: "provider B"
+---
+name: "mount routing - list provider A root"
+operation: list
+params:
+  path: "/alpha"
+expect:
+  success: true
+  data:
+    data:
+      type: "array"
+---
+name: "mount routing - list provider B root"
+operation: list
+params:
+  path: "/beta"
+expect:
+  success: true
+  data:
+    data:
+      type: "array"
+---
+name: "mount routing - list nested directory in provider B"
+operation: list
+params:
+  path: "/beta/nested"
+expect:
+  success: true
+  data:
+    data:
+      type: "array"
+---
+name: "mount routing - read nested file in provider B"
+operation: read
+params:
+  path: "/beta/nested/deep.txt"
+expect:
+  success: true
+  data:
+    data:
+      content:
+        contains: "Deep nested"
+---
+name: "mount routing - stat routes to correct provider"
+operation: stat
+params:
+  path: "/alpha/hello.txt"
+expect:
+  success: true
+  data:
+    data:
+      meta:
+        size:
+          gte: 1
+---
+name: "mount routing - nonexistent path under valid mount"
+operation: read
+params:
+  path: "/alpha/does-not-exist.txt"
+expect:
+  success: false
+---
+name: "mount routing - nonexistent mount prefix"
+operation: read
+params:
+  path: "/gamma/anything.txt"
+expect:
+  success: false

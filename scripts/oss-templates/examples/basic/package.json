@@ -1,0 +1,10 @@
+{
+  "name": "afs-basic-example",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@aigne/afs": "workspace:*",
+    "@aigne/afs-fs": "workspace:*",
+    "@aigne/afs-json": "workspace:*"
+  }
+}

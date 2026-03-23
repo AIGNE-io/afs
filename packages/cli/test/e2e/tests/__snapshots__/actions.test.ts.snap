@@ -1,0 +1,152 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`Action system Action execution table actions view=human count action: exec-human-sqlite-users-_actions-count 1`] = `
+"Executed: /sqlite/users/.actions/count
+
+{
+  "count": 2
+}"
+`;
+
+exports[`Action system Action execution table actions view=llm count action: exec-llm-sqlite-users-_actions-count 1`] = `
+"EXEC /sqlite/users/.actions/count
+STATUS SUCCESS
+DATA {"count":2}"
+`;
+
+exports[`Action system Action execution table actions view=json count action: exec-json-sqlite-users-_actions-count 1`] = `
+"{
+  "success": true,
+  "data": {
+    "count": 2
+  }
+}"
+`;
+
+exports[`Action system Action execution table actions export format=json export action: exec-export-json-sqlite-users-_actions-export 1`] = `"{"data":[{"id":1,"name":"Alice","email":"alice@example.com","created_at":"2026-01-01"},{"id":2,"name":"Bob","email":"bob@example.com","created_at":"2026-01-02"}]}"`;
+
+exports[`Action system Action execution table actions export format=csv export action: exec-export-csv-sqlite-users-_actions-export 1`] = `""id,name,email,created_at\\n1,Alice,alice@example.com,2026-01-01\\n2,Bob,bob@example.com,2026-01-02""`;
+
+exports[`Action system Action execution row actions view=human validate action: exec-human-sqlite-users-1-_actions-validate 1`] = `
+"Executed: /sqlite/users/1/.actions/validate
+
+{
+  "errors": [],
+  "valid": true
+}"
+`;
+
+exports[`Action system Action execution row actions view=llm validate action: exec-llm-sqlite-users-1-_actions-validate 1`] = `
+"EXEC /sqlite/users/1/.actions/validate
+STATUS SUCCESS
+DATA {"errors":[],"valid":true}"
+`;
+
+exports[`Action system Action execution row actions view=json validate action: exec-json-sqlite-users-1-_actions-validate 1`] = `
+"{
+  "success": true,
+  "data": {
+    "errors": [],
+    "valid": true
+  }
+}"
+`;
+
+exports[`Action system Action help table export (/sqlite/users/.actions/export --help): exec-help-sqlite-users-_actions-export 1`] = `
+"afs exec /sqlite/users/.actions/export
+
+Export table data in specified format (j
+son, csv)
+
+Action Parameters:
+      --format                                        [string] [default: "json"]
+
+Positionals:
+  executable_path  Action path to execute                    [string] [required]
+
+Options:
+      --json     Output in JSON format                                 [boolean]
+      --yaml     Output in YAML format                                 [boolean]
+      --view     Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --args     JSON arguments: --args '{"key": "value"}'              [string]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]"
+`;
+
+exports[`Action system Action help table count (/sqlite/users/.actions/count --help): exec-help-sqlite-users-_actions-count 1`] = `
+"afs exec /sqlite/users/.actions/count
+
+Get the total row count for this table
+
+Positionals:
+  executable_path  Action path to execute                    [string] [required]
+
+Options:
+      --json     Output in JSON format                                 [boolean]
+      --yaml     Output in YAML format                                 [boolean]
+      --view     Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --args     JSON arguments: --args '{"key": "value"}'              [string]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]"
+`;
+
+exports[`Action system Action help table insert (/sqlite/users/.actions/insert --help): exec-help-sqlite-users-_actions-insert 1`] = `
+"afs exec /sqlite/users/.actions/insert
+
+Insert a new row into the table
+
+Action Parameters:
+      --data  Row data to insert (JSON object with: name, email, created_at)
+                                                             [string] [required]
+
+Positionals:
+  executable_path  Action path to execute                    [string] [required]
+
+Options:
+      --json     Output in JSON format                                 [boolean]
+      --yaml     Output in YAML format                                 [boolean]
+      --view     Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --args     JSON arguments: --args '{"key": "value"}'              [string]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]"
+`;
+
+exports[`Action system Action help row duplicate (/sqlite/users/1/.actions/duplicate --help): exec-help-sqlite-users-1-_actions-duplicate 1`] = `
+"afs exec /sqlite/users/1/.actions/duplicate
+
+Create a copy of this row
+
+Positionals:
+  executable_path  Action path to execute                    [string] [required]
+
+Options:
+      --json     Output in JSON format                                 [boolean]
+      --yaml     Output in YAML format                                 [boolean]
+      --view     Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --args     JSON arguments: --args '{"key": "value"}'              [string]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]"
+`;
+
+exports[`Action system Action help row validate (/sqlite/users/1/.actions/validate --help): exec-help-sqlite-users-1-_actions-validate 1`] = `
+"afs exec /sqlite/users/1/.actions/validate
+
+Validate row data against schema con
+straints
+
+Positionals:
+  executable_path  Action path to execute                    [string] [required]
+
+Options:
+      --json     Output in JSON format                                 [boolean]
+      --yaml     Output in YAML format                                 [boolean]
+      --view     Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --args     JSON arguments: --args '{"key": "value"}'              [string]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]"
+`;

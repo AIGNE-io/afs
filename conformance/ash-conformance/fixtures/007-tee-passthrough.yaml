@@ -1,0 +1,22 @@
+name: "tee writes copy and passes through to save"
+script: |
+  job backup_and_save {
+    find /data
+    | tee /copy
+    | save /main
+  }
+mockWorld:
+  read:
+    /data:
+      - { id: 1, val: "x" }
+      - { id: 2, val: "y" }
+expected:
+  status: "ok"
+  recordCount: 0
+  writes:
+    /copy:
+      - { id: 1, val: "x" }
+      - { id: 2, val: "y" }
+    /main:
+      - { id: 1, val: "x" }
+      - { id: 2, val: "y" }

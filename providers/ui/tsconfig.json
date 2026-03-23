@@ -1,0 +1,14 @@
+{
+  "extends": "@aigne/typescript-config/base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": ".",
+    "paths": {
+      "@aigne/afs-ui": ["./src/index.ts"],
+      "@aigne/afs-ui/*": ["./src/*"]
+    },
+    "experimentalDecorators": true
+  },
+  "include": ["src", "test"],
+  "exclude": ["node_modules", "dist"]
+}

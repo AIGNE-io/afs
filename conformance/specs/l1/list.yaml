@@ -1,0 +1,53 @@
+name: "list - root directory"
+operation: list
+params:
+  path: "/"
+expect:
+  success: true
+  data:
+    data:
+      type: "array"
+---
+name: "list - directory with children"
+operation: list
+params:
+  path: "/docs"
+expect:
+  success: true
+  data:
+    data:
+      type: "array"
+---
+name: "list - with limit"
+operation: list
+params:
+  path: "/"
+  options:
+    limit: 2
+expect:
+  success: true
+  data:
+    data:
+      type: "array"
+---
+name: "list - with offset"
+operation: list
+params:
+  path: "/"
+  options:
+    offset: 1
+    limit: 2
+expect:
+  success: true
+  data:
+    data:
+      type: "array"
+---
+name: "list - not found"
+operation: list
+params:
+  path: "/nonexistent-dir"
+expect:
+  success: false
+  error:
+    code: 1

@@ -1,0 +1,39 @@
+{
+  "name": "sqlite",
+  "description": "SQLite database — tables as directories, rows as nodes.\n- Browse tables and rows, full-text search (FTS5), schema introspection\n- Exec actions: `insert`, `update`, `delete` at table/row level, custom SQL\n- Path structure: `/{table}/{primary-key}`",
+  "uriTemplate": "sqlite://{localPath+}",
+  "category": "database",
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "localPath": {
+        "type": "string"
+      }
+    },
+    "required": ["localPath"],
+    "additionalProperties": false
+  },
+  "tags": ["sqlite", "database"],
+  "capabilityTags": [
+    "read-write",
+    "crud",
+    "search",
+    "query",
+    "sql",
+    "destructive",
+    "auth:none",
+    "local"
+  ],
+  "security": {
+    "riskLevel": "local",
+    "resourceAccess": ["local-filesystem"],
+    "requires": ["sqlite"]
+  },
+  "capabilities": {
+    "filesystem": {
+      "read": true,
+      "write": true
+    }
+  }
+}

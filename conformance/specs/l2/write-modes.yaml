@@ -1,0 +1,255 @@
+name: "append mode - adds to existing"
+steps:
+  - operation: write
+    params:
+      path: "/l2-append.txt"
+      content:
+        content: "first"
+    expect:
+      success: true
+  - operation: write
+    params:
+      path: "/l2-append.txt"
+      content:
+        content: " second"
+      options:
+        mode: "append"
+    expect:
+      success: true
+  - operation: read
+    params:
+      path: "/l2-append.txt"
+    expect:
+      success: true
+      data:
+        data:
+          content: "$contains:first"
+  - operation: delete
+    params:
+      path: "/l2-append.txt"
+---
+name: "append to non-existent file - creates it"
+steps:
+  - operation: write
+    params:
+      path: "/l2-append-new.txt"
+      content:
+        content: "brand new"
+      options:
+        mode: "append"
+    expect:
+      success: true
+  - operation: read
+    params:
+      path: "/l2-append-new.txt"
+    expect:
+      success: true
+      data:
+        data:
+          content: "brand new"
+  - operation: delete
+    params:
+      path: "/l2-append-new.txt"
+---
+name: "prepend mode - adds before existing"
+steps:
+  - operation: write
+    params:
+      path: "/l2-prepend.txt"
+      content:
+        content: "world"
+    expect:
+      success: true
+  - operation: write
+    params:
+      path: "/l2-prepend.txt"
+      content:
+        content: "hello "
+      options:
+        mode: "prepend"
+    expect:
+      success: true
+  - operation: read
+    params:
+      path: "/l2-prepend.txt"
+    expect:
+      success: true
+      data:
+        data:
+          content: "hello world"
+  - operation: delete
+    params:
+      path: "/l2-prepend.txt"
+---
+name: "prepend to non-existent file - creates it"
+steps:
+  - operation: write
+    params:
+      path: "/l2-prepend-new.txt"
+      content:
+        content: "brand new"
+      options:
+        mode: "prepend"
+    expect:
+      success: true
+  - operation: read
+    params:
+      path: "/l2-prepend-new.txt"
+    expect:
+      success: true
+      data:
+        data:
+          content: "brand new"
+  - operation: delete
+    params:
+      path: "/l2-prepend-new.txt"
+---
+name: "create mode - succeeds on new path"
+steps:
+  - operation: write
+    params:
+      path: "/l2-create-ok.txt"
+      content:
+        content: "created"
+      options:
+        mode: "create"
+    expect:
+      success: true
+  - operation: read
+    params:
+      path: "/l2-create-ok.txt"
+    expect:
+      success: true
+      data:
+        data:
+          content: "created"
+  - operation: delete
+    params:
+      path: "/l2-create-ok.txt"
+---
+name: "create mode - rejects second write"
+steps:
+  - operation: write
+    params:
+      path: "/l2-create-once.txt"
+      content:
+        content: "original"
+      options:
+        mode: "create"
+    expect:
+      success: true
+  - operation: write
+    params:
+      path: "/l2-create-once.txt"
+      content:
+        content: "duplicate"
+      options:
+        mode: "create"
+    expect:
+      success: false
+  - operation: delete
+    params:
+      path: "/l2-create-once.txt"
+---
+name: "update mode - succeeds on existing path"
+steps:
+  - operation: write
+    params:
+      path: "/l2-update.txt"
+      content:
+        content: "original"
+    expect:
+      success: true
+  - operation: write
+    params:
+      path: "/l2-update.txt"
+      content:
+        content: "updated"
+      options:
+        mode: "update"
+    expect:
+      success: true
+  - operation: read
+    params:
+      path: "/l2-update.txt"
+    expect:
+      success: true
+      data:
+        data:
+          content: "updated"
+  - operation: delete
+    params:
+      path: "/l2-update.txt"
+---
+name: "update mode - rejects non-existent path"
+steps:
+  - operation: write
+    params:
+      path: "/l2-update-missing.txt"
+      content:
+        content: "data"
+      options:
+        mode: "update"
+    expect:
+      success: false
+---
+name: "patch mode - applies str_replace"
+steps:
+  - operation: write
+    params:
+      path: "/l2-patch.txt"
+      content:
+        content: "hello world"
+    expect:
+      success: true
+  - operation: write
+    params:
+      path: "/l2-patch.txt"
+      content:
+        patches:
+          - op: "str_replace"
+            target: "world"
+            content: "earth"
+      options:
+        mode: "patch"
+    expect:
+      success: true
+  - operation: read
+    params:
+      path: "/l2-patch.txt"
+    expect:
+      success: true
+      data:
+        data:
+          content: "hello earth"
+  - operation: delete
+    params:
+      path: "/l2-patch.txt"
+---
+name: "replace mode (default) - overwrites content"
+steps:
+  - operation: write
+    params:
+      path: "/l2-replace.txt"
+      content:
+        content: "first"
+    expect:
+      success: true
+  - operation: write
+    params:
+      path: "/l2-replace.txt"
+      content:
+        content: "second"
+    expect:
+      success: true
+  - operation: read
+    params:
+      path: "/l2-replace.txt"
+    expect:
+      success: true
+      data:
+        data:
+          content: "second"
+  - operation: delete
+    params:
+      path: "/l2-replace.txt"

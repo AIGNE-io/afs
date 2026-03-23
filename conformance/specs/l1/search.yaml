@@ -1,0 +1,23 @@
+name: "search - by content"
+operation: search
+params:
+  path: "/"
+  query: "Hello"
+expect:
+  success: true
+  data:
+    data:
+      type: "array"
+---
+name: "search - with limit"
+operation: search
+params:
+  path: "/"
+  query: "line"
+  options:
+    limit: 2
+expect:
+  success: true
+  data:
+    data:
+      type: "array"

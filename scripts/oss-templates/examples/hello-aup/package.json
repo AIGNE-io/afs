@@ -1,0 +1,9 @@
+{
+  "name": "afs-hello-aup-example",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@aigne/afs": "workspace:*",
+    "@aigne/afs-ui": "workspace:*"
+  }
+}

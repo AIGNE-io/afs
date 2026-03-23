@@ -1,0 +1,8 @@
+{
+  "name": "afs-custom-provider-example",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@aigne/afs": "workspace:*"
+  }
+}

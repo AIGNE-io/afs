@@ -1,0 +1,42 @@
+{
+  "name": "git",
+  "description": "Git repository browser with branch-based access.\n- Browse branches, read files at any ref, search across repository\n- Exec actions (readwrite): `diff`, `create-branch`, `commit`, `merge`\n- Virtual `.log/` tree exposes commit history per branch\n- Path structure: `/{branch}/{file-path}` (branch `/` encoded as `~`)",
+  "uriTemplate": "git://{localPath+}",
+  "category": "vcs",
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "localPath": {
+        "type": "string"
+      },
+      "branch": {
+        "type": "string"
+      },
+      "remoteUrl": {
+        "type": "string"
+      }
+    },
+    "required": ["localPath"],
+    "additionalProperties": false
+  },
+  "tags": ["git", "version-control"],
+  "capabilityTags": ["read-write", "search", "auth:none", "local"],
+  "security": {
+    "riskLevel": "local",
+    "resourceAccess": ["local-filesystem"],
+    "requires": ["git"],
+    "dataSensitivity": ["code"],
+    "notes": ["Accesses local git repositories; readwrite mode creates worktrees and can commit"]
+  },
+  "capabilities": {
+    "filesystem": {
+      "read": true,
+      "write": true
+    },
+    "process": {
+      "spawn": true,
+      "allowedCommands": ["git"]
+    }
+  }
+}

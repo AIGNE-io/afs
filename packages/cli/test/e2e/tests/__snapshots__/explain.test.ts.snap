@@ -1,0 +1,1233 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`explain command Concept explanations view=human default (AFS overview): explain-human-concept-default 1`] = `
+"AFS Overview
+============
+
+AFS (Abstract File System) is a virtual filesystem that unifies different data sources into a single namespace.
+
+Core Concepts:
+- mount: Mount a data source to a virtual path
+- path: Virtual path, e.g., /src, /data
+- uri: Data source address, e.g., fs://, git://, sqlite://
+
+Data Flow:
+  User Path -> AFS -> /{mount} -> Provider -> Actual Data
+
+Examples:
+  $ afs mount add /src fs:///path/to/source
+  $ afs ls /src
+  $ afs read /src/file.txt"
+`;
+
+exports[`explain command Concept explanations view=human mount: explain-human-concept-mount 1`] = `
+"Mounts
+======
+
+Current mount configuration:
+
+  /fs - E2E Test FS Provider
+  /json - E2E Test JSON Provider
+  /sqlite - E2E Test SQLite Provider
+  /mcp - E2E Test MCP Provider
+  /git - E2E Test Git Provider
+
+After mounting, data is accessed via the mount path:
+  path="/src" -> /src
+
+Examples:
+  $ afs ls /fs
+  $ afs ls /json
+  $ afs ls /sqlite
+  $ afs ls /mcp
+  $ afs ls /git"
+`;
+
+exports[`explain command Concept explanations view=human uri: explain-human-concept-uri 1`] = `
+"URI
+===
+
+AFS URI Schemes and Objects:
+
+fs://       Local Filesystem Provider
+  Format: fs:///absolute/path or fs://./relative/path
+  Operations: list, read, write, delete
+
+git://      Git Repository Provider
+  Format: git:///local/repo or git://github.com/user/repo?branch=main
+  Operations: list, read, exec (diff, create-branch, commit, merge)
+
+sqlite://   SQLite Database Provider
+  Format: sqlite:///path/to/db.sqlite
+  Operations: list, read, exec (SQL queries)
+
+json://     JSON Data Provider
+  Format: json:///path/to/data.json
+  Operations: list, read, write
+
+toml://     TOML Data Provider
+  Format: toml:///path/to/config.toml
+  Operations: list, read, write
+
+sandbox://  Sandboxed Script Execution Provider
+  Format: sandbox:///path/to/scripts
+  Operations: list, read, exec
+
+github://   GitHub Issues/PRs Provider
+  Format: github://owner/repo
+  Operations: list, read, exec (create-issue, close-issue, etc.)
+
+http://     HTTP Proxy Provider
+  Format: http://host:port/path
+  Operations: list, read
+
+mcp://      MCP Server Provider
+  Format: mcp:///path/to/server
+  Operations: list, read, exec
+
+s3://       AWS S3 Storage Provider
+  Format: s3://bucket-name
+  Operations: list, read, write, delete
+
+gcs://      Google Cloud Storage Provider
+  Format: gcs://bucket-name
+  Operations: list, read, write, delete
+
+ec2://      AWS EC2 Instances Provider
+  Format: ec2://region
+  Operations: list, read, exec (run-instances)
+
+gce://      Google Compute Engine Provider
+  Format: gce://project/zone
+  Operations: list, read, exec
+
+dns://      Cloud DNS Provider
+  Format: dns://provider (route53, clouddns)
+  Operations: list, read
+
+Examples:
+  $ afs mount add /src fs:///Users/me/project
+  $ afs mount add /repo git://github.com/user/repo
+  $ afs mount add /db sqlite:///data.sqlite
+  $ afs mount add /s3 s3://my-bucket"
+`;
+
+exports[`explain command Concept explanations view=llm default (AFS overview): explain-llm-concept-default 1`] = `
+"TOPIC AFS Overview
+
+AFS (Abstract File System) is a virtual filesystem that unifies different data sources into a single namespace.
+
+Core Concepts:
+- mount: Mount a data source to a virtual path
+- path: Virtual path, e.g., /src, /data
+- uri: Data source address, e.g., fs://, git://, sqlite://
+
+Data Flow:
+  User Path -> AFS -> /{mount} -> Provider -> Actual Data
+
+EXAMPLES
+CMD afs mount add /src fs:///path/to/source
+CMD afs ls /src
+CMD afs read /src/file.txt"
+`;
+
+exports[`explain command Concept explanations view=llm mount: explain-llm-concept-mount 1`] = `
+"TOPIC Mounts
+
+Current mount configuration:
+
+  /fs - E2E Test FS Provider
+  /json - E2E Test JSON Provider
+  /sqlite - E2E Test SQLite Provider
+  /mcp - E2E Test MCP Provider
+  /git - E2E Test Git Provider
+
+After mounting, data is accessed via the mount path:
+  path="/src" -> /src
+
+EXAMPLES
+CMD afs ls /fs
+CMD afs ls /json
+CMD afs ls /sqlite
+CMD afs ls /mcp
+CMD afs ls /git"
+`;
+
+exports[`explain command Concept explanations view=llm uri: explain-llm-concept-uri 1`] = `
+"TOPIC URI
+
+AFS URI Schemes and Objects:
+
+fs://       Local Filesystem Provider
+  Format: fs:///absolute/path or fs://./relative/path
+  Operations: list, read, write, delete
+
+git://      Git Repository Provider
+  Format: git:///local/repo or git://github.com/user/repo?branch=main
+  Operations: list, read, exec (diff, create-branch, commit, merge)
+
+sqlite://   SQLite Database Provider
+  Format: sqlite:///path/to/db.sqlite
+  Operations: list, read, exec (SQL queries)
+
+json://     JSON Data Provider
+  Format: json:///path/to/data.json
+  Operations: list, read, write
+
+toml://     TOML Data Provider
+  Format: toml:///path/to/config.toml
+  Operations: list, read, write
+
+sandbox://  Sandboxed Script Execution Provider
+  Format: sandbox:///path/to/scripts
+  Operations: list, read, exec
+
+github://   GitHub Issues/PRs Provider
+  Format: github://owner/repo
+  Operations: list, read, exec (create-issue, close-issue, etc.)
+
+http://     HTTP Proxy Provider
+  Format: http://host:port/path
+  Operations: list, read
+
+mcp://      MCP Server Provider
+  Format: mcp:///path/to/server
+  Operations: list, read, exec
+
+s3://       AWS S3 Storage Provider
+  Format: s3://bucket-name
+  Operations: list, read, write, delete
+
+gcs://      Google Cloud Storage Provider
+  Format: gcs://bucket-name
+  Operations: list, read, write, delete
+
+ec2://      AWS EC2 Instances Provider
+  Format: ec2://region
+  Operations: list, read, exec (run-instances)
+
+gce://      Google Compute Engine Provider
+  Format: gce://project/zone
+  Operations: list, read, exec
+
+dns://      Cloud DNS Provider
+  Format: dns://provider (route53, clouddns)
+  Operations: list, read
+
+EXAMPLES
+CMD afs mount add /src fs:///Users/me/project
+CMD afs mount add /repo git://github.com/user/repo
+CMD afs mount add /db sqlite:///data.sqlite
+CMD afs mount add /s3 s3://my-bucket"
+`;
+
+exports[`explain command Concept explanations view=json default (AFS overview): explain-json-concept-default 1`] = `
+"{
+  "topic": "AFS Overview",
+  "explanation": "AFS (Abstract File System) is a virtual filesystem that unifies different data sources into a single namespace.\\n\\nCore Concepts:\\n- mount: Mount a data source to a virtual path\\n- path: Virtual path, e.g., /src, /data\\n- uri: Data source address, e.g., fs://, git://, sqlite://\\n\\nData Flow:\\n  User Path -> AFS -> /{mount} -> Provider -> Actual Data",
+  "examples": [
+    "afs mount add /src fs:///path/to/source",
+    "afs ls /src",
+    "afs read /src/file.txt"
+  ]
+}"
+`;
+
+exports[`explain command Concept explanations view=json mount: explain-json-concept-mount 1`] = `
+"{
+  "topic": "Mounts",
+  "explanation": "Current mount configuration:\\n\\n  /fs - E2E Test FS Provider\\n  /json - E2E Test JSON Provider\\n  /sqlite - E2E Test SQLite Provider\\n  /mcp - E2E Test MCP Provider\\n  /git - E2E Test Git Provider\\n\\nAfter mounting, data is accessed via the mount path:\\n  path=\\"/src\\" -> /src",
+  "examples": [
+    "afs ls /fs",
+    "afs ls /json",
+    "afs ls /sqlite",
+    "afs ls /mcp",
+    "afs ls /git"
+  ]
+}"
+`;
+
+exports[`explain command Concept explanations view=json uri: explain-json-concept-uri 1`] = `
+"{
+  "topic": "URI",
+  "explanation": "AFS URI Schemes and Objects:\\n\\nfs://       Local Filesystem Provider\\n  Format: fs:///absolute/path or fs://./relative/path\\n  Operations: list, read, write, delete\\n\\ngit://      Git Repository Provider\\n  Format: git:///local/repo or git://github.com/user/repo?branch=main\\n  Operations: list, read, exec (diff, create-branch, commit, merge)\\n\\nsqlite://   SQLite Database Provider\\n  Format: sqlite:///path/to/db.sqlite\\n  Operations: list, read, exec (SQL queries)\\n\\njson://     JSON Data Provider\\n  Format: json:///path/to/data.json\\n  Operations: list, read, write\\n\\ntoml://     TOML Data Provider\\n  Format: toml:///path/to/config.toml\\n  Operations: list, read, write\\n\\nsandbox://  Sandboxed Script Execution Provider\\n  Format: sandbox:///path/to/scripts\\n  Operations: list, read, exec\\n\\ngithub://   GitHub Issues/PRs Provider\\n  Format: github://owner/repo\\n  Operations: list, read, exec (create-issue, close-issue, etc.)\\n\\nhttp://     HTTP Proxy Provider\\n  Format: http://host:port/path\\n  Operations: list, read\\n\\nmcp://      MCP Server Provider\\n  Format: mcp:///path/to/server\\n  Operations: list, read, exec\\n\\ns3://       AWS S3 Storage Provider\\n  Format: s3://bucket-name\\n  Operations: list, read, write, delete\\n\\ngcs://      Google Cloud Storage Provider\\n  Format: gcs://bucket-name\\n  Operations: list, read, write, delete\\n\\nec2://      AWS EC2 Instances Provider\\n  Format: ec2://region\\n  Operations: list, read, exec (run-instances)\\n\\ngce://      Google Compute Engine Provider\\n  Format: gce://project/zone\\n  Operations: list, read, exec\\n\\ndns://      Cloud DNS Provider\\n  Format: dns://provider (route53, clouddns)\\n  Operations: list, read",
+  "examples": [
+    "afs mount add /src fs:///Users/me/project",
+    "afs mount add /repo git://github.com/user/repo",
+    "afs mount add /db sqlite:///data.sqlite",
+    "afs mount add /s3 s3://my-bucket"
+  ]
+}"
+`;
+
+exports[`explain command Path explanations view=human root (/): explain-human-root 1`] = `
+"# AFS — Agentic File System
+
+AFS is a virtual filesystem developed by [ArcBlock](https://www.arcblock.io) that gives AI agents a unified, path-based interface to any data source.
+Inspired by Unix and Plan 9's "everything is a file", AFS extends the idea to **everything is context** — databases, APIs, smart home devices, and cloud services all become files and directories that agents can read, write, search, and act on.
+
+## Mounted Providers
+
+- **fs** (\`/fs\`) — E2E Test FS Provider
+- **data** (\`/json\`) — E2E Test JSON Provider
+- **sqlite-afs** (\`/sqlite\`) — E2E Test SQLite Provider
+- **mcp** (\`/mcp\`) — E2E Test MCP Provider
+- **repo** (\`/git\`) — E2E Test Git Provider
+
+## Standard Operations
+
+- **read** — Read file or node content
+- **list** — List children of a directory or container
+- **stat** — Get metadata without content
+- **explain** — Get human-readable documentation for a path
+- **search** — Search within a mounted provider
+- **write** — Create or update content
+- **delete** — Remove a file or node
+- **exec** — Execute an action at a path
+
+## Root Actions
+
+- **unmount** — Unmount a provider at a given path
+- **read** — Read file content at a given path
+- **list** — List directory content at a given path
+- **write** — Write content to a file at a given path
+- **delete** — Delete a file or directory at a given path
+
+Use \`explain('/.actions/<name>')\` for detailed usage.
+
+## Quick Start
+
+- List all sites: \`list /web/sites\`
+- Read a site page: \`read /web/sites/{name}/pages/index.html\`
+- Search a provider: \`search /registry "query"\` (search at \`/\` is not supported)
+- Run an LLM: \`exec /modules/aignehub/defaults/.actions/chat {messages: [...]}\`
+- Discover capabilities: \`explain {path}\` on any mount
+
+## Built-in Systems
+
+- **\`.meta\`** — Metadata for any node. Access via \`read('/.meta')\` at root, or append \`/.meta\` to any path.
+- **\`.actions\`** — Executable actions. Access via \`read('/.actions')\` to list, \`exec('/.actions/<name>', args)\` to run.
+- **\`.afs/\`** — Provider self-documentation. \`read {path}/.afs/README.md\` for description, \`list {path}/.afs/skills/\` for capabilities.
+- **\`.knowledge/\`** — Capability index. \`read /.knowledge\` for a one-shot summary of all providers and actions. \`read /.knowledge/{provider}\` for provider details."
+`;
+
+exports[`explain command Path explanations view=human fs provider root (/fs): explain-human-fs 1`] = `
+"# /
+
+**Path:** \`/\`
+**Type:** directory
+
+## Metadata
+**Kind:** \`afs:node\`
+**Name:** E2E Test Project
+**Description:** Test project for CLI E2E testing
+
+## Kind Schema
+This node is of kind \`afs:node\`.
+> Base kind for all AFS nodes
+
+## Contents
+
+- README.md
+- docs
+- src
+- test"
+`;
+
+exports[`explain command Path explanations view=human json provider root (/json): explain-human-json 1`] = `
+"# /
+
+**Path:** \`/\`
+**Format:** JSON
+**Structure:** object
+**Top-level keys:** 3
+
+## Keys
+
+- \`config\` — object{3 keys}
+- \`users\` — array[2]
+- \`metadata\` — object{2 keys}
+
+## Metadata
+- **kind:** "afs:node"
+- **description:** "E2E Test JSON Data""
+`;
+
+exports[`explain command Path explanations view=human sqlite provider root (/sqlite): explain-human-sqlite 1`] = `
+"# sqlite-afs
+
+**Type:** SQLite Database
+**Tables:** 3
+
+## Tables
+
+| Table | Columns | Primary Key |
+|-------|---------|-------------|
+| comments | 4 | id |
+| posts | 5 | id |
+| users | 4 | id |"
+`;
+
+exports[`explain command Path explanations view=human git provider root (/git): explain-human-git 1`] = `
+"# Git Repository
+
+**Provider:** repo
+**Description:** E2E Test Git Provider
+**Default Branch:** main
+**Branches:** 1
+
+## Branches
+
+- main"
+`;
+
+exports[`explain command Path explanations view=human fs nested dir (/fs/docs): explain-human-fs-docs 1`] = `
+"# docs
+
+**Path:** \`/docs\`
+**Type:** directory
+
+## Metadata
+**Kind:** \`afs:node\`
+**Name:** Documentation
+**Description:** Project documentation directory
+
+## Kind Schema
+This node is of kind \`afs:node\`.
+> Base kind for all AFS nodes
+
+## Contents
+
+- api
+- guide.md"
+`;
+
+exports[`explain command Path explanations view=human fs root file (/fs/README.md): explain-human-fs-README_md 1`] = `
+"# README.md
+
+**Path:** \`/README.md\`
+**Type:** file
+**Size:** 91 bytes"
+`;
+
+exports[`explain command Path explanations view=human fs nested file (/fs/docs/guide.md): explain-human-fs-docs-guide_md 1`] = `
+"# guide.md
+
+**Path:** \`/docs/guide.md\`
+**Type:** file
+**Size:** 91 bytes
+
+## Metadata
+**Kind:** \`afs:node\`
+**Name:** User Guide
+
+- **author:** "Test Author"
+
+## Kind Schema
+This node is of kind \`afs:node\`.
+> Base kind for all AFS nodes"
+`;
+
+exports[`explain command Path explanations view=human fs deep file (/fs/docs/api/overview.md): explain-human-fs-docs-api-overview_md 1`] = `
+"# overview.md
+
+**Path:** \`/docs/api/overview.md\`
+**Type:** file
+**Size:** 95 bytes"
+`;
+
+exports[`explain command Path explanations view=human json nested dir (/json/config): explain-human-json-config 1`] = `
+"# config
+
+**Path:** \`/config\`
+**Format:** JSON
+**Type:** object
+**Keys:** 3
+
+## Keys
+
+- \`name\` — string
+- \`version\` — string
+- \`settings\` — object{2 keys}
+
+## Metadata
+- **kind:** "afs:node"
+- **description:** "Application configuration""
+`;
+
+exports[`explain command Path explanations view=human json shallow leaf (/json/config/name): explain-human-json-config-name 1`] = `
+"# name
+
+**Path:** \`/config/name\`
+**Format:** JSON
+**Type:** string
+**Value:** e2e-test"
+`;
+
+exports[`explain command Path explanations view=human json deep leaf (/json/users/0/profile/preferences/theme): explain-human-json-users-0-profile-preferences-theme 1`] = `
+"# theme
+
+**Path:** \`/users/0/profile/preferences/theme\`
+**Format:** JSON
+**Type:** string
+**Value:** dark"
+`;
+
+exports[`explain command Path explanations view=human sqlite table (/sqlite/users): explain-human-sqlite-users 1`] = `
+"# users
+
+**Type:** SQLite Table
+**Rows:** 2
+**Primary Key:** id
+
+## Columns
+
+| Column | Type | Nullable | Primary Key | Default |
+|--------|------|----------|-------------|---------|
+| id | INTEGER | YES | YES |  |
+| name | TEXT | NO |  |  |
+| email | TEXT | YES |  |  |
+| created_at | TEXT | YES |  | CURRENT_TIMESTAMP |"
+`;
+
+exports[`explain command Path explanations view=human sqlite row (/sqlite/users/1): explain-human-sqlite-users-1 1`] = `
+"# users/1
+
+**Table:** users
+**Primary Key:** id = 1
+
+## Values
+
+| Column | Value |
+|--------|-------|
+| id | 1 |
+| name | Alice |
+| email | alice@example.com |
+| created_at | 2026-01-01 |"
+`;
+
+exports[`explain command Path explanations view=human git branch (/git/main): explain-human-git-main 1`] = `
+"# Branch: main
+
+**HEAD Commit:** [SHORT_HASH] - Initial commit
+**Author:** E2E Test
+**Date:** [TIMESTAMP]
+**Files:** 10 entries in tree"
+`;
+
+exports[`explain command Path explanations view=human git src dir (/git/main/src): explain-human-git-main-src 1`] = `
+"# src
+
+**Path:** src
+**Type:** directory
+
+## Last Modified
+**Commit:** [SHORT_HASH] - Initial commit
+**Author:** E2E Test
+**Date:** [TIMESTAMP]"
+`;
+
+exports[`explain command Path explanations view=human git root file (/git/main/README.md): explain-human-git-main-README_md 1`] = `
+"# README.md
+
+**Path:** README.md
+**Type:** file
+**Size:** 99 bytes
+
+## Last Modified
+**Commit:** [SHORT_HASH] - Initial commit
+**Author:** E2E Test
+**Date:** [TIMESTAMP]"
+`;
+
+exports[`explain command Path explanations view=human git nested file (/git/main/src/index.ts): explain-human-git-main-src-index_ts 1`] = `
+"# index.ts
+
+**Path:** src/index.ts
+**Type:** file
+**Size:** 130 bytes
+
+## Last Modified
+**Commit:** [SHORT_HASH] - Initial commit
+**Author:** E2E Test
+**Date:** [TIMESTAMP]"
+`;
+
+exports[`explain command Path explanations view=llm root (/): explain-llm-root 1`] = `
+"# AFS — Agentic File System
+
+AFS is a virtual filesystem developed by [ArcBlock](https://www.arcblock.io) that gives AI agents a unified, path-based interface to any data source.
+Inspired by Unix and Plan 9's "everything is a file", AFS extends the idea to **everything is context** — databases, APIs, smart home devices, and cloud services all become files and directories that agents can read, write, search, and act on.
+
+## Mounted Providers
+
+- **fs** (\`/fs\`) — E2E Test FS Provider
+- **data** (\`/json\`) — E2E Test JSON Provider
+- **sqlite-afs** (\`/sqlite\`) — E2E Test SQLite Provider
+- **mcp** (\`/mcp\`) — E2E Test MCP Provider
+- **repo** (\`/git\`) — E2E Test Git Provider
+
+## Standard Operations
+
+- **read** — Read file or node content
+- **list** — List children of a directory or container
+- **stat** — Get metadata without content
+- **explain** — Get human-readable documentation for a path
+- **search** — Search within a mounted provider
+- **write** — Create or update content
+- **delete** — Remove a file or node
+- **exec** — Execute an action at a path
+
+## Root Actions
+
+- **unmount** — Unmount a provider at a given path
+- **read** — Read file content at a given path
+- **list** — List directory content at a given path
+- **write** — Write content to a file at a given path
+- **delete** — Delete a file or directory at a given path
+
+Use \`explain('/.actions/<name>')\` for detailed usage.
+
+## Quick Start
+
+- List all sites: \`list /web/sites\`
+- Read a site page: \`read /web/sites/{name}/pages/index.html\`
+- Search a provider: \`search /registry "query"\` (search at \`/\` is not supported)
+- Run an LLM: \`exec /modules/aignehub/defaults/.actions/chat {messages: [...]}\`
+- Discover capabilities: \`explain {path}\` on any mount
+
+## Built-in Systems
+
+- **\`.meta\`** — Metadata for any node. Access via \`read('/.meta')\` at root, or append \`/.meta\` to any path.
+- **\`.actions\`** — Executable actions. Access via \`read('/.actions')\` to list, \`exec('/.actions/<name>', args)\` to run.
+- **\`.afs/\`** — Provider self-documentation. \`read {path}/.afs/README.md\` for description, \`list {path}/.afs/skills/\` for capabilities.
+- **\`.knowledge/\`** — Capability index. \`read /.knowledge\` for a one-shot summary of all providers and actions. \`read /.knowledge/{provider}\` for provider details."
+`;
+
+exports[`explain command Path explanations view=llm fs provider root (/fs): explain-llm-fs 1`] = `
+"# /
+
+**Path:** \`/\`
+**Type:** directory
+
+## Metadata
+**Kind:** \`afs:node\`
+**Name:** E2E Test Project
+**Description:** Test project for CLI E2E testing
+
+## Kind Schema
+This node is of kind \`afs:node\`.
+> Base kind for all AFS nodes
+
+## Contents
+
+- README.md
+- docs
+- src
+- test"
+`;
+
+exports[`explain command Path explanations view=llm json provider root (/json): explain-llm-json 1`] = `
+"# /
+
+**Path:** \`/\`
+**Format:** JSON
+**Structure:** object
+**Top-level keys:** 3
+
+## Keys
+
+- \`config\` — object{3 keys}
+- \`users\` — array[2]
+- \`metadata\` — object{2 keys}
+
+## Metadata
+- **kind:** "afs:node"
+- **description:** "E2E Test JSON Data""
+`;
+
+exports[`explain command Path explanations view=llm sqlite provider root (/sqlite): explain-llm-sqlite 1`] = `
+"# sqlite-afs
+
+**Type:** SQLite Database
+**Tables:** 3
+
+## Tables
+
+| Table | Columns | Primary Key |
+|-------|---------|-------------|
+| comments | 4 | id |
+| posts | 5 | id |
+| users | 4 | id |"
+`;
+
+exports[`explain command Path explanations view=llm git provider root (/git): explain-llm-git 1`] = `
+"# Git Repository
+
+**Provider:** repo
+**Description:** E2E Test Git Provider
+**Default Branch:** main
+**Branches:** 1
+
+## Branches
+
+- main"
+`;
+
+exports[`explain command Path explanations view=llm fs nested dir (/fs/docs): explain-llm-fs-docs 1`] = `
+"# docs
+
+**Path:** \`/docs\`
+**Type:** directory
+
+## Metadata
+**Kind:** \`afs:node\`
+**Name:** Documentation
+**Description:** Project documentation directory
+
+## Kind Schema
+This node is of kind \`afs:node\`.
+> Base kind for all AFS nodes
+
+## Contents
+
+- api
+- guide.md"
+`;
+
+exports[`explain command Path explanations view=llm fs root file (/fs/README.md): explain-llm-fs-README_md 1`] = `
+"# README.md
+
+**Path:** \`/README.md\`
+**Type:** file
+**Size:** 91 bytes"
+`;
+
+exports[`explain command Path explanations view=llm fs nested file (/fs/docs/guide.md): explain-llm-fs-docs-guide_md 1`] = `
+"# guide.md
+
+**Path:** \`/docs/guide.md\`
+**Type:** file
+**Size:** 91 bytes
+
+## Metadata
+**Kind:** \`afs:node\`
+**Name:** User Guide
+
+- **author:** "Test Author"
+
+## Kind Schema
+This node is of kind \`afs:node\`.
+> Base kind for all AFS nodes"
+`;
+
+exports[`explain command Path explanations view=llm fs deep file (/fs/docs/api/overview.md): explain-llm-fs-docs-api-overview_md 1`] = `
+"# overview.md
+
+**Path:** \`/docs/api/overview.md\`
+**Type:** file
+**Size:** 95 bytes"
+`;
+
+exports[`explain command Path explanations view=llm json nested dir (/json/config): explain-llm-json-config 1`] = `
+"# config
+
+**Path:** \`/config\`
+**Format:** JSON
+**Type:** object
+**Keys:** 3
+
+## Keys
+
+- \`name\` — string
+- \`version\` — string
+- \`settings\` — object{2 keys}
+
+## Metadata
+- **kind:** "afs:node"
+- **description:** "Application configuration""
+`;
+
+exports[`explain command Path explanations view=llm json shallow leaf (/json/config/name): explain-llm-json-config-name 1`] = `
+"# name
+
+**Path:** \`/config/name\`
+**Format:** JSON
+**Type:** string
+**Value:** e2e-test"
+`;
+
+exports[`explain command Path explanations view=llm json deep leaf (/json/users/0/profile/preferences/theme): explain-llm-json-users-0-profile-preferences-theme 1`] = `
+"# theme
+
+**Path:** \`/users/0/profile/preferences/theme\`
+**Format:** JSON
+**Type:** string
+**Value:** dark"
+`;
+
+exports[`explain command Path explanations view=llm sqlite table (/sqlite/users): explain-llm-sqlite-users 1`] = `
+"# users
+
+**Type:** SQLite Table
+**Rows:** 2
+**Primary Key:** id
+
+## Columns
+
+| Column | Type | Nullable | Primary Key | Default |
+|--------|------|----------|-------------|---------|
+| id | INTEGER | YES | YES |  |
+| name | TEXT | NO |  |  |
+| email | TEXT | YES |  |  |
+| created_at | TEXT | YES |  | CURRENT_TIMESTAMP |"
+`;
+
+exports[`explain command Path explanations view=llm sqlite row (/sqlite/users/1): explain-llm-sqlite-users-1 1`] = `
+"# users/1
+
+**Table:** users
+**Primary Key:** id = 1
+
+## Values
+
+| Column | Value |
+|--------|-------|
+| id | 1 |
+| name | Alice |
+| email | alice@example.com |
+| created_at | 2026-01-01 |"
+`;
+
+exports[`explain command Path explanations view=llm git branch (/git/main): explain-llm-git-main 1`] = `
+"# Branch: main
+
+**HEAD Commit:** [SHORT_HASH] - Initial commit
+**Author:** E2E Test
+**Date:** [TIMESTAMP]
+**Files:** 10 entries in tree"
+`;
+
+exports[`explain command Path explanations view=llm git src dir (/git/main/src): explain-llm-git-main-src 1`] = `
+"# src
+
+**Path:** src
+**Type:** directory
+
+## Last Modified
+**Commit:** [SHORT_HASH] - Initial commit
+**Author:** E2E Test
+**Date:** [TIMESTAMP]"
+`;
+
+exports[`explain command Path explanations view=llm git root file (/git/main/README.md): explain-llm-git-main-README_md 1`] = `
+"# README.md
+
+**Path:** README.md
+**Type:** file
+**Size:** 99 bytes
+
+## Last Modified
+**Commit:** [SHORT_HASH] - Initial commit
+**Author:** E2E Test
+**Date:** [TIMESTAMP]"
+`;
+
+exports[`explain command Path explanations view=llm git nested file (/git/main/src/index.ts): explain-llm-git-main-src-index_ts 1`] = `
+"# index.ts
+
+**Path:** src/index.ts
+**Type:** file
+**Size:** 130 bytes
+
+## Last Modified
+**Commit:** [SHORT_HASH] - Initial commit
+**Author:** E2E Test
+**Date:** [TIMESTAMP]"
+`;
+
+exports[`explain command Path explanations view=json root (/): explain-json-root 1`] = `
+"{
+  "path": "/",
+  "type": "explained",
+  "markdown": "# AFS — Agentic File System\\n\\nAFS is a virtual filesystem developed by [ArcBlock](https://www.arcblock.io) that gives AI agents a unified, path-based interface to any data source.\\nInspired by Unix and Plan 9's \\"everything is a file\\", AFS extends the idea to **everything is context** — databases, APIs, smart home devices, and cloud services all become files and directories that agents can read, write, search, and act on.\\n\\n## Mounted Providers\\n\\n- **fs** (\`/fs\`) — E2E Test FS Provider\\n- **data** (\`/json\`) — E2E Test JSON Provider\\n- **sqlite-afs** (\`/sqlite\`) — E2E Test SQLite Provider\\n- **mcp** (\`/mcp\`) — E2E Test MCP Provider\\n- **repo** (\`/git\`) — E2E Test Git Provider\\n\\n## Standard Operations\\n\\n- **read** — Read file or node content\\n- **list** — List children of a directory or container\\n- **stat** — Get metadata without content\\n- **explain** — Get human-readable documentation for a path\\n- **search** — Search within a mounted provider\\n- **write** — Create or update content\\n- **delete** — Remove a file or node\\n- **exec** — Execute an action at a path\\n\\n## Root Actions\\n\\n- **unmount** — Unmount a provider at a given path\\n- **read** — Read file content at a given path\\n- **list** — List directory content at a given path\\n- **write** — Write content to a file at a given path\\n- **delete** — Delete a file or directory at a given path\\n\\nUse \`explain('/.actions/<name>')\` for detailed usage.\\n\\n## Quick Start\\n\\n- List all sites: \`list /web/sites\`\\n- Read a site page: \`read /web/sites/{name}/pages/index.html\`\\n- Search a provider: \`search /registry \\"query\\"\` (search at \`/\` is not supported)\\n- Run an LLM: \`exec /modules/aignehub/defaults/.actions/chat {messages: [...]}\`\\n- Discover capabilities: \`explain {path}\` on any mount\\n\\n## Built-in Systems\\n\\n- **\`.meta\`** — Metadata for any node. Access via \`read('/.meta')\` at root, or append \`/.meta\` to any path.\\n- **\`.actions\`** — Executable actions. Access via \`read('/.actions')\` to list, \`exec('/.actions/<name>', args)\` to run.\\n- **\`.afs/\`** — Provider self-documentation. \`read {path}/.afs/README.md\` for description, \`list {path}/.afs/skills/\` for capabilities.\\n- **\`.knowledge/\`** — Capability index. \`read /.knowledge\` for a one-shot summary of all providers and actions. \`read /.knowledge/{provider}\` for provider details.\\n"
+}"
+`;
+
+exports[`explain command Path explanations view=json fs provider root (/fs): explain-json-fs 1`] = `
+"{
+  "path": "/fs",
+  "type": "explained",
+  "markdown": "# /\\n\\n**Path:** \`/\`\\n**Type:** directory\\n\\n## Metadata\\n**Kind:** \`afs:node\`\\n**Name:** E2E Test Project\\n**Description:** Test project for CLI E2E testing\\n\\n## Kind Schema\\nThis node is of kind \`afs:node\`.\\n> Base kind for all AFS nodes\\n\\n## Contents\\n\\n- README.md\\n- docs\\n- src\\n- test"
+}"
+`;
+
+exports[`explain command Path explanations view=json json provider root (/json): explain-json-json 1`] = `
+"{
+  "path": "/json",
+  "type": "explained",
+  "markdown": "# /\\n\\n**Path:** \`/\`\\n**Format:** JSON\\n**Structure:** object\\n**Top-level keys:** 3\\n\\n## Keys\\n\\n- \`config\` — object{3 keys}\\n- \`users\` — array[2]\\n- \`metadata\` — object{2 keys}\\n\\n## Metadata\\n- **kind:** \\"afs:node\\"\\n- **description:** \\"E2E Test JSON Data\\""
+}"
+`;
+
+exports[`explain command Path explanations view=json sqlite provider root (/sqlite): explain-json-sqlite 1`] = `
+"{
+  "path": "/sqlite",
+  "type": "explained",
+  "markdown": "# sqlite-afs\\n\\n**Type:** SQLite Database\\n**Tables:** 3\\n\\n## Tables\\n\\n| Table | Columns | Primary Key |\\n|-------|---------|-------------|\\n| comments | 4 | id |\\n| posts | 5 | id |\\n| users | 4 | id |"
+}"
+`;
+
+exports[`explain command Path explanations view=json git provider root (/git): explain-json-git 1`] = `
+"{
+  "path": "/git",
+  "type": "explained",
+  "markdown": "# Git Repository\\n\\n**Provider:** repo\\n**Description:** E2E Test Git Provider\\n**Default Branch:** main\\n**Branches:** 1\\n\\n## Branches\\n\\n- main"
+}"
+`;
+
+exports[`explain command Path explanations view=json fs nested dir (/fs/docs): explain-json-fs-docs 1`] = `
+"{
+  "path": "/fs/docs",
+  "type": "explained",
+  "markdown": "# docs\\n\\n**Path:** \`/docs\`\\n**Type:** directory\\n\\n## Metadata\\n**Kind:** \`afs:node\`\\n**Name:** Documentation\\n**Description:** Project documentation directory\\n\\n## Kind Schema\\nThis node is of kind \`afs:node\`.\\n> Base kind for all AFS nodes\\n\\n## Contents\\n\\n- api\\n- guide.md"
+}"
+`;
+
+exports[`explain command Path explanations view=json fs root file (/fs/README.md): explain-json-fs-README_md 1`] = `
+"{
+  "path": "/fs/README.md",
+  "type": "explained",
+  "markdown": "# README.md\\n\\n**Path:** \`/README.md\`\\n**Type:** file\\n**Size:** 91 bytes"
+}"
+`;
+
+exports[`explain command Path explanations view=json fs nested file (/fs/docs/guide.md): explain-json-fs-docs-guide_md 1`] = `
+"{
+  "path": "/fs/docs/guide.md",
+  "type": "explained",
+  "markdown": "# guide.md\\n\\n**Path:** \`/docs/guide.md\`\\n**Type:** file\\n**Size:** 91 bytes\\n\\n## Metadata\\n**Kind:** \`afs:node\`\\n**Name:** User Guide\\n\\n- **author:** \\"Test Author\\"\\n\\n## Kind Schema\\nThis node is of kind \`afs:node\`.\\n> Base kind for all AFS nodes"
+}"
+`;
+
+exports[`explain command Path explanations view=json fs deep file (/fs/docs/api/overview.md): explain-json-fs-docs-api-overview_md 1`] = `
+"{
+  "path": "/fs/docs/api/overview.md",
+  "type": "explained",
+  "markdown": "# overview.md\\n\\n**Path:** \`/docs/api/overview.md\`\\n**Type:** file\\n**Size:** 95 bytes"
+}"
+`;
+
+exports[`explain command Path explanations view=json json nested dir (/json/config): explain-json-json-config 1`] = `
+"{
+  "path": "/json/config",
+  "type": "explained",
+  "markdown": "# config\\n\\n**Path:** \`/config\`\\n**Format:** JSON\\n**Type:** object\\n**Keys:** 3\\n\\n## Keys\\n\\n- \`name\` — string\\n- \`version\` — string\\n- \`settings\` — object{2 keys}\\n\\n## Metadata\\n- **kind:** \\"afs:node\\"\\n- **description:** \\"Application configuration\\""
+}"
+`;
+
+exports[`explain command Path explanations view=json json shallow leaf (/json/config/name): explain-json-json-config-name 1`] = `
+"{
+  "path": "/json/config/name",
+  "type": "explained",
+  "markdown": "# name\\n\\n**Path:** \`/config/name\`\\n**Format:** JSON\\n**Type:** string\\n**Value:** e2e-test"
+}"
+`;
+
+exports[`explain command Path explanations view=json json deep leaf (/json/users/0/profile/preferences/theme): explain-json-json-users-0-profile-preferences-theme 1`] = `
+"{
+  "path": "/json/users/0/profile/preferences/theme",
+  "type": "explained",
+  "markdown": "# theme\\n\\n**Path:** \`/users/0/profile/preferences/theme\`\\n**Format:** JSON\\n**Type:** string\\n**Value:** dark"
+}"
+`;
+
+exports[`explain command Path explanations view=json sqlite table (/sqlite/users): explain-json-sqlite-users 1`] = `
+"{
+  "path": "/sqlite/users",
+  "type": "explained",
+  "markdown": "# users\\n\\n**Type:** SQLite Table\\n**Rows:** 2\\n**Primary Key:** id\\n\\n## Columns\\n\\n| Column | Type | Nullable | Primary Key | Default |\\n|--------|------|----------|-------------|---------|\\n| id | INTEGER | YES | YES |  |\\n| name | TEXT | NO |  |  |\\n| email | TEXT | YES |  |  |\\n| created_at | TEXT | YES |  | CURRENT_TIMESTAMP |"
+}"
+`;
+
+exports[`explain command Path explanations view=json sqlite row (/sqlite/users/1): explain-json-sqlite-users-1 1`] = `
+"{
+  "path": "/sqlite/users/1",
+  "type": "explained",
+  "markdown": "# users/1\\n\\n**Table:** users\\n**Primary Key:** id = 1\\n\\n## Values\\n\\n| Column | Value |\\n|--------|-------|\\n| id | 1 |\\n| name | Alice |\\n| email | alice@example.com |\\n| created_at | 2026-01-01 |"
+}"
+`;
+
+exports[`explain command Path explanations view=json git branch (/git/main): explain-json-git-main 1`] = `
+"{
+  "path": "/git/main",
+  "type": "explained",
+  "markdown": "# Branch: main\\n\\n**HEAD Commit:** [SHORT_HASH] - Initial commit\\n**Author:** E2E Test\\n**Date:** [TIMESTAMP]\\n**Files:** 10 entries in tree"
+}"
+`;
+
+exports[`explain command Path explanations view=json git src dir (/git/main/src): explain-json-git-main-src 1`] = `
+"{
+  "path": "/git/main/src",
+  "type": "explained",
+  "markdown": "# src\\n\\n**Path:** src\\n**Type:** directory\\n\\n## Last Modified\\n**Commit:** [SHORT_HASH] - Initial commit\\n**Author:** E2E Test\\n**Date:** [TIMESTAMP]"
+}"
+`;
+
+exports[`explain command Path explanations view=json git root file (/git/main/README.md): explain-json-git-main-README_md 1`] = `
+"{
+  "path": "/git/main/README.md",
+  "type": "explained",
+  "markdown": "# README.md\\n\\n**Path:** README.md\\n**Type:** file\\n**Size:** 99 bytes\\n\\n## Last Modified\\n**Commit:** [SHORT_HASH] - Initial commit\\n**Author:** E2E Test\\n**Date:** [TIMESTAMP]"
+}"
+`;
+
+exports[`explain command Path explanations view=json git nested file (/git/main/src/index.ts): explain-json-git-main-src-index_ts 1`] = `
+"{
+  "path": "/git/main/src/index.ts",
+  "type": "explained",
+  "markdown": "# index.ts\\n\\n**Path:** src/index.ts\\n**Type:** file\\n**Size:** 130 bytes\\n\\n## Last Modified\\n**Commit:** [SHORT_HASH] - Initial commit\\n**Author:** E2E Test\\n**Date:** [TIMESTAMP]"
+}"
+`;
+
+exports[`explain command Action paths view=human sqlite table export action (/sqlite/users/.actions/export): explain-human-sqlite-users-_actions-export 1`] = `
+"# /sqlite/users/.actions/export
+
+
+## Description
+Export table data in specified format (json, csv)
+- **Kind**: afs:executable
+- **Kinds**: afs:executable, afs:node"
+`;
+
+exports[`explain command Action paths view=human sqlite table count action (/sqlite/users/.actions/count): explain-human-sqlite-users-_actions-count 1`] = `
+"# /sqlite/users/.actions/count
+
+
+## Description
+Get the total row count for this table
+- **Kind**: afs:executable
+- **Kinds**: afs:executable, afs:node"
+`;
+
+exports[`explain command Action paths view=human sqlite row validate action (/sqlite/users/1/.actions/validate): explain-human-sqlite-users-1-_actions-validate 1`] = `
+"# /sqlite/users/1/.actions/validate
+
+
+## Description
+Validate row data against schema constraints
+- **Kind**: afs:executable
+- **Kinds**: afs:executable, afs:node"
+`;
+
+exports[`explain command Action paths view=human sqlite row duplicate action (/sqlite/users/1/.actions/duplicate): explain-human-sqlite-users-1-_actions-duplicate 1`] = `
+"# /sqlite/users/1/.actions/duplicate
+
+
+## Description
+Create a copy of this row
+- **Kind**: afs:executable
+- **Kinds**: afs:executable, afs:node"
+`;
+
+exports[`explain command Action paths view=llm sqlite table export action (/sqlite/users/.actions/export): explain-llm-sqlite-users-_actions-export 1`] = `
+"# /sqlite/users/.actions/export
+
+
+## Description
+Export table data in specified format (json, csv)
+- **Kind**: afs:executable
+- **Kinds**: afs:executable, afs:node"
+`;
+
+exports[`explain command Action paths view=llm sqlite table count action (/sqlite/users/.actions/count): explain-llm-sqlite-users-_actions-count 1`] = `
+"# /sqlite/users/.actions/count
+
+
+## Description
+Get the total row count for this table
+- **Kind**: afs:executable
+- **Kinds**: afs:executable, afs:node"
+`;
+
+exports[`explain command Action paths view=llm sqlite row validate action (/sqlite/users/1/.actions/validate): explain-llm-sqlite-users-1-_actions-validate 1`] = `
+"# /sqlite/users/1/.actions/validate
+
+
+## Description
+Validate row data against schema constraints
+- **Kind**: afs:executable
+- **Kinds**: afs:executable, afs:node"
+`;
+
+exports[`explain command Action paths view=llm sqlite row duplicate action (/sqlite/users/1/.actions/duplicate): explain-llm-sqlite-users-1-_actions-duplicate 1`] = `
+"# /sqlite/users/1/.actions/duplicate
+
+
+## Description
+Create a copy of this row
+- **Kind**: afs:executable
+- **Kinds**: afs:executable, afs:node"
+`;
+
+exports[`explain command Action paths view=json sqlite table export action (/sqlite/users/.actions/export): explain-json-sqlite-users-_actions-export 1`] = `
+"{
+  "path": "/sqlite/users/.actions/export",
+  "type": "explained",
+  "markdown": "# /sqlite/users/.actions/export\\n\\n\\n## Description\\nExport table data in specified format (json, csv)\\n- **Kind**: afs:executable\\n- **Kinds**: afs:executable, afs:node"
+}"
+`;
+
+exports[`explain command Action paths view=json sqlite table count action (/sqlite/users/.actions/count): explain-json-sqlite-users-_actions-count 1`] = `
+"{
+  "path": "/sqlite/users/.actions/count",
+  "type": "explained",
+  "markdown": "# /sqlite/users/.actions/count\\n\\n\\n## Description\\nGet the total row count for this table\\n- **Kind**: afs:executable\\n- **Kinds**: afs:executable, afs:node"
+}"
+`;
+
+exports[`explain command Action paths view=json sqlite row validate action (/sqlite/users/1/.actions/validate): explain-json-sqlite-users-1-_actions-validate 1`] = `
+"{
+  "path": "/sqlite/users/1/.actions/validate",
+  "type": "explained",
+  "markdown": "# /sqlite/users/1/.actions/validate\\n\\n\\n## Description\\nValidate row data against schema constraints\\n- **Kind**: afs:executable\\n- **Kinds**: afs:executable, afs:node"
+}"
+`;
+
+exports[`explain command Action paths view=json sqlite row duplicate action (/sqlite/users/1/.actions/duplicate): explain-json-sqlite-users-1-_actions-duplicate 1`] = `
+"{
+  "path": "/sqlite/users/1/.actions/duplicate",
+  "type": "explained",
+  "markdown": "# /sqlite/users/1/.actions/duplicate\\n\\n\\n## Description\\nCreate a copy of this row\\n- **Kind**: afs:executable\\n- **Kinds**: afs:executable, afs:node"
+}"
+`;
+
+exports[`explain command Meta paths view=human fs provider meta (/fs/.meta): explain-human-fs-_meta 1`] = `
+"# /fs/.meta
+
+- **Modified**: [TIMESTAMP]
+
+## Description
+Test project for CLI E2E testing
+- **Kind**: afs:node"
+`;
+
+exports[`explain command Meta paths view=human fs nested meta (/fs/docs/.meta): explain-human-fs-docs-_meta 1`] = `
+"# /fs/docs/.meta
+
+- **Modified**: [TIMESTAMP]
+
+## Description
+Project documentation directory
+- **Kind**: afs:node"
+`;
+
+exports[`explain command Meta paths view=human json provider meta (/json/.meta): explain-human-json-_meta 1`] = `
+"# /json/.meta
+
+- **Modified**: [TIMESTAMP]
+
+## Description
+E2E Test JSON Data
+- **Kind**: afs:node"
+`;
+
+exports[`explain command Meta paths view=human sqlite provider meta (/sqlite/.meta): explain-human-sqlite-_meta 1`] = `
+"# /sqlite/.meta
+
+- **Children**: 3 items"
+`;
+
+exports[`explain command Meta paths view=human sqlite table meta (/sqlite/users/.meta): explain-human-sqlite-users-_meta 1`] = `
+"# /sqlite/users/.meta
+
+- **Children**: 2 items
+
+## Description
+Table "users" with 4 columns"
+`;
+
+exports[`explain command Meta paths view=llm fs provider meta (/fs/.meta): explain-llm-fs-_meta 1`] = `
+"# /fs/.meta
+
+- **Modified**: [TIMESTAMP]
+
+## Description
+Test project for CLI E2E testing
+- **Kind**: afs:node"
+`;
+
+exports[`explain command Meta paths view=llm fs nested meta (/fs/docs/.meta): explain-llm-fs-docs-_meta 1`] = `
+"# /fs/docs/.meta
+
+- **Modified**: [TIMESTAMP]
+
+## Description
+Project documentation directory
+- **Kind**: afs:node"
+`;
+
+exports[`explain command Meta paths view=llm json provider meta (/json/.meta): explain-llm-json-_meta 1`] = `
+"# /json/.meta
+
+- **Modified**: [TIMESTAMP]
+
+## Description
+E2E Test JSON Data
+- **Kind**: afs:node"
+`;
+
+exports[`explain command Meta paths view=llm sqlite provider meta (/sqlite/.meta): explain-llm-sqlite-_meta 1`] = `
+"# /sqlite/.meta
+
+- **Children**: 3 items"
+`;
+
+exports[`explain command Meta paths view=llm sqlite table meta (/sqlite/users/.meta): explain-llm-sqlite-users-_meta 1`] = `
+"# /sqlite/users/.meta
+
+- **Children**: 2 items
+
+## Description
+Table "users" with 4 columns"
+`;
+
+exports[`explain command Meta paths view=json fs provider meta (/fs/.meta): explain-json-fs-_meta 1`] = `
+"{
+  "path": "/fs/.meta",
+  "type": "explained",
+  "markdown": "# /fs/.meta\\n\\n- **Modified**: [TIMESTAMP]\\n\\n## Description\\nTest project for CLI E2E testing\\n- **Kind**: afs:node"
+}"
+`;
+
+exports[`explain command Meta paths view=json fs nested meta (/fs/docs/.meta): explain-json-fs-docs-_meta 1`] = `
+"{
+  "path": "/fs/docs/.meta",
+  "type": "explained",
+  "markdown": "# /fs/docs/.meta\\n\\n- **Modified**: [TIMESTAMP]\\n\\n## Description\\nProject documentation directory\\n- **Kind**: afs:node"
+}"
+`;
+
+exports[`explain command Meta paths view=json json provider meta (/json/.meta): explain-json-json-_meta 1`] = `
+"{
+  "path": "/json/.meta",
+  "type": "explained",
+  "markdown": "# /json/.meta\\n\\n- **Modified**: [TIMESTAMP]\\n\\n## Description\\nE2E Test JSON Data\\n- **Kind**: afs:node"
+}"
+`;
+
+exports[`explain command Meta paths view=json sqlite provider meta (/sqlite/.meta): explain-json-sqlite-_meta 1`] = `
+"{
+  "path": "/sqlite/.meta",
+  "type": "explained",
+  "markdown": "# /sqlite/.meta\\n\\n- **Children**: 3 items"
+}"
+`;
+
+exports[`explain command Meta paths view=json sqlite table meta (/sqlite/users/.meta): explain-json-sqlite-users-_meta 1`] = `
+"{
+  "path": "/sqlite/users/.meta",
+  "type": "explained",
+  "markdown": "# /sqlite/users/.meta\\n\\n- **Children**: 2 items\\n\\n## Description\\nTable \\"users\\" with 4 columns"
+}"
+`;

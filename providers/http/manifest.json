@@ -1,0 +1,33 @@
+{
+  "name": "http",
+  "description": "Remote AFS instance — proxy all operations to another AFS server over HTTP.\n- Transparently forwards read, write, search, exec, and all other operations\n- Supports bearer token authentication and configurable retry/timeout",
+  "uriTemplate": "http://{host+}",
+  "category": "bridge",
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "host": {
+        "type": "string"
+      },
+      "token": {
+        "type": "string",
+        "sensitive": true
+      }
+    },
+    "required": ["host"],
+    "additionalProperties": false
+  },
+  "tags": ["http", "remote", "integration"],
+  "capabilityTags": ["read-write", "search", "auth:token", "remote", "http"],
+  "security": {
+    "riskLevel": "external",
+    "resourceAccess": ["internet"],
+    "notes": ["Proxies all operations to a remote AFS server — security depends on the remote"]
+  },
+  "capabilities": {
+    "network": {
+      "egress": true
+    }
+  }
+}

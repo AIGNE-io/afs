@@ -1,0 +1,16 @@
+name: "where on string fields with not-equals"
+script: |
+  job filter_strings {
+    find /data
+    | where category != "spam"
+  }
+mockWorld:
+  read:
+    /data:
+      - { id: 1, category: "news" }
+      - { id: 2, category: "spam" }
+      - { id: 3, category: "update" }
+      - { id: 4, category: "spam" }
+expected:
+  status: "ok"
+  recordCount: 2
