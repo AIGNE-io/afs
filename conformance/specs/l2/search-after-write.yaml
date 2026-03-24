@@ -1,0 +1,19 @@
+name: "search finds newly written file"
+steps:
+  - operation: write
+    params:
+      path: "/l2-searchable.txt"
+      content:
+        content: "find me"
+  - operation: search
+    params:
+      path: "/"
+      query: "l2-searchable"
+    expect:
+      success: true
+      data:
+        data:
+          type: "array"
+  - operation: delete
+    params:
+      path: "/l2-searchable.txt"

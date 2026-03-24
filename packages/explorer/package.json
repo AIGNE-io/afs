@@ -1,0 +1,61 @@
+{
+  "name": "@aigne/afs-explorer",
+  "version": "1.11.0-beta.13",
+  "description": "Web-based explorer for AFS file systems",
+  "license": "BUSL-1.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Arcblock <blocklet@arcblock.io> https://github.com/arcblock",
+  "homepage": "https://github.com/arcblock/afs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arcblock/afs"
+  },
+  "bugs": {
+    "url": "https://github.com/arcblock/afs/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
+  },
+  "files": [
+    "dist",
+    "web",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "check-types": "tsc --noEmit",
+    "clean": "rimraf dist coverage",
+    "prepublishOnly": "run-s clean build",
+    "test": "bun test",
+    "test:coverage": "bun test --coverage --coverage-reporter=lcov --coverage-reporter=text"
+  },
+  "dependencies": {
+    "@aigne/afs": "workspace:^",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@aigne/afs-fs": "workspace:^",
+    "@aigne/afs-git": "workspace:^",
+    "@aigne/afs-json": "workspace:^",
+    "@aigne/scripts": "workspace:*",
+    "@aigne/typescript-config": "workspace:*",
+    "@types/bun": "^1.2.22",
+    "@types/ws": "^8.18.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^6.0.1",
+    "tsdown": "0.20.0-beta.3",
+    "typescript": "^5.9.2"
+  }
+}

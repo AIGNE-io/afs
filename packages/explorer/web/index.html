@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AFS Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <header id="toolbar">
+      <nav id="tab-bar">
+        <button class="tab-btn active" data-tab="browse" title="Browse files">📁 Browse</button>
+        <button class="tab-btn" data-tab="mounts" title="Manage mounts">⚙ Mounts</button>
+        <button class="tab-btn" data-tab="registry" title="Provider registry">🔍 Registry</button>
+      </nav>
+      <nav id="breadcrumb"></nav>
+      <div id="toolbar-right">
+        <span id="conn-status" class="conn-status" title="WebSocket connection status"></span>
+        <div id="search-wrap">
+          <input id="search-input" type="text" placeholder="Filter… (/)" spellcheck="false" autocomplete="off">
+        </div>
+        <button class="tb-btn" id="btn-theme" title="Toggle theme">☀</button>
+        <button class="tb-btn" id="btn-refresh" title="Refresh (R)">↻</button>
+        <button class="tb-btn" id="btn-help" title="Help (?)">?</button>
+      </div>
+    </header>
+
+    <!-- Browse View (existing) -->
+    <div id="content" class="view-content">
+      <aside id="tree-panel">
+        <div id="tree-header">Explorer</div>
+        <div id="tree-body"></div>
+      </aside>
+      <div class="col-resizer" id="resizer-left"></div>
+      <div id="file-panel">
+        <div id="dir-view">
+          <div id="vault-toolbar" class="hidden"></div>
+          <div id="file-header">
+            <span class="col-icon"></span>
+            <span class="col-name">Name</span>
+            <span class="col-size">Size</span>
+            <span class="col-date">Modified</span>
+          </div>
+          <div id="file-list" tabindex="0"></div>
+        </div>
+        <div id="detail-view" class="hidden">
+          <div id="detail-header">
+            <button id="detail-back" class="tb-btn" title="Back to listing">&larr;</button>
+            <span id="detail-filename"></span>
+          </div>
+          <div id="detail-content"></div>
+        </div>
+      </div>
+      <div class="col-resizer" id="resizer-right"></div>
+      <aside id="sidebar"></aside>
+    </div>
+
+    <!-- Mounts View -->
+    <div id="mounts-view" class="view-content hidden">
+      <div id="mounts-container">
+        <div id="mounts-header">
+          <h2>Mounted Providers</h2>
+          <button id="btn-add-mount" class="primary-btn">+ Add Mount</button>
+        </div>
+        <div id="mounts-list"></div>
+        <div id="mounts-failed" class="hidden">
+          <h3>Failed Mounts</h3>
+          <div id="mounts-failed-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mount Form (Add/Edit) -->
+    <div id="mount-form-view" class="view-content hidden">
+      <div id="mount-form-container">
+        <h2 id="mount-form-title">Add Mount</h2>
+        <form id="mount-form" autocomplete="off">
+          <div class="form-group">
+            <label for="mf-uri">URI <span class="required">*</span></label>
+            <input id="mf-uri" type="text" placeholder="github://owner/repo" required>
+          </div>
+          <div class="form-group">
+            <label for="mf-path">Mount Path <span class="required">*</span></label>
+            <input id="mf-path" type="text" placeholder="/modules/my-provider" required>
+          </div>
+          <div class="form-group">
+            <label for="mf-desc">Description</label>
+            <input id="mf-desc" type="text" placeholder="Human-readable description">
+          </div>
+          <div class="form-group">
+            <label>Access Mode</label>
+            <div class="radio-group">
+              <label><input type="radio" name="mf-access" value="readonly" checked> readonly</label>
+              <label><input type="radio" name="mf-access" value="readwrite"> readwrite</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="mf-auth">Auth Token</label>
+            <input id="mf-auth" type="password" placeholder="Authentication token">
+          </div>
+          <details class="form-advanced">
+            <summary>Advanced</summary>
+            <div class="form-group">
+              <label for="mf-namespace">Namespace</label>
+              <input id="mf-namespace" type="text" placeholder="default">
+            </div>
+            <div class="form-group">
+              <label for="mf-options">Options (JSON)</label>
+              <textarea id="mf-options" rows="3" placeholder='{"branch": "main"}'></textarea>
+            </div>
+          </details>
+          <div class="form-actions">
+            <button type="button" id="btn-mount-cancel" class="secondary-btn">Cancel</button>
+            <button type="button" id="btn-mount-test" class="secondary-btn">Test Connection</button>
+            <button type="submit" id="btn-mount-save" class="primary-btn">Save</button>
+          </div>
+          <div id="mount-form-status" class="hidden"></div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Registry View -->
+    <div id="registry-view" class="view-content hidden">
+      <div id="registry-container">
+        <div id="registry-header">
+          <h2>Provider Registry</h2>
+          <input id="registry-search" type="text" placeholder="Filter providers…" spellcheck="false" autocomplete="off">
+        </div>
+        <div id="registry-list"></div>
+      </div>
+    </div>
+    <footer id="statusbar">
+      <span id="status-left"></span>
+      <span id="status-right"></span>
+    </footer>
+  </div>
+  <div id="modal-backdrop" class="hidden"></div>
+  <div id="modal" class="hidden">
+    <div id="modal-header">
+      <span id="modal-title"></span>
+      <button id="modal-close" title="Close (Esc)">✕</button>
+    </div>
+    <div id="modal-body"></div>
+    <div id="modal-footer"></div>
+  </div>
+  <script src="state.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

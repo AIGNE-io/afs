@@ -1,0 +1,32 @@
+# L5 — Core security: blocked/allowed actions
+# Tests that blockedActions always wins, even over allowedActions.
+#
+# Uses L5-blocked server with blockedActions: ["archive"]
+
+---
+name: "blocked actions - blocked action is rejected"
+description: >
+  blockedActions always wins — the archive action is blocked regardless of policy.
+operation: exec
+params:
+  path: "/alpha/.actions/archive"
+  args:
+    path: "/"
+    format: "tar.gz"
+expect:
+  success: false
+  error:
+    message:
+      contains: "blocked"
+---
+name: "blocked actions - non-blocked action still works"
+description: >
+  checksum is not in blockedActions, so it should work normally
+  (no actionPolicy set, so no severity enforcement either).
+operation: exec
+params:
+  path: "/alpha/.actions/checksum"
+  args:
+    path: "/hello.txt"
+expect:
+  success: true

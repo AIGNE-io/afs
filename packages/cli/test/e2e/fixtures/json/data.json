@@ -1,0 +1,54 @@
+{
+  ".afs": {
+    "meta": { "kind": "afs:node", "description": "E2E Test JSON Data" }
+  },
+  "config": {
+    ".afs": {
+      "meta": { "kind": "afs:node", "description": "Application configuration" }
+    },
+    "name": "e2e-test",
+    "version": "1.0.0",
+    "settings": {
+      "debug": true,
+      "logging": {
+        "level": "info",
+        "format": "json",
+        "options": {
+          "timestamp": true,
+          "color": false
+        }
+      }
+    }
+  },
+  "users": [
+    {
+      ".afs": {
+        "meta": { "kind": "afs:node", "description": "User Alice" }
+      },
+      "id": 1,
+      "name": "Alice",
+      "profile": {
+        "email": "alice@example.com",
+        "preferences": {
+          "theme": "dark",
+          "language": "en"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "profile": {
+        "email": "bob@example.com",
+        "preferences": {
+          "theme": "light",
+          "language": "zh"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "created": "2026-01-01",
+    "tags": ["test", "e2e", "cli"]
+  }
+}

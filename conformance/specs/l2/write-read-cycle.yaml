@@ -1,0 +1,69 @@
+name: "write then read - content persists"
+steps:
+  - name: write
+    operation: write
+    params:
+      path: "/l2-test-file.txt"
+      content:
+        content: "L2 test content"
+    expect:
+      success: true
+  - name: read back
+    operation: read
+    params:
+      path: "/l2-test-file.txt"
+    expect:
+      success: true
+      data:
+        data:
+          content: "$contains:L2 test content"
+  - name: cleanup
+    operation: delete
+    params:
+      path: "/l2-test-file.txt"
+    expect:
+      success: true
+---
+name: "write then stat - metadata correct"
+steps:
+  - operation: write
+    params:
+      path: "/l2-stat-test.txt"
+      content:
+        content: "check size"
+    expect:
+      success: true
+  - operation: stat
+    params:
+      path: "/l2-stat-test.txt"
+    expect:
+      success: true
+      data:
+        data:
+          meta:
+            size:
+              gte: 1
+  - operation: delete
+    params:
+      path: "/l2-stat-test.txt"
+---
+name: "write then list - file appears"
+steps:
+  - operation: write
+    params:
+      path: "/l2-list-test.txt"
+      content:
+        content: "list me"
+    expect:
+      success: true
+  - operation: list
+    params:
+      path: "/"
+    expect:
+      success: true
+      data:
+        data:
+          type: "array"
+  - operation: delete
+    params:
+      path: "/l2-list-test.txt"

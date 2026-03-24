@@ -1,0 +1,31 @@
+name: "rename then read - old path gone, new path exists"
+steps:
+  - operation: write
+    params:
+      path: "/l2-rename-src.txt"
+      content:
+        content: "rename content"
+  - operation: rename
+    params:
+      path: "/l2-rename-src.txt"
+      newPath: "/l2-rename-dst.txt"
+    expect:
+      success: true
+  - operation: read
+    params:
+      path: "/l2-rename-src.txt"
+    expect:
+      success: false
+      error:
+        code: 1
+  - operation: read
+    params:
+      path: "/l2-rename-dst.txt"
+    expect:
+      success: true
+      data:
+        data:
+          content: "$contains:rename content"
+  - operation: delete
+    params:
+      path: "/l2-rename-dst.txt"

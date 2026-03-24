@@ -1,0 +1,1015 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`stat command view=human root (/): stat-human-root 1`] = `
+"Path:     /
+Children: 5"
+`;
+
+exports[`stat command view=human fs provider root (/fs): stat-human-fs 1`] = `
+"Path:     /fs
+Kind:     afs:node
+Children: 4
+Modified: [TIMESTAMP]
+Name:     E2E Test Project
+Description:Test project for CLI E2E testing"
+`;
+
+exports[`stat command view=human json provider root (/json): stat-human-json 1`] = `
+"Path:     /json
+Kind:     afs:node
+Children: 3
+Modified: [TIMESTAMP]
+Description:E2E Test JSON Data"
+`;
+
+exports[`stat command view=human sqlite provider root (/sqlite): stat-human-sqlite 1`] = `
+"Path:     /sqlite
+Kind:     sqlite:database
+Kinds:    sqlite:database → afs:node
+Children: 3
+TableCount:3
+
+Actions (5):
+  • create_table - Create a new table in the database
+  • drop_table - Drop a table from the database
+  • rename_table - Rename a table in the database
+  • pragma - Execute a PRAGMA command (whitelist-restricted)
+  • vacuum - Compact the database file and reclaim unused space"
+`;
+
+exports[`stat command view=human git provider root (/git): stat-human-git 1`] = `
+"Path:     /git
+Children: 1"
+`;
+
+exports[`stat command view=human fs nested dir (/fs/docs): stat-human-fs-docs 1`] = `
+"Path:     /fs/docs
+Kind:     afs:node
+Children: 2
+Modified: [TIMESTAMP]
+Name:     Documentation
+Description:Project documentation directory"
+`;
+
+exports[`stat command view=human fs root file (/fs/README.md): stat-human-fs-README_md 1`] = `
+"Path:     /fs/README.md
+Size:     91 bytes
+Modified: [TIMESTAMP]"
+`;
+
+exports[`stat command view=human fs nested file (/fs/docs/guide.md): stat-human-fs-docs-guide_md 1`] = `
+"Path:     /fs/docs/guide.md
+Kind:     afs:node
+Size:     91 bytes
+Modified: [TIMESTAMP]
+Name:     User Guide
+Author:   Test Author"
+`;
+
+exports[`stat command view=human fs deep file (/fs/docs/api/overview.md): stat-human-fs-docs-api-overview_md 1`] = `
+"Path:     /fs/docs/api/overview.md
+Size:     95 bytes
+Modified: [TIMESTAMP]"
+`;
+
+exports[`stat command view=human json nested dir (/json/config): stat-human-json-config 1`] = `
+"Path:     /json/config
+Kind:     afs:node
+Children: 3
+Modified: [TIMESTAMP]
+Description:Application configuration"
+`;
+
+exports[`stat command view=human json shallow leaf (/json/config/name): stat-human-json-config-name 1`] = `
+"Path:     /json/config/name
+Modified: [TIMESTAMP]
+Type:     string
+Path:     /config/name
+Value:    e2e-test
+Created:  "[TIMESTAMP]"
+Modified: "[TIMESTAMP]""
+`;
+
+exports[`stat command view=human json deep leaf (/json/users/0/profile/preferences/theme): stat-human-json-users-0-profile-preferences-theme 1`] = `
+"Path:     /json/users/0/profile/preferences/theme
+Modified: [TIMESTAMP]
+Type:     string
+Path:     /users/0/profile/preferences/theme
+Value:    dark
+Created:  "[TIMESTAMP]"
+Modified: "[TIMESTAMP]""
+`;
+
+exports[`stat command view=human sqlite table (/sqlite/users): stat-human-sqlite-users 1`] = `
+"Path:     /sqlite/users
+Kind:     sqlite:table
+Kinds:    sqlite:table → afs:node
+Children: 2
+Table:    users
+ColumnCount:4
+Columns:  [{"name":"id","type":"INTEGER","nullable":true,"primaryKey":true},{"name":"name","type":"TEXT","nullable":false,"primaryKey":false},{"name":"email","type":"TEXT","nullable":true,"primaryKey":false},{"name":"created_at","type":"TEXT","nullable":true,"primaryKey":false}]
+PrimaryKey:id
+
+Actions (13):
+  • export - Export table data in specified format (json, csv)
+  • count - Get the total row count for this table
+  • insert - Insert a new row into the table
+  • add_column - Add a new column to the table
+  • rename_column - Rename a column in the table
+  • drop_column - Drop a column from the table
+  • create_index - Create an index on the table
+  • drop_index - Drop an index from the table
+  • query - Query rows with conditions, ordering, and pagination
+  • update_where - Update rows matching conditions
+  • delete_where - Delete rows matching conditions
+  • bulk_insert - Insert multiple rows at once
+  • import - Import data into table from JSON or CSV format"
+`;
+
+exports[`stat command view=human sqlite row (/sqlite/users/1): stat-human-sqlite-users-1 1`] = `
+"Path:     /sqlite/users/1
+Kind:     sqlite:row
+Kinds:    sqlite:row → afs:node
+Children: 0
+Table:    users
+PrimaryKey:1
+ColumnCount:4
+Columns:  [{"name":"id","type":"INTEGER","nullable":true,"primaryKey":true},{"name":"name","type":"TEXT","nullable":false,"primaryKey":false},{"name":"email","type":"TEXT","nullable":true,"primaryKey":false},{"name":"created_at","type":"TEXT","nullable":true,"primaryKey":false}]
+
+Actions (4):
+  • duplicate - Create a copy of this row
+  • validate - Validate row data against schema constraints
+  • update - Update this row
+  • delete - Delete this row"
+`;
+
+exports[`stat command view=human git branch (/git/main): stat-human-git-main 1`] = `
+"Path:     /git/main
+Children: 4
+LastCommit:{"hash":"[HASH]","shortHash": "[SHORT_HASH]","author":"E2E Test","date":"[TIMESTAMP]","message":"Initial commit"}"
+`;
+
+exports[`stat command view=human git src dir (/git/main/src): stat-human-git-main-src 1`] = `
+"Path:     /git/main/src
+Children: 3"
+`;
+
+exports[`stat command view=human git root file (/git/main/README.md): stat-human-git-main-README_md 1`] = `
+"Path:     /git/main/README.md
+Size:     99 bytes
+MimeType: text/markdown"
+`;
+
+exports[`stat command view=human git nested file (/git/main/src/index.ts): stat-human-git-main-src-index_ts 1`] = `
+"Path:     /git/main/src/index.ts
+Size:     130 bytes
+MimeType: text/typescript"
+`;
+
+exports[`stat command view=llm root (/): stat-llm-root 1`] = `
+"NODE /
+CHILDREN 5
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command view=llm fs provider root (/fs): stat-llm-fs 1`] = `
+"NODE /fs
+KIND afs:node
+CHILDREN 4
+UPDATED [TIMESTAMP]
+META_NAME E2E Test Project
+META_DESCRIPTION Test project for CLI E2E testing
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command view=llm json provider root (/json): stat-llm-json 1`] = `
+"NODE /json
+KIND afs:node
+CHILDREN 3
+UPDATED [TIMESTAMP]
+META_DESCRIPTION E2E Test JSON Data
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command view=llm sqlite provider root (/sqlite): stat-llm-sqlite 1`] = `
+"NODE /sqlite
+KIND sqlite:database
+KINDS sqlite:database afs:node
+CHILDREN 3
+META_TABLECOUNT 3
+ACTIONS_COUNT 5
+ACTION create_table "Create a new table in the database"
+ACTION drop_table "Drop a table from the database"
+ACTION rename_table "Rename a table in the database"
+ACTION pragma "Execute a PRAGMA command (whitelist-restricted)"
+ACTION vacuum "Compact the database file and reclaim unused space"
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command view=llm git provider root (/git): stat-llm-git 1`] = `
+"NODE /git
+CHILDREN 1
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command view=llm fs nested dir (/fs/docs): stat-llm-fs-docs 1`] = `
+"NODE /fs/docs
+KIND afs:node
+CHILDREN 2
+UPDATED [TIMESTAMP]
+META_NAME Documentation
+META_DESCRIPTION Project documentation directory
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command view=llm fs root file (/fs/README.md): stat-llm-fs-README_md 1`] = `
+"NODE /fs/README.md
+SIZE 91
+UPDATED [TIMESTAMP]
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command view=llm fs nested file (/fs/docs/guide.md): stat-llm-fs-docs-guide_md 1`] = `
+"NODE /fs/docs/guide.md
+KIND afs:node
+SIZE 91
+UPDATED [TIMESTAMP]
+META_NAME User Guide
+META_AUTHOR Test Author
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command view=llm fs deep file (/fs/docs/api/overview.md): stat-llm-fs-docs-api-overview_md 1`] = `
+"NODE /fs/docs/api/overview.md
+SIZE 95
+UPDATED [TIMESTAMP]
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command view=llm json nested dir (/json/config): stat-llm-json-config 1`] = `
+"NODE /json/config
+KIND afs:node
+CHILDREN 3
+UPDATED [TIMESTAMP]
+META_DESCRIPTION Application configuration
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command view=llm json shallow leaf (/json/config/name): stat-llm-json-config-name 1`] = `
+"NODE /json/config/name
+UPDATED [TIMESTAMP]
+META_TYPE string
+META_PATH /config/name
+META_VALUE e2e-test
+META_CREATED "[TIMESTAMP]"
+META_MODIFIED "[TIMESTAMP]"
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command view=llm json deep leaf (/json/users/0/profile/preferences/theme): stat-llm-json-users-0-profile-preferences-theme 1`] = `
+"NODE /json/users/0/profile/preferences/theme
+UPDATED [TIMESTAMP]
+META_TYPE string
+META_PATH /users/0/profile/preferences/theme
+META_VALUE dark
+META_CREATED "[TIMESTAMP]"
+META_MODIFIED "[TIMESTAMP]"
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command view=llm sqlite table (/sqlite/users): stat-llm-sqlite-users 1`] = `
+"NODE /sqlite/users
+KIND sqlite:table
+KINDS sqlite:table afs:node
+CHILDREN 2
+META_TABLE users
+META_COLUMNCOUNT 4
+META_COLUMNS [{"name":"id","type":"INTEGER","nullable":true,"primaryKey":true},{"name":"name","type":"TEXT","nullable":false,"primaryKey":false},{"name":"email","type":"TEXT","nullable":true,"primaryKey":false},{"name":"created_at","type":"TEXT","nullable":true,"primaryKey":false}]
+META_PRIMARYKEY id
+ACTIONS_COUNT 13
+ACTION export "Export table data in specified format (json, csv)"
+ACTION count "Get the total row count for this table"
+ACTION insert "Insert a new row into the table"
+ACTION add_column "Add a new column to the table"
+ACTION rename_column "Rename a column in the table"
+ACTION drop_column "Drop a column from the table"
+ACTION create_index "Create an index on the table"
+ACTION drop_index "Drop an index from the table"
+ACTION query "Query rows with conditions, ordering, and pagination"
+ACTION update_where "Update rows matching conditions"
+ACTION delete_where "Delete rows matching conditions"
+ACTION bulk_insert "Insert multiple rows at once"
+ACTION import "Import data into table from JSON or CSV format"
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command view=llm sqlite row (/sqlite/users/1): stat-llm-sqlite-users-1 1`] = `
+"NODE /sqlite/users/1
+KIND sqlite:row
+KINDS sqlite:row afs:node
+CHILDREN 0
+META_TABLE users
+META_PRIMARYKEY 1
+META_COLUMNCOUNT 4
+META_COLUMNS [{"name":"id","type":"INTEGER","nullable":true,"primaryKey":true},{"name":"name","type":"TEXT","nullable":false,"primaryKey":false},{"name":"email","type":"TEXT","nullable":true,"primaryKey":false},{"name":"created_at","type":"TEXT","nullable":true,"primaryKey":false}]
+ACTIONS_COUNT 4
+ACTION duplicate "Create a copy of this row"
+ACTION validate "Validate row data against schema constraints"
+ACTION update "Update this row"
+ACTION delete "Delete this row"
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command view=llm git branch (/git/main): stat-llm-git-main 1`] = `
+"NODE /git/main
+CHILDREN 4
+META_LASTCOMMIT {"hash":"[HASH]","shortHash": "[SHORT_HASH]","author":"E2E Test","date":"[TIMESTAMP]","message":"Initial commit"}
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command view=llm git src dir (/git/main/src): stat-llm-git-main-src 1`] = `
+"NODE /git/main/src
+CHILDREN 3
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command view=llm git root file (/git/main/README.md): stat-llm-git-main-README_md 1`] = `
+"NODE /git/main/README.md
+SIZE 99
+META_MIMETYPE text/markdown
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command view=llm git nested file (/git/main/src/index.ts): stat-llm-git-main-src-index_ts 1`] = `
+"NODE /git/main/src/index.ts
+SIZE 130
+META_MIMETYPE text/typescript
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command view=json root (/): stat-json-root 1`] = `
+"{
+  "path": "/",
+  "childrenCount": 5
+}"
+`;
+
+exports[`stat command view=json fs provider root (/fs): stat-json-fs 1`] = `
+"{
+  "path": "/fs",
+  "modified": "[TIMESTAMP]",
+  "created": "[TIMESTAMP]",
+  "kind": "afs:node",
+  "name": "E2E Test Project",
+  "description": "Test project for CLI E2E testing",
+  "childrenCount": 4
+}"
+`;
+
+exports[`stat command view=json json provider root (/json): stat-json-json 1`] = `
+"{
+  "path": "/json",
+  "modified": "[TIMESTAMP]",
+  "created": "[TIMESTAMP]",
+  "kind": "afs:node",
+  "description": "E2E Test JSON Data",
+  "childrenCount": 3
+}"
+`;
+
+exports[`stat command view=json sqlite provider root (/sqlite): stat-json-sqlite 1`] = `
+"{
+  "path": "/sqlite",
+  "actions": [
+    {
+      "name": "create_table",
+      "description": "Create a new table in the database"
+    },
+    {
+      "name": "drop_table",
+      "description": "Drop a table from the database"
+    },
+    {
+      "name": "rename_table",
+      "description": "Rename a table in the database"
+    },
+    {
+      "name": "pragma",
+      "description": "Execute a PRAGMA command (whitelist-restricted)"
+    },
+    {
+      "name": "vacuum",
+      "description": "Compact the database file and reclaim unused space"
+    }
+  ],
+  "kind": "sqlite:database",
+  "kinds": [
+    "sqlite:database",
+    "afs:node"
+  ],
+  "tableCount": 3,
+  "childrenCount": 3
+}"
+`;
+
+exports[`stat command view=json git provider root (/git): stat-json-git 1`] = `
+"{
+  "path": "/git",
+  "childrenCount": 1
+}"
+`;
+
+exports[`stat command view=json fs nested dir (/fs/docs): stat-json-fs-docs 1`] = `
+"{
+  "path": "/fs/docs",
+  "modified": "[TIMESTAMP]",
+  "created": "[TIMESTAMP]",
+  "kind": "afs:node",
+  "name": "Documentation",
+  "description": "Project documentation directory",
+  "childrenCount": 2
+}"
+`;
+
+exports[`stat command view=json fs root file (/fs/README.md): stat-json-fs-README_md 1`] = `
+"{
+  "path": "/fs/README.md",
+  "modified": "[TIMESTAMP]",
+  "created": "[TIMESTAMP]",
+  "size": 91
+}"
+`;
+
+exports[`stat command view=json fs nested file (/fs/docs/guide.md): stat-json-fs-docs-guide_md 1`] = `
+"{
+  "path": "/fs/docs/guide.md",
+  "modified": "[TIMESTAMP]",
+  "created": "[TIMESTAMP]",
+  "kind": "afs:node",
+  "name": "User Guide",
+  "author": "Test Author",
+  "size": 91
+}"
+`;
+
+exports[`stat command view=json fs deep file (/fs/docs/api/overview.md): stat-json-fs-docs-api-overview_md 1`] = `
+"{
+  "path": "/fs/docs/api/overview.md",
+  "modified": "[TIMESTAMP]",
+  "created": "[TIMESTAMP]",
+  "size": 95
+}"
+`;
+
+exports[`stat command view=json json nested dir (/json/config): stat-json-json-config 1`] = `
+"{
+  "path": "/json/config",
+  "modified": "[TIMESTAMP]",
+  "created": "[TIMESTAMP]",
+  "kind": "afs:node",
+  "description": "Application configuration",
+  "childrenCount": 3
+}"
+`;
+
+exports[`stat command view=json json shallow leaf (/json/config/name): stat-json-json-config-name 1`] = `
+"{
+  "path": "/config/name",
+  "modified": "[TIMESTAMP]",
+  "created": "[TIMESTAMP]",
+  "type": "string",
+  "value": "e2e-test"
+}"
+`;
+
+exports[`stat command view=json json deep leaf (/json/users/0/profile/preferences/theme): stat-json-json-users-0-profile-preferences-theme 1`] = `
+"{
+  "path": "/users/0/profile/preferences/theme",
+  "modified": "[TIMESTAMP]",
+  "created": "[TIMESTAMP]",
+  "type": "string",
+  "value": "dark"
+}"
+`;
+
+exports[`stat command view=json sqlite table (/sqlite/users): stat-json-sqlite-users 1`] = `
+"{
+  "path": "/sqlite/users",
+  "actions": [
+    {
+      "name": "export",
+      "description": "Export table data in specified format (json, csv)"
+    },
+    {
+      "name": "count",
+      "description": "Get the total row count for this table"
+    },
+    {
+      "name": "insert",
+      "description": "Insert a new row into the table"
+    },
+    {
+      "name": "add_column",
+      "description": "Add a new column to the table"
+    },
+    {
+      "name": "rename_column",
+      "description": "Rename a column in the table"
+    },
+    {
+      "name": "drop_column",
+      "description": "Drop a column from the table"
+    },
+    {
+      "name": "create_index",
+      "description": "Create an index on the table"
+    },
+    {
+      "name": "drop_index",
+      "description": "Drop an index from the table"
+    },
+    {
+      "name": "query",
+      "description": "Query rows with conditions, ordering, and pagination"
+    },
+    {
+      "name": "update_where",
+      "description": "Update rows matching conditions"
+    },
+    {
+      "name": "delete_where",
+      "description": "Delete rows matching conditions"
+    },
+    {
+      "name": "bulk_insert",
+      "description": "Insert multiple rows at once"
+    },
+    {
+      "name": "import",
+      "description": "Import data into table from JSON or CSV format"
+    }
+  ],
+  "kind": "sqlite:table",
+  "kinds": [
+    "sqlite:table",
+    "afs:node"
+  ],
+  "table": "users",
+  "columnCount": 4,
+  "columns": [
+    {
+      "name": "id",
+      "type": "INTEGER",
+      "nullable": true,
+      "primaryKey": true
+    },
+    {
+      "name": "name",
+      "type": "TEXT",
+      "nullable": false,
+      "primaryKey": false
+    },
+    {
+      "name": "email",
+      "type": "TEXT",
+      "nullable": true,
+      "primaryKey": false
+    },
+    {
+      "name": "created_at",
+      "type": "TEXT",
+      "nullable": true,
+      "primaryKey": false
+    }
+  ],
+  "primaryKey": "id",
+  "childrenCount": 2
+}"
+`;
+
+exports[`stat command view=json sqlite row (/sqlite/users/1): stat-json-sqlite-users-1 1`] = `
+"{
+  "path": "/sqlite/users/1",
+  "actions": [
+    {
+      "name": "duplicate",
+      "description": "Create a copy of this row"
+    },
+    {
+      "name": "validate",
+      "description": "Validate row data against schema constraints"
+    },
+    {
+      "name": "update",
+      "description": "Update this row"
+    },
+    {
+      "name": "delete",
+      "description": "Delete this row"
+    }
+  ],
+  "kind": "sqlite:row",
+  "kinds": [
+    "sqlite:row",
+    "afs:node"
+  ],
+  "table": "users",
+  "primaryKey": "1",
+  "columnCount": 4,
+  "columns": [
+    {
+      "name": "id",
+      "type": "INTEGER",
+      "nullable": true,
+      "primaryKey": true
+    },
+    {
+      "name": "name",
+      "type": "TEXT",
+      "nullable": false,
+      "primaryKey": false
+    },
+    {
+      "name": "email",
+      "type": "TEXT",
+      "nullable": true,
+      "primaryKey": false
+    },
+    {
+      "name": "created_at",
+      "type": "TEXT",
+      "nullable": true,
+      "primaryKey": false
+    }
+  ],
+  "childrenCount": 0
+}"
+`;
+
+exports[`stat command view=json git branch (/git/main): stat-json-git-main 1`] = `
+"{
+  "path": "/git/main",
+  "childrenCount": 4,
+  "lastCommit": {
+    "hash": "[HASH]",
+    "shortHash": "[SHORT_HASH]",
+    "author": "E2E Test",
+    "date": "[TIMESTAMP]",
+    "message": "Initial commit"
+  }
+}"
+`;
+
+exports[`stat command view=json git src dir (/git/main/src): stat-json-git-main-src 1`] = `
+"{
+  "path": "/git/main/src",
+  "childrenCount": 3
+}"
+`;
+
+exports[`stat command view=json git root file (/git/main/README.md): stat-json-git-main-README_md 1`] = `
+"{
+  "path": "/git/main/README.md",
+  "size": 99,
+  "mimeType": "text/markdown"
+}"
+`;
+
+exports[`stat command view=json git nested file (/git/main/src/index.ts): stat-json-git-main-src-index_ts 1`] = `
+"{
+  "path": "/git/main/src/index.ts",
+  "size": 130,
+  "mimeType": "text/typescript"
+}"
+`;
+
+exports[`stat command Action paths view=human sqlite table export action (/sqlite/users/.actions/export): stat-human-sqlite-users-_actions-export 1`] = `
+"Path:     /sqlite/users/.actions/export
+Kind:     afs:executable
+Kinds:    afs:executable → afs:node
+Name:     export
+Description:Export table data in specified format (json, csv)
+InputSchema:{"type":"object","properties":{"format":{"type":"string","enum":["json","csv"],"default":"json"}}}"
+`;
+
+exports[`stat command Action paths view=human sqlite table count action (/sqlite/users/.actions/count): stat-human-sqlite-users-_actions-count 1`] = `
+"Path:     /sqlite/users/.actions/count
+Kind:     afs:executable
+Kinds:    afs:executable → afs:node
+Name:     count
+Description:Get the total row count for this table"
+`;
+
+exports[`stat command Action paths view=human sqlite row validate action (/sqlite/users/1/.actions/validate): stat-human-sqlite-users-1-_actions-validate 1`] = `
+"Path:     /sqlite/users/1/.actions/validate
+Kind:     afs:executable
+Kinds:    afs:executable → afs:node
+Name:     validate
+Description:Validate row data against schema constraints
+InputSchema:{"type":"object","description":"Validate row data against \\"users\\" table constraints","properties":{},"additionalProperties":false,"x-table-schema":{"columns":[{"name":"id","type":"INTEGER","nullable":true,"primaryKey":true},{"name":"name","type":"TEXT","nullable":false,"primaryKey":false},{"name":"email","type":"TEXT","nullable":true,"primaryKey":false},{"name":"created_at","type":"TEXT","nullable":true,"primaryKey":false}],"foreignKeys":[]}}"
+`;
+
+exports[`stat command Action paths view=human sqlite row duplicate action (/sqlite/users/1/.actions/duplicate): stat-human-sqlite-users-1-_actions-duplicate 1`] = `
+"Path:     /sqlite/users/1/.actions/duplicate
+Kind:     afs:executable
+Kinds:    afs:executable → afs:node
+Name:     duplicate
+Description:Create a copy of this row
+InputSchema:{"type":"object","description":"Create a copy of the row (excluding primary key \\"id\\")","properties":{},"additionalProperties":false,"x-copied-columns":["name","email","created_at"]}"
+`;
+
+exports[`stat command Action paths view=llm sqlite table export action (/sqlite/users/.actions/export): stat-llm-sqlite-users-_actions-export 1`] = `
+"NODE /sqlite/users/.actions/export
+KIND afs:executable
+KINDS afs:executable afs:node
+META_NAME export
+META_DESCRIPTION Export table data in specified format (json, csv)
+META_INPUTSCHEMA {"type":"object","properties":{"format":{"type":"string","enum":["json","csv"],"default":"json"}}}
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command Action paths view=llm sqlite table count action (/sqlite/users/.actions/count): stat-llm-sqlite-users-_actions-count 1`] = `
+"NODE /sqlite/users/.actions/count
+KIND afs:executable
+KINDS afs:executable afs:node
+META_NAME count
+META_DESCRIPTION Get the total row count for this table
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command Action paths view=llm sqlite row validate action (/sqlite/users/1/.actions/validate): stat-llm-sqlite-users-1-_actions-validate 1`] = `
+"NODE /sqlite/users/1/.actions/validate
+KIND afs:executable
+KINDS afs:executable afs:node
+META_NAME validate
+META_DESCRIPTION Validate row data against schema constraints
+META_INPUTSCHEMA {"type":"object","description":"Validate row data against \\"users\\" table constraints","properties":{},"additionalProperties":false,"x-table-schema":{"columns":[{"name":"id","type":"INTEGER","nullable":true,"primaryKey":true},{"name":"name","type":"TEXT","nullable":false,"primaryKey":false},{"name":"email","type":"TEXT","nullable":true,"primaryKey":false},{"name":"created_at","type":"TEXT","nullable":true,"primaryKey":false}],"foreignKeys":[]}}
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command Action paths view=llm sqlite row duplicate action (/sqlite/users/1/.actions/duplicate): stat-llm-sqlite-users-1-_actions-duplicate 1`] = `
+"NODE /sqlite/users/1/.actions/duplicate
+KIND afs:executable
+KINDS afs:executable afs:node
+META_NAME duplicate
+META_DESCRIPTION Create a copy of this row
+META_INPUTSCHEMA {"type":"object","description":"Create a copy of the row (excluding primary key \\"id\\")","properties":{},"additionalProperties":false,"x-copied-columns":["name","email","created_at"]}
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command Action paths view=json sqlite table export action (/sqlite/users/.actions/export): stat-json-sqlite-users-_actions-export 1`] = `
+"{
+  "path": "/sqlite/users/.actions/export",
+  "kind": "afs:executable",
+  "kinds": [
+    "afs:executable",
+    "afs:node"
+  ],
+  "name": "export",
+  "description": "Export table data in specified format (json, csv)",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "format": {
+        "type": "string",
+        "enum": [
+          "json",
+          "csv"
+        ],
+        "default": "json"
+      }
+    }
+  }
+}"
+`;
+
+exports[`stat command Action paths view=json sqlite table count action (/sqlite/users/.actions/count): stat-json-sqlite-users-_actions-count 1`] = `
+"{
+  "path": "/sqlite/users/.actions/count",
+  "kind": "afs:executable",
+  "kinds": [
+    "afs:executable",
+    "afs:node"
+  ],
+  "name": "count",
+  "description": "Get the total row count for this table"
+}"
+`;
+
+exports[`stat command Action paths view=json sqlite row validate action (/sqlite/users/1/.actions/validate): stat-json-sqlite-users-1-_actions-validate 1`] = `
+"{
+  "path": "/sqlite/users/1/.actions/validate",
+  "kind": "afs:executable",
+  "kinds": [
+    "afs:executable",
+    "afs:node"
+  ],
+  "name": "validate",
+  "description": "Validate row data against schema constraints",
+  "inputSchema": {
+    "type": "object",
+    "description": "Validate row data against \\"users\\" table constraints",
+    "properties": {},
+    "additionalProperties": false,
+    "x-table-schema": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "nullable": true,
+          "primaryKey": true
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "nullable": false,
+          "primaryKey": false
+        },
+        {
+          "name": "email",
+          "type": "TEXT",
+          "nullable": true,
+          "primaryKey": false
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "nullable": true,
+          "primaryKey": false
+        }
+      ],
+      "foreignKeys": []
+    }
+  }
+}"
+`;
+
+exports[`stat command Action paths view=json sqlite row duplicate action (/sqlite/users/1/.actions/duplicate): stat-json-sqlite-users-1-_actions-duplicate 1`] = `
+"{
+  "path": "/sqlite/users/1/.actions/duplicate",
+  "kind": "afs:executable",
+  "kinds": [
+    "afs:executable",
+    "afs:node"
+  ],
+  "name": "duplicate",
+  "description": "Create a copy of this row",
+  "inputSchema": {
+    "type": "object",
+    "description": "Create a copy of the row (excluding primary key \\"id\\")",
+    "properties": {},
+    "additionalProperties": false,
+    "x-copied-columns": [
+      "name",
+      "email",
+      "created_at"
+    ]
+  }
+}"
+`;
+
+exports[`stat command Meta paths view=human fs provider meta (/fs/.meta): stat-human-meta-fs-_meta 1`] = `
+"Path:     /fs/.meta
+Kind:     afs:node
+Modified: [TIMESTAMP]
+Name:     E2E Test Project
+Description:Test project for CLI E2E testing"
+`;
+
+exports[`stat command Meta paths view=human fs nested meta (/fs/docs/.meta): stat-human-meta-fs-docs-_meta 1`] = `
+"Path:     /fs/docs/.meta
+Kind:     afs:node
+Modified: [TIMESTAMP]
+Name:     Documentation
+Description:Project documentation directory"
+`;
+
+exports[`stat command Meta paths view=human json provider meta (/json/.meta): stat-human-meta-json-_meta 1`] = `
+"Path:     /json/.meta
+Kind:     afs:node
+Modified: [TIMESTAMP]
+Description:E2E Test JSON Data"
+`;
+
+exports[`stat command Meta paths view=human sqlite provider meta (/sqlite/.meta): stat-human-meta-sqlite-_meta 1`] = `
+"Path:     /sqlite/.meta
+Children: 3
+Tables:   ["comments","posts","users"]"
+`;
+
+exports[`stat command Meta paths view=human sqlite table meta (/sqlite/users/.meta): stat-human-meta-sqlite-users-_meta 1`] = `
+"Path:     /sqlite/users/.meta
+Children: 2
+Table:    users
+Description:Table "users" with 4 columns
+ColumnCount:4
+Columns:  ["id","name","email","created_at"]
+PrimaryKey:["id"]"
+`;
+
+exports[`stat command Meta paths view=llm fs provider meta (/fs/.meta): stat-llm-meta-fs-_meta 1`] = `
+"NODE /fs/.meta
+KIND afs:node
+UPDATED [TIMESTAMP]
+META_NAME E2E Test Project
+META_DESCRIPTION Test project for CLI E2E testing
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command Meta paths view=llm fs nested meta (/fs/docs/.meta): stat-llm-meta-fs-docs-_meta 1`] = `
+"NODE /fs/docs/.meta
+KIND afs:node
+UPDATED [TIMESTAMP]
+META_NAME Documentation
+META_DESCRIPTION Project documentation directory
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command Meta paths view=llm json provider meta (/json/.meta): stat-llm-meta-json-_meta 1`] = `
+"NODE /json/.meta
+KIND afs:node
+UPDATED [TIMESTAMP]
+META_DESCRIPTION E2E Test JSON Data
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command Meta paths view=llm sqlite provider meta (/sqlite/.meta): stat-llm-meta-sqlite-_meta 1`] = `
+"NODE /sqlite/.meta
+CHILDREN 3
+META_TABLES ["comments","posts","users"]
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command Meta paths view=llm sqlite table meta (/sqlite/users/.meta): stat-llm-meta-sqlite-users-_meta 1`] = `
+"NODE /sqlite/users/.meta
+CHILDREN 2
+META_TABLE users
+META_DESCRIPTION Table "users" with 4 columns
+META_COLUMNCOUNT 4
+META_COLUMNS ["id","name","email","created_at"]
+META_PRIMARYKEY ["id"]
+SIDE_EFFECT NONE"
+`;
+
+exports[`stat command Meta paths view=json fs provider meta (/fs/.meta): stat-json-meta-fs-_meta 1`] = `
+"{
+  "path": "/fs/.meta",
+  "modified": "[TIMESTAMP]",
+  "created": "[TIMESTAMP]",
+  "kind": "afs:node",
+  "name": "E2E Test Project",
+  "description": "Test project for CLI E2E testing"
+}"
+`;
+
+exports[`stat command Meta paths view=json fs nested meta (/fs/docs/.meta): stat-json-meta-fs-docs-_meta 1`] = `
+"{
+  "path": "/fs/docs/.meta",
+  "modified": "[TIMESTAMP]",
+  "created": "[TIMESTAMP]",
+  "kind": "afs:node",
+  "name": "Documentation",
+  "description": "Project documentation directory"
+}"
+`;
+
+exports[`stat command Meta paths view=json json provider meta (/json/.meta): stat-json-meta-json-_meta 1`] = `
+"{
+  "path": "/json/.meta",
+  "modified": "[TIMESTAMP]",
+  "created": "[TIMESTAMP]",
+  "kind": "afs:node",
+  "description": "E2E Test JSON Data"
+}"
+`;
+
+exports[`stat command Meta paths view=json sqlite provider meta (/sqlite/.meta): stat-json-meta-sqlite-_meta 1`] = `
+"{
+  "path": "/sqlite/.meta",
+  "childrenCount": 3,
+  "tables": [
+    "comments",
+    "posts",
+    "users"
+  ]
+}"
+`;
+
+exports[`stat command Meta paths view=json sqlite table meta (/sqlite/users/.meta): stat-json-meta-sqlite-users-_meta 1`] = `
+"{
+  "path": "/sqlite/users/.meta",
+  "table": "users",
+  "description": "Table \\"users\\" with 4 columns",
+  "childrenCount": 2,
+  "columnCount": 4,
+  "columns": [
+    "id",
+    "name",
+    "email",
+    "created_at"
+  ],
+  "primaryKey": [
+    "id"
+  ]
+}"
+`;

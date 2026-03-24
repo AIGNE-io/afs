@@ -1,0 +1,109 @@
+[[todos]]
+id = 1
+title = "Design AFS provider architecture"
+description = "Define the core interfaces for AFSModule: read, list, write, exec, stat. Ensure backward compatibility with existing providers."
+status = "done"
+priority = "high"
+tags = ["architecture", "core"]
+dueDate = "2026-03-15"
+createdAt = "2026-03-01T09:00:00Z"
+updatedAt = "2026-03-14T16:30:00Z"
+
+[[todos]]
+id = 2
+title = "Implement JSON provider"
+description = "Create AFSJson provider that maps JSON structure to virtual filesystem paths. Support both read and write with file persistence."
+status = "done"
+priority = "high"
+tags = ["provider", "json"]
+dueDate = "2026-03-18"
+createdAt = "2026-03-02T10:00:00Z"
+updatedAt = "2026-03-17T14:00:00Z"
+
+[[todos]]
+id = 3
+title = "Write conformance test suite"
+description = "Create runProviderTests() framework covering 21 test categories. Every provider must pass conformance."
+status = "done"
+priority = "high"
+tags = ["testing", "conformance"]
+dueDate = "2026-03-20"
+createdAt = "2026-03-05T08:00:00Z"
+updatedAt = "2026-03-19T11:00:00Z"
+
+[[todos]]
+id = 4
+title = "Build AUP renderer for web"
+description = "Implement client-side AUP node renderer: view, text, action, list, form primitives. Connect via WebSocket."
+status = "done"
+priority = "high"
+tags = ["ui", "aup", "web"]
+dueDate = "2026-03-22"
+createdAt = "2026-03-10T09:00:00Z"
+updatedAt = "2026-03-21T17:00:00Z"
+
+[[todos]]
+id = 5
+title = "Add SQLite provider"
+description = "Implement AFSSQLite with table-as-directory mapping. Support CRUD via read/write/exec and SQL via exec actions."
+status = "pending"
+priority = "medium"
+tags = ["provider", "sqlite"]
+dueDate = "2026-03-25"
+createdAt = "2026-03-12T10:00:00Z"
+updatedAt = "2026-03-12T10:00:00Z"
+
+[[todos]]
+id = 6
+title = "Implement cross-platform AUP (Swift)"
+description = "Port AUP renderer to Swift for iOS. Support view, text, action, media primitives with native UIKit/SwiftUI."
+status = "pending"
+priority = "medium"
+tags = ["ui", "aup", "swift", "ios"]
+dueDate = "2026-03-28"
+createdAt = "2026-03-15T09:00:00Z"
+updatedAt = "2026-03-15T09:00:00Z"
+
+[[todos]]
+id = 7
+title = "Set up CI/CD pipeline"
+description = "Configure GitHub Actions for build, test, type-check on every PR. Add Release Please for automated versioning."
+status = "pending"
+priority = "low"
+tags = ["devops", "ci"]
+dueDate = "2026-04-01"
+createdAt = "2026-03-16T08:00:00Z"
+updatedAt = "2026-03-16T08:00:00Z"
+
+[[todos]]
+id = 8
+title = "Write evaluation framework"
+description = "Create reproducible experiments comparing AFS-UI, Markdown, and Skills+API paradigms. Measure tokens, latency, LOC."
+status = "pending"
+priority = "high"
+tags = ["evaluation", "research"]
+dueDate = "2026-03-30"
+createdAt = "2026-03-20T09:00:00Z"
+updatedAt = "2026-03-20T09:00:00Z"
+
+[[todos]]
+id = 9
+title = "Document AFS protocol specification"
+description = "Write formal spec for AFS wire protocol: JSON-RPC over WebSocket. Include request/response schemas and error codes."
+status = "pending"
+priority = "medium"
+tags = ["docs", "protocol"]
+dueDate = "2026-04-05"
+createdAt = "2026-03-22T10:00:00Z"
+updatedAt = "2026-03-22T10:00:00Z"
+
+[[todos]]
+id = 10
+title = "Performance benchmarking"
+description = "Benchmark AFS core operations: mount latency, read throughput, list pagination, search over 10K files."
+status = "pending"
+priority = "low"
+tags = ["performance", "benchmarking"]
+dueDate = "2026-04-10"
+createdAt = "2026-03-23T08:00:00Z"
+updatedAt = "2026-03-23T08:00:00Z"

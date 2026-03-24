@@ -1,0 +1,16 @@
+name: "boolean coercion: true matches string true"
+script: |
+  job coerce {
+    find /data
+    | where enabled == true
+  }
+mockWorld:
+  read:
+    /data:
+      - { id: 1, enabled: true }
+      - { id: 2, enabled: false }
+      - { id: 3, enabled: "true" }
+      - { id: 4, enabled: "false" }
+expected:
+  status: "ok"
+  recordCount: 2

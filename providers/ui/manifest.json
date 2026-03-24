@@ -1,0 +1,35 @@
+{
+  "name": "ui",
+  "description": "Interactive UI device with window manager — build UIs, control desktop layout (open/close/arrange windows, switch strategies), manage focus and panels",
+  "uriTemplate": "ui://{backend}",
+  "category": "device",
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "backend": {
+        "default": "tty",
+        "type": "string",
+        "enum": ["tty", "web", "term"]
+      },
+      "port": {
+        "type": "number"
+      }
+    },
+    "required": ["backend"],
+    "additionalProperties": false
+  },
+  "tags": ["ui", "device", "interactive", "term"],
+  "capabilityTags": ["read-write", "auth:none", "local"],
+  "security": {
+    "riskLevel": "local",
+    "resourceAccess": ["local-network"],
+    "notes": ["Interacts with local terminal, web, or messaging backend"]
+  },
+  "capabilities": {
+    "network": {
+      "egress": true,
+      "ingress": true
+    }
+  }
+}

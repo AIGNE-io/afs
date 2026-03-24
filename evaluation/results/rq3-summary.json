@@ -1,0 +1,121 @@
+{
+  "generatedAt": "2026-03-24T22:03:49.991Z",
+  "scenarios": [
+    {
+      "id": "CS1",
+      "name": "Add new data source",
+      "category": "data",
+      "afsUi": {
+        "files": 1,
+        "lines": 1,
+        "layers": ["config"]
+      },
+      "baseline": {
+        "files": 4,
+        "lines": 80,
+        "layers": ["data", "api", "skill", "ui"]
+      },
+      "lineSavings": "99%"
+    },
+    {
+      "id": "CS2",
+      "name": "Change UI layout",
+      "category": "ui",
+      "afsUi": {
+        "files": 1,
+        "lines": 3,
+        "layers": ["ui-tree"]
+      },
+      "baseline": {
+        "files": 2,
+        "lines": 120,
+        "layers": ["skill", "ui"]
+      },
+      "lineSavings": "98%"
+    },
+    {
+      "id": "CS3",
+      "name": "Add search/filter feature",
+      "category": "feature",
+      "afsUi": {
+        "files": 1,
+        "lines": 12,
+        "layers": ["ui-tree"]
+      },
+      "baseline": {
+        "files": 3,
+        "lines": 85,
+        "layers": ["skill", "api", "ui"]
+      },
+      "lineSavings": "86%"
+    },
+    {
+      "id": "CS4",
+      "name": "Cross-platform (Web → CLI)",
+      "category": "platform",
+      "afsUi": {
+        "files": 0,
+        "lines": 0,
+        "layers": []
+      },
+      "baseline": {
+        "files": 8,
+        "lines": 400,
+        "layers": ["ui", "skill", "renderer"]
+      },
+      "lineSavings": "100%"
+    },
+    {
+      "id": "CS5",
+      "name": "Data schema change",
+      "category": "schema",
+      "afsUi": {
+        "files": 1,
+        "lines": 2,
+        "layers": ["provider"]
+      },
+      "baseline": {
+        "files": 5,
+        "lines": 25,
+        "layers": ["data", "api", "skill", "ui"]
+      },
+      "lineSavings": "92%"
+    },
+    {
+      "id": "CS6",
+      "name": "Add dark mode",
+      "category": "style",
+      "afsUi": {
+        "files": 1,
+        "lines": 5,
+        "layers": ["renderer"]
+      },
+      "baseline": {
+        "files": 7,
+        "lines": 150,
+        "layers": ["ui"]
+      },
+      "lineSavings": "97%"
+    }
+  ],
+  "totals": {
+    "afsUi": {
+      "files": 5,
+      "lines": 23,
+      "layers": ["config", "ui-tree", "provider", "renderer"]
+    },
+    "baseline": {
+      "files": 29,
+      "lines": 860,
+      "layers": ["data", "api", "skill", "ui", "renderer"]
+    },
+    "overallLineSavings": "97%",
+    "overallFileSavings": "83%"
+  },
+  "layerAnalysis": {
+    "afsUiCrossLayerChanges": 0,
+    "baselineCrossLayerChanges": 5,
+    "afsUiDistinctLayers": 4,
+    "baselineDistinctLayers": 5
+  }
+}

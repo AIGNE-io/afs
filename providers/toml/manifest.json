@@ -1,0 +1,29 @@
+{
+  "name": "toml",
+  "description": "TOML config file — navigate and edit structured data as a tree.\n- Tables become directories, values become leaf nodes\n- Supports TOML-specific types (datetime, array of tables)\n- Path structure: `/{table}/{key}`",
+  "uriTemplate": "toml://{localPath+}",
+  "category": "structured-data",
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "localPath": {
+        "type": "string"
+      }
+    },
+    "required": ["localPath"],
+    "additionalProperties": false
+  },
+  "tags": ["toml", "structured-data"],
+  "capabilityTags": ["read-write", "crud", "search", "auth:none", "local"],
+  "security": {
+    "riskLevel": "sandboxed",
+    "resourceAccess": []
+  },
+  "capabilities": {
+    "filesystem": {
+      "read": true,
+      "write": true
+    }
+  }
+}

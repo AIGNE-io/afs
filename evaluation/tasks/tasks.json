@@ -1,0 +1,133 @@
+{
+  "$schema": "./tasks-schema.json",
+  "version": "1.0",
+  "description": "7 UI tasks for evaluating agent-driven UI generation paradigms",
+  "tasks": [
+    {
+      "id": "T1",
+      "name": "task-list",
+      "title": "Render Task List",
+      "description": "Display a list of 10 TODO items showing title, status (done/pending), priority, and due date",
+      "operations": ["list"],
+      "expectedElements": ["list-container", "10-items", "status-badge", "priority-indicator"],
+      "dataPath": "/todos",
+      "complexity": "simple"
+    },
+    {
+      "id": "T2",
+      "name": "task-detail",
+      "title": "Show Task Detail",
+      "description": "Display a single task with all fields: title, description, status, priority, due date, tags, created/updated timestamps",
+      "operations": ["read"],
+      "expectedElements": ["detail-view", "all-fields", "tag-list", "timestamps"],
+      "dataPath": "/todos/1",
+      "complexity": "simple"
+    },
+    {
+      "id": "T3",
+      "name": "create-task",
+      "title": "Create Task Form",
+      "description": "Render a form to create a new task with fields: title (required), description (textarea), priority (select: low/medium/high), due date (date picker)",
+      "operations": ["write"],
+      "expectedElements": [
+        "form",
+        "text-input",
+        "textarea",
+        "select",
+        "date-input",
+        "submit-button"
+      ],
+      "dataPath": "/todos",
+      "complexity": "medium"
+    },
+    {
+      "id": "T4",
+      "name": "incremental-update",
+      "title": "Incremental Data Update",
+      "description": "Starting from T1 (10 items), simulate: (a) new task added, (b) existing task marked done. Measure update cost vs full re-render",
+      "operations": ["list", "write"],
+      "expectedElements": ["updated-list", "11-items", "changed-status"],
+      "dataPath": "/todos",
+      "complexity": "medium"
+    },
+    {
+      "id": "T5",
+      "name": "view-switching",
+      "title": "Toggle View Layout",
+      "description": "Switch the same 10-item dataset between three layouts: list view, grid/card view, table view",
+      "operations": ["list"],
+      "expectedElements": ["layout-toggle", "list-view", "grid-view", "table-view"],
+      "dataPath": "/todos",
+      "complexity": "medium"
+    },
+    {
+      "id": "T6",
+      "name": "search-filter",
+      "title": "Search and Filter",
+      "description": "Add search box (text filter on title) and status filter (all/pending/done) to the task list",
+      "operations": ["list", "search"],
+      "expectedElements": ["search-input", "status-filter", "filtered-results", "result-count"],
+      "dataPath": "/todos",
+      "complexity": "medium"
+    },
+    {
+      "id": "T7",
+      "name": "multi-step-wizard",
+      "title": "Multi-step Project Creation",
+      "description": "Three-step wizard: (1) Enter project name + description, (2) Select members from list, (3) Review + confirm. Each step validates before proceeding",
+      "operations": ["read", "write", "exec"],
+      "expectedElements": [
+        "step-indicator",
+        "step-1-form",
+        "step-2-member-list",
+        "step-3-summary",
+        "back-next-buttons"
+      ],
+      "dataPath": "/projects",
+      "complexity": "complex"
+    },
+    {
+      "id": "T8",
+      "name": "dashboard",
+      "title": "Multi-panel Dashboard",
+      "description": "Composite view with: (1) stats summary cards (total/completed/pending/overdue), (2) recent activity feed, (3) priority distribution chart data, (4) task list. Multiple AFS paths mounted into one UI.",
+      "operations": ["read", "list"],
+      "expectedElements": ["stats-cards", "activity-feed", "chart-data", "task-list-panel"],
+      "dataPath": "/dashboard",
+      "complexity": "complex"
+    },
+    {
+      "id": "T9",
+      "name": "data-table-crud",
+      "title": "Interactive Data Table",
+      "description": "Full-featured table with: sortable columns, pagination (5 per page), inline edit mode, row selection, bulk status change action. Common SE benchmark scenario.",
+      "operations": ["list", "write", "exec"],
+      "expectedElements": [
+        "sortable-headers",
+        "pagination",
+        "edit-button",
+        "row-checkbox",
+        "bulk-action"
+      ],
+      "dataPath": "/todos",
+      "complexity": "complex"
+    },
+    {
+      "id": "T10",
+      "name": "chat-feed",
+      "title": "Real-time Chat Feed",
+      "description": "Chat message list with: sender avatars, timestamps, message grouping by date, new message input, real-time append (incremental update). Tests streaming/push advantage of AFS-UI.",
+      "operations": ["list", "write"],
+      "expectedElements": [
+        "message-list",
+        "sender-info",
+        "timestamp",
+        "date-separator",
+        "message-input",
+        "send-button"
+      ],
+      "dataPath": "/chat",
+      "complexity": "complex"
+    }
+  ]
+}

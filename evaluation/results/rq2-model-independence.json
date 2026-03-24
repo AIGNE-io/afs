@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2026-03-24T22:03:57.221Z",
+  "mode": "simulated",
+  "prompt": {
+    "system": "You are an AFS agent that generates AUP (Agent UI Protocol) trees.\nAUP trees are JSON objects representing UI structure. Each node has:\n- \"id\": unique string identifier\n- \"type\": one of \"view\", \"text\", \"list\", \"form\", \"action\"\n- \"props\": object with type-specific properties\n- \"children\": array of child nodes (for \"view\" type)\n- \"src\": data source path (for \"list\" type)\n\nOutput ONLY valid JSON. No markdown fences, no explanation.",
+    "user": "Generate an AUP tree to display a TODO task list.\n\nData source: /data/todos (10 items with fields: id, title, status, priority, dueDate)\n\nRequirements:\n- Root: type \"view\" with id \"root\"\n- Heading: type \"text\", id \"heading\", props.content \"Tasks\", props.level 1\n- Task list: type \"list\", id \"task-list\", src \"/data/todos\", props.layout \"list\", props.itemStyle \"row\"\n- Columns: title (label \"Task\"), status (label \"Status\"), priority (label \"Priority\"), dueDate (label \"Due\")"
+  },
+  "results": [
+    {
+      "model": "claude-haiku",
+      "vendor": "Anthropic",
+      "valid": true,
+      "outputTokens": 98,
+      "outputBytes": 389,
+      "latencyMs": 0,
+      "structuralNotes": [
+        "props inline (non-standard but renderable)",
+        "columns use \"key\" field"
+      ],
+      "failedChecks": []
+    },
+    {
+      "model": "claude-sonnet",
+      "vendor": "Anthropic",
+      "valid": true,
+      "outputTokens": 91,
+      "outputBytes": 361,
+      "latencyMs": 0,
+      "structuralNotes": ["props in props object", "columns use \"field\" field"],
+      "failedChecks": []
+    },
+    {
+      "model": "claude-opus",
+      "vendor": "Anthropic",
+      "valid": true,
+      "outputTokens": 91,
+      "outputBytes": 361,
+      "latencyMs": 0,
+      "structuralNotes": ["props in props object", "columns use \"field\" field"],
+      "failedChecks": []
+    }
+  ],
+  "summary": {
+    "allValid": true,
+    "tokenRange": {
+      "min": 91,
+      "max": 98,
+      "variancePct": "7.7%"
+    },
+    "conclusion": "All tested models produce valid, renderable AUP trees with minor structural differences handled by tolerant renderer parsing."
+  }
+}

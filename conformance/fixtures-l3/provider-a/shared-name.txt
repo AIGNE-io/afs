@@ -1,0 +1,1 @@
+This is provider A's version

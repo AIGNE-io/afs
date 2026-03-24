@@ -1,0 +1,25 @@
+# L4 — Explain for actions
+# Tests that root-level actions and provider actions are discoverable.
+
+---
+name: "explain - root lists standard operations"
+operation: explain
+params:
+  path: "/"
+expect:
+  success: true
+  data:
+    content:
+      contains: "read"
+---
+name: "explain - mount explain includes capabilities"
+description: >
+  Explain for a mount root should include information about what
+  the provider can do (e.g., actions, operations).
+operation: explain
+params:
+  path: "/alpha"
+expect:
+  success: true
+  data:
+    format: "markdown"

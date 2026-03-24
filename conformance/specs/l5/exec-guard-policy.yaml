@@ -1,0 +1,62 @@
+# L5 — Core security: action policy enforcement
+# Tests that AFS exec guard blocks actions based on severity + policy.
+#
+# Uses L5 server with actionPolicy: "safe" (only ambient allowed).
+# AFSFS actions (archive, checksum) default to severity "boundary" → blocked under "safe" policy.
+
+---
+name: "exec guard - safe policy blocks boundary action (checksum)"
+description: >
+  With actionPolicy=safe, only ambient-severity actions are allowed.
+  The checksum action defaults to boundary severity and must be blocked.
+operation: exec
+params:
+  path: "/alpha/.actions/checksum"
+  args:
+    path: "/hello.txt"
+expect:
+  success: false
+  error:
+    message:
+      contains: "severity"
+---
+name: "exec guard - safe policy blocks boundary action (archive)"
+operation: exec
+params:
+  path: "/alpha/.actions/archive"
+  args:
+    path: "/"
+    format: "tar.gz"
+expect:
+  success: false
+  error:
+    message:
+      contains: "severity"
+---
+name: "exec guard - read still works under safe policy"
+description: >
+  Action policy only affects exec — read/write/list/stat are unaffected.
+operation: read
+params:
+  path: "/alpha/hello.txt"
+expect:
+  success: true
+  data:
+    data:
+      content:
+        contains: "provider A"
+---
+name: "exec guard - write still works under safe policy"
+steps:
+  - name: write file
+    operation: write
+    params:
+      path: "/alpha/policy-test.txt"
+      content:
+        content: "policy test"
+    expect:
+      success: true
+  - name: cleanup
+    operation: delete
+    params:
+      path: "/alpha/policy-test.txt"

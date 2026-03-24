@@ -1,0 +1,58 @@
+{
+  "T1": {
+    "instruction": "Display a list of TODO tasks showing: title, status (done/pending), priority (high/medium/low), and due date.",
+    "data": true,
+    "dataDescription": "10 TODO items from /data/todos"
+  },
+  "T2": {
+    "instruction": "Show the detail view for a single task with all fields: title, description, status, priority, due date, tags, created and updated timestamps.",
+    "data": true,
+    "dataDescription": "Single TODO item (id=1)"
+  },
+  "T3": {
+    "instruction": "Create a form for adding a new task with fields: title (required text), description (textarea), priority (select: low/medium/high, default medium), due date (date picker). Include a submit button labeled 'Create Task'.",
+    "data": false
+  },
+  "T4": {
+    "instruction": "Update the existing task list: (1) add a new task titled 'New urgent task' with status pending and priority high, (2) change task #3's status from pending to done.",
+    "data": true,
+    "dataDescription": "Current task list (10 items) + change instructions",
+    "note": "For AFS-UI this is an incremental patch; for others it requires full regeneration"
+  },
+  "T5": {
+    "instruction": "Show the same 10-task dataset in three different layouts: (1) vertical list view, (2) card grid view, (3) table view with columns.",
+    "data": true,
+    "dataDescription": "10 TODO items, rendered 3 times in different layouts"
+  },
+  "T6": {
+    "instruction": "Display the task list with a search box (filter by title text) and a status filter dropdown (all/pending/done). Show result count.",
+    "data": true,
+    "dataDescription": "10 TODO items + search/filter UI"
+  },
+  "T7": {
+    "instruction": "Create a 3-step wizard for creating a new project: Step 1: project name (required) and description. Step 2: select team members from a list. Step 3: review selections and confirm. Include back/next navigation and a step indicator.",
+    "data": true,
+    "dataDescription": "5 team members for step 2"
+  },
+  "T8": {
+    "instruction": "Create a dashboard with 4 panels: (1) summary stat cards showing total, completed, pending, and overdue counts, (2) recent activity feed showing the last 5 actions, (3) priority distribution chart/breakdown, (4) abbreviated task list.",
+    "data": true,
+    "dataDescription": "Dashboard stats + 8 activity entries + priority breakdown + 10 tasks"
+  },
+  "T9": {
+    "instruction": "Create an interactive data table with: sortable column headers, pagination (5 items per page), row checkboxes for selection, a 'Select All' checkbox, a 'Mark Done' bulk action button (disabled when no rows selected), and an edit button per row.",
+    "data": true,
+    "dataDescription": "10 TODO items with CRUD capabilities"
+  },
+  "T10": {
+    "instruction": "Display a chat message feed for channel '#afs-dev' with: sender name, timestamp, message text, and a message input area with a Send button at the bottom.",
+    "data": true,
+    "dataDescription": "10 chat messages between 5 team members"
+  },
+  "T10b": {
+    "instruction": "A new message has arrived in the chat: sender 'eve', text 'Evaluation results look great!', timestamp '2026-03-24T10:00:00Z'. Update the existing chat feed to include this message.",
+    "data": true,
+    "dataDescription": "Existing 10 messages + 1 new message",
+    "note": "For AFS-UI this is a single patch op; for others it requires full regeneration"
+  }
+}

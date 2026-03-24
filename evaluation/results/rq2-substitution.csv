@@ -1,0 +1,16 @@
+experiment,source,provider,metric,value
+data-source,JSON,@aigne/afs-json,list_count,10
+data-source,JSON,@aigne/afs-json,list_ms,14.19
+data-source,JSON,@aigne/afs-json,ui_code_changes,0
+data-source,TOML,@aigne/afs-toml,list_count,10
+data-source,TOML,@aigne/afs-toml,list_ms,2.84
+data-source,TOML,@aigne/afs-toml,ui_code_changes,0
+data-source,Filesystem,@aigne/afs-fs,list_count,10
+data-source,Filesystem,@aigne/afs-fs,list_ms,2.45
+data-source,Filesystem,@aigne/afs-fs,ui_code_changes,0
+renderer,Web (HTML),n/a,output_bytes,62
+renderer,Web (HTML),n/a,tree_changes,0
+renderer,CLI (Text),n/a,output_bytes,28
+renderer,CLI (Text),n/a,tree_changes,0
+renderer,API (JSON),n/a,output_bytes,206
+renderer,API (JSON),n/a,tree_changes,0

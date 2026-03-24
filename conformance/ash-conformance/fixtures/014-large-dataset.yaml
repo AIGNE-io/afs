@@ -1,0 +1,63 @@
+name: "large dataset: 50 records with where and map"
+script: |
+  job big {
+    find /items
+    | where value > 25
+    | map { id: id, v: value }
+  }
+mockWorld:
+  read:
+    /items:
+      - { id: 1, value: 10 }
+      - { id: 2, value: 20 }
+      - { id: 3, value: 30 }
+      - { id: 4, value: 40 }
+      - { id: 5, value: 50 }
+      - { id: 6, value: 5 }
+      - { id: 7, value: 15 }
+      - { id: 8, value: 26 }
+      - { id: 9, value: 35 }
+      - { id: 10, value: 45 }
+      - { id: 11, value: 1 }
+      - { id: 12, value: 2 }
+      - { id: 13, value: 3 }
+      - { id: 14, value: 4 }
+      - { id: 15, value: 55 }
+      - { id: 16, value: 60 }
+      - { id: 17, value: 65 }
+      - { id: 18, value: 70 }
+      - { id: 19, value: 75 }
+      - { id: 20, value: 80 }
+      - { id: 21, value: 11 }
+      - { id: 22, value: 12 }
+      - { id: 23, value: 13 }
+      - { id: 24, value: 14 }
+      - { id: 25, value: 16 }
+      - { id: 26, value: 17 }
+      - { id: 27, value: 18 }
+      - { id: 28, value: 19 }
+      - { id: 29, value: 21 }
+      - { id: 30, value: 22 }
+      - { id: 31, value: 23 }
+      - { id: 32, value: 24 }
+      - { id: 33, value: 25 }
+      - { id: 34, value: 85 }
+      - { id: 35, value: 90 }
+      - { id: 36, value: 95 }
+      - { id: 37, value: 100 }
+      - { id: 38, value: 6 }
+      - { id: 39, value: 7 }
+      - { id: 40, value: 8 }
+      - { id: 41, value: 9 }
+      - { id: 42, value: 27 }
+      - { id: 43, value: 28 }
+      - { id: 44, value: 29 }
+      - { id: 45, value: 31 }
+      - { id: 46, value: 32 }
+      - { id: 47, value: 33 }
+      - { id: 48, value: 34 }
+      - { id: 49, value: 36 }
+      - { id: 50, value: 37 }
+expected:
+  status: "ok"
+  recordCount: 25

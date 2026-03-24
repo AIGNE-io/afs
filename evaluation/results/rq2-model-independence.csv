@@ -1,0 +1,4 @@
+model,vendor,mode,valid,output_tokens,output_bytes,latency_ms
+claude-haiku,Anthropic,simulated,true,98,389,0
+claude-sonnet,Anthropic,simulated,true,91,361,0
+claude-opus,Anthropic,simulated,true,91,361,0

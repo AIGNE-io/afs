@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-03-24T22:03:57.221Z",
+  "dataSourceSubstitution": {
+    "sources": [
+      {
+        "name": "JSON",
+        "provider": "@aigne/afs-json",
+        "items": 10,
+        "uiCodeChanges": 0,
+        "configChangeOnly": "uri: \"json://...\""
+      },
+      {
+        "name": "TOML",
+        "provider": "@aigne/afs-toml",
+        "items": 10,
+        "uiCodeChanges": 0,
+        "configChangeOnly": "uri: \"toml://...\""
+      },
+      {
+        "name": "Filesystem",
+        "provider": "@aigne/afs-fs",
+        "items": 10,
+        "uiCodeChanges": 0,
+        "configChangeOnly": "uri: \"fs://...\""
+      }
+    ],
+    "conclusion": "All data sources produce identical AFS list/read results. UI code requires 0 changes. Only the mount configuration (1 line) changes."
+  },
+  "rendererSubstitution": {
+    "renderers": [
+      {
+        "renderer": "Web (HTML)",
+        "outputType": "html",
+        "outputBytes": 62,
+        "treeChanges": 0
+      },
+      {
+        "renderer": "CLI (Text)",
+        "outputType": "text",
+        "outputBytes": 28,
+        "treeChanges": 0
+      },
+      {
+        "renderer": "API (JSON)",
+        "outputType": "json",
+        "outputBytes": 206,
+        "treeChanges": 0
+      }
+    ],
+    "inputTree": {
+      "id": "root",
+      "type": "view",
+      "children": [
+        {
+          "id": "heading",
+          "type": "text",
+          "props": {
+            "content": "Tasks",
+            "level": 1
+          }
+        },
+        {
+          "id": "task-list",
+          "type": "list",
+          "src": "/data/todos",
+          "props": {
+            "layout": "list",
+            "itemStyle": "row"
+          }
+        }
+      ]
+    },
+    "conclusion": "Same AUP tree renders to 3 different targets. Zero changes to the AUP tree or agent logic."
+  },
+  "modelIndependence": {
+    "modelsTestedCount": 3,
+    "allValid": true,
+    "note": "See rq2-model-independence.json for full details. Run with --live for real API verification."
+  }
+}

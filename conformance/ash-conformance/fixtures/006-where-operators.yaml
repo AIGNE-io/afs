@@ -1,0 +1,17 @@
+name: "where with greater-than operator"
+script: |
+  job filter {
+    find /data
+    | where score > 50
+  }
+mockWorld:
+  read:
+    /data:
+      - { id: 1, score: 30 }
+      - { id: 2, score: 60 }
+      - { id: 3, score: 80 }
+      - { id: 4, score: 50 }
+      - { id: 5, score: 10 }
+expected:
+  status: "ok"
+  recordCount: 2

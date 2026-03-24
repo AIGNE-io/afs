@@ -1,0 +1,75 @@
+# L3 — Cross-mount search
+# Tests that search at root spans all mounted providers.
+
+---
+name: "cross-mount search - search root finds results across providers"
+steps:
+  - name: write unique string to alpha
+    operation: write
+    params:
+      path: "/alpha/search-test-xm.txt"
+      content:
+        content: "l3-xmount-unique-token-abc123"
+    expect:
+      success: true
+  - name: write unique string to beta
+    operation: write
+    params:
+      path: "/beta/search-test-xm.txt"
+      content:
+        content: "l3-xmount-unique-token-abc123"
+    expect:
+      success: true
+  - name: search root for unique string
+    operation: search
+    params:
+      path: "/"
+      query: "l3-xmount-unique-token-abc123"
+    expect:
+      success: true
+      data:
+        data:
+          type: "array"
+  - name: cleanup alpha
+    operation: delete
+    params:
+      path: "/alpha/search-test-xm.txt"
+  - name: cleanup beta
+    operation: delete
+    params:
+      path: "/beta/search-test-xm.txt"
+---
+name: "cross-mount search - search scoped to single mount"
+steps:
+  - name: write to alpha only
+    operation: write
+    params:
+      path: "/alpha/scoped-search.txt"
+      content:
+        content: "l3-scoped-token-xyz789"
+    expect:
+      success: true
+  - name: search only in beta
+    operation: search
+    params:
+      path: "/beta"
+      query: "l3-scoped-token-xyz789"
+    expect:
+      success: true
+      data:
+        data:
+          length: 0
+  - name: search in alpha finds it
+    operation: search
+    params:
+      path: "/alpha"
+      query: "l3-scoped-token-xyz789"
+    expect:
+      success: true
+      data:
+        data:
+          type: "array"
+  - name: cleanup
+    operation: delete
+    params:
+      path: "/alpha/scoped-search.txt"

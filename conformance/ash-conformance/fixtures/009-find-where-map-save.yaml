@@ -1,0 +1,21 @@
+name: "full pipeline: find, where, map, save"
+script: |
+  job pipeline {
+    find /users
+    | where active == true
+    | map { username: name, mail: email }
+    | save /active_users
+  }
+mockWorld:
+  read:
+    /users:
+      - { name: "alice", email: "alice@example.com", active: true }
+      - { name: "bob", email: "bob@example.com", active: false }
+      - { name: "carol", email: "carol@example.com", active: true }
+expected:
+  status: "ok"
+  recordCount: 0
+  writes:
+    /active_users:
+      - { username: "alice", mail: "alice@example.com" }
+      - { username: "carol", mail: "carol@example.com" }

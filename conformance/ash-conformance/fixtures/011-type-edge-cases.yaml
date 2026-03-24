@@ -1,0 +1,13 @@
+name: "type edge cases: numbers, booleans, null, nested objects"
+script: |
+  job types {
+    find /data
+  }
+mockWorld:
+  read:
+    /data:
+      - { int_val: 42, float_val: 3.14, neg_val: -7, bool_val: true, null_val: null, nested: { a: 1 } }
+      - { int_val: 0, float_val: 0.001, neg_val: -100, bool_val: false, null_val: null, nested: { a: 2 } }
+expected:
+  status: "ok"
+  recordCount: 2

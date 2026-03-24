@@ -1,0 +1,53 @@
+name: "write - new file (replace mode)"
+operation: write
+params:
+  path: "/test-write-new.txt"
+  content:
+    content: "new file content"
+expect:
+  success: true
+  data:
+    data:
+      path: "$exists"
+---
+name: "write - replace existing"
+operation: write
+params:
+  path: "/test-write-replace.txt"
+  content:
+    content: "replaced content"
+  options:
+    mode: "replace"
+expect:
+  success: true
+  data:
+    data:
+      path: "$exists"
+---
+name: "write - append mode"
+operation: write
+params:
+  path: "/test-write-append.txt"
+  content:
+    content: "appended text"
+  options:
+    mode: "append"
+expect:
+  success: true
+  data:
+    data:
+      path: "$exists"
+---
+name: "write - create mode rejects existing"
+description: "Write with mode 'create' should fail if the file already exists"
+operation: write
+params:
+  path: "/hello.txt"
+  content:
+    content: "should fail"
+  options:
+    mode: "create"
+expect:
+  success: false
+  error:
+    code: 3

@@ -1,0 +1,24 @@
+{
+  "name": "@aigne/afs-conformance",
+  "version": "0.1.0",
+  "description": "AFS protocol conformance test runner",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "glob": "^11.0.2",
+    "yaml": "^2.7.1"
+  },
+  "devDependencies": {
+    "@aigne/afs": "workspace:*",
+    "@aigne/afs-fs": "workspace:*",
+    "@aigne/afs-http": "workspace:*",
+    "@aigne/ash": "0.0.2-beta.2",
+    "@types/node": "^22.15.0",
+    "tsx": "^4.19.4",
+    "typescript": "5.9.2"
+  }
+}

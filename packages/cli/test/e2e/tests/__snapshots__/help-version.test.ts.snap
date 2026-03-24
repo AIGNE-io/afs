@@ -1,0 +1,431 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`Help and Version Commands global options afs --help shows main help: main-help 1`] = `
+"afs <command> [options]
+
+Commands:
+  afs ls [path]                List directory contents           [aliases: list]
+  afs read <path>              Read file content                  [aliases: cat]
+  afs write <path> [content]   Write content to file
+  afs delete <path>            Delete file or directory            [aliases: rm]
+  afs stat <path>              Get file or directory info
+  afs exec <executable_path>   Execute an action
+  afs explain [topic]          Explain AFS concepts or paths
+  afs search <path> <query>    Search for content within an AFS path
+                                                           [aliases: grep, find]
+  afs mount                    Mount management
+  afs serve                    Start AFS server (HTTP or MCP)
+  afs explore [path]           Interactive explorer (TUI or web)
+  afs did                      Identity & trust management
+  afs vault                    Encrypted secret storage
+  afs service <action>         Manage AFS background service
+  afs connect                  Start service and open web explorer
+  afs mcp                      Connect Claude Desktop (or any stdio MCP client)
+                               to AFS
+  afs gen-agent-md <provider>  Generate .afs/AGENT.md for a provider package
+
+Options:
+      --json         Output in JSON format                             [boolean]
+      --yaml         Output in YAML format                             [boolean]
+      --view         Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+  -i, --interactive  Start interactive REPL mode                       [boolean]
+  -h, --help         Show help                                         [boolean]
+  -v, --version      Show version number                               [boolean]"
+`;
+
+exports[`Help and Version Commands global options afs -h shows main help: main-help-short 1`] = `
+"afs <command> [options]
+
+Commands:
+  afs ls [path]                List directory contents           [aliases: list]
+  afs read <path>              Read file content                  [aliases: cat]
+  afs write <path> [content]   Write content to file
+  afs delete <path>            Delete file or directory            [aliases: rm]
+  afs stat <path>              Get file or directory info
+  afs exec <executable_path>   Execute an action
+  afs explain [topic]          Explain AFS concepts or paths
+  afs search <path> <query>    Search for content within an AFS path
+                                                           [aliases: grep, find]
+  afs mount                    Mount management
+  afs serve                    Start AFS server (HTTP or MCP)
+  afs explore [path]           Interactive explorer (TUI or web)
+  afs did                      Identity & trust management
+  afs vault                    Encrypted secret storage
+  afs service <action>         Manage AFS background service
+  afs connect                  Start service and open web explorer
+  afs mcp                      Connect Claude Desktop (or any stdio MCP client)
+                               to AFS
+  afs gen-agent-md <provider>  Generate .afs/AGENT.md for a provider package
+
+Options:
+      --json         Output in JSON format                             [boolean]
+      --yaml         Output in YAML format                             [boolean]
+      --view         Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+  -i, --interactive  Start interactive REPL mode                       [boolean]
+  -h, --help         Show help                                         [boolean]
+  -v, --version      Show version number                               [boolean]"
+`;
+
+exports[`Help and Version Commands global options afs without args shows help with error: no-args-help 1`] = `
+"Not enough non-option arguments: got 0, need at least 1
+
+afs <command> [options]
+
+Commands:
+  afs ls [path]                List directory contents           [aliases: list]
+  afs read <path>              Read file content                  [aliases: cat]
+  afs write <path> [content]   Write content to file
+  afs delete <path>            Delete file or directory            [aliases: rm]
+  afs stat <path>              Get file or directory info
+  afs exec <executable_path>   Execute an action
+  afs explain [topic]          Explain AFS concepts or paths
+  afs search <path> <query>    Search for content within an AFS path
+                                                           [aliases: grep, find]
+  afs mount                    Mount management
+  afs serve                    Start AFS server (HTTP or MCP)
+  afs explore [path]           Interactive explorer (TUI or web)
+  afs did                      Identity & trust management
+  afs vault                    Encrypted secret storage
+  afs service <action>         Manage AFS background service
+  afs connect                  Start service and open web explorer
+  afs mcp                      Connect Claude Desktop (or any stdio MCP client)
+                               to AFS
+  afs gen-agent-md <provider>  Generate .afs/AGENT.md for a provider package
+
+Options:
+      --json         Output in JSON format                             [boolean]
+      --yaml         Output in YAML format                             [boolean]
+      --view         Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+  -i, --interactive  Start interactive REPL mode                       [boolean]
+  -h, --help         Show help                                         [boolean]
+  -v, --version      Show version number                               [boolean]"
+`;
+
+exports[`Help and Version Commands command help afs ls --help: ls-help 1`] = `
+"afs ls [path]
+
+List directory contents
+
+Options:
+      --json          Output in JSON format                            [boolean]
+      --yaml          Output in YAML format                            [boolean]
+      --view          Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --path          Path to list                       [string] [default: "/"]
+      --depth         Maximum depth to list                [number] [default: 1]
+  -l                  Long listing format (detailed view)
+                                                      [boolean] [default: false]
+  -R                  List recursively                [boolean] [default: false]
+      --limit         Maximum number of entries to return               [number]
+      --max-children  Maximum children per directory                    [number]
+      --pattern       Glob pattern to filter entries                    [string]
+  -h, --help          Show help                                        [boolean]
+  -v, --version       Show version number                              [boolean]"
+`;
+
+exports[`Help and Version Commands command help afs read --help: read-help 1`] = `
+"afs read <path>
+
+Read file content
+
+Options:
+      --json        Output in JSON format                              [boolean]
+      --yaml        Output in YAML format                              [boolean]
+      --view        Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --path        Path to read                             [string] [required]
+      --start-line  Start line (1-indexed, inclusive)                   [number]
+      --end-line    End line (1-indexed, inclusive). -1 for end of file [number]
+  -h, --help        Show help                                          [boolean]
+  -v, --version     Show version number                                [boolean]"
+`;
+
+exports[`Help and Version Commands command help afs write --help: write-help 1`] = `
+"afs write <path> [content]
+
+Write content to file
+
+Options:
+      --json     Output in JSON format                                 [boolean]
+      --yaml     Output in YAML format                                 [boolean]
+      --view     Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --path     Path to write                               [string] [required]
+      --content  Content to write                                       [string]
+      --mode     Write mode
+  [string] [choices: "replace", "append", "prepend", "patch", "create", "update"
+                                                          ] [default: "replace"]
+      --patch    JSON array of patch operations (for mode=patch)        [string]
+      --meta     Set metadata field (key=value)                          [array]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]"
+`;
+
+exports[`Help and Version Commands command help afs delete --help: delete-help 1`] = `
+"afs delete <path>
+
+Delete file or directory
+
+Options:
+      --json       Output in JSON format                               [boolean]
+      --yaml       Output in YAML format                               [boolean]
+      --view       Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --path       Path to delete                            [string] [required]
+  -r, --recursive  Delete directory recursively       [boolean] [default: false]
+  -h, --help       Show help                                           [boolean]
+  -v, --version    Show version number                                 [boolean]"
+`;
+
+exports[`Help and Version Commands command help afs stat --help: stat-help 1`] = `
+"afs stat <path>
+
+Get file or directory info
+
+Options:
+      --json     Output in JSON format                                 [boolean]
+      --yaml     Output in YAML format                                 [boolean]
+      --view     Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --path     Path to stat                                [string] [required]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]"
+`;
+
+exports[`Help and Version Commands command help afs exec --help: exec-help 1`] = `
+"afs exec <executable_path>
+
+Execute an action
+
+Positionals:
+  executable_path  Action path to execute                    [string] [required]
+
+Options:
+      --json     Output in JSON format                                 [boolean]
+      --yaml     Output in YAML format                                 [boolean]
+      --view     Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --args     JSON arguments: --args '{"key": "value"}'              [string]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]"
+`;
+
+exports[`Help and Version Commands command help afs explain --help: explain-help 1`] = `
+"afs explain [topic]
+
+Explain AFS concepts or paths
+
+Options:
+      --json     Output in JSON format                                 [boolean]
+      --yaml     Output in YAML format                                 [boolean]
+      --view     Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --topic    Topic (mount, path, uri) or AFS path (e.g., /src)      [string]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]"
+`;
+
+exports[`Help and Version Commands command help afs serve --help: serve-help 1`] = `
+"afs serve
+
+Start AFS server (HTTP or MCP)
+
+Options:
+      --json       Output in JSON format                               [boolean]
+      --yaml       Output in YAML format                               [boolean]
+      --view       Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --host       Host to bind                  [string] [default: "localhost"]
+      --port       Port to listen on                    [number] [default: 3000]
+      --path       Base path for API                  [string] [default: "/afs"]
+      --readonly   Read-only mode                     [boolean] [default: false]
+      --cors       Enable CORS                        [boolean] [default: false]
+      --transport  Transport: http (default), mcp-stdio, or mcp-http
+           [string] [choices: "http", "mcp-stdio", "mcp-http"] [default: "http"]
+  -h, --help       Show help                                           [boolean]
+  -v, --version    Show version number                                 [boolean]"
+`;
+
+exports[`Help and Version Commands command help afs explore --help: explore-help 1`] = `
+"afs explore [path]
+
+Interactive explorer (TUI or web)
+
+Options:
+      --json     Output in JSON format                                 [boolean]
+      --yaml     Output in YAML format                                 [boolean]
+      --view     Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --path     Starting path                           [string] [default: "/"]
+      --web      Launch web-based explorer            [boolean] [default: false]
+      --port     Port for web explorer (0 = auto)          [number] [default: 0]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]"
+`;
+
+exports[`Help and Version Commands mount subcommand help afs mount --help: mount-help 1`] = `
+"afs mount
+
+Mount management
+
+Commands:
+  afs mount list              List all mounts                      [aliases: ls]
+  afs mount add <path> <uri>  Add a mount
+  afs mount remove <path>     Unmount a path                       [aliases: rm]
+  afs mount validate          Validate mount configuration
+
+Options:
+      --json     Output in JSON format                                 [boolean]
+      --yaml     Output in YAML format                                 [boolean]
+      --view     Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+  -v, --version  Show version number                                   [boolean]"
+`;
+
+exports[`Help and Version Commands mount subcommand help afs mount list --help: mount-list-help 1`] = `
+"afs mount list
+
+List all mounts
+
+Options:
+      --json       Output in JSON format                               [boolean]
+      --yaml       Output in YAML format                               [boolean]
+      --view       Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --namespace  Filter by namespace                                  [string]
+  -v, --version    Show version number                                 [boolean]"
+`;
+
+exports[`Help and Version Commands mount subcommand help afs mount add --help: mount-add-help 1`] = `
+"afs mount add <path> <uri>
+
+Add a mount
+
+Positionals:
+  path  Mount path (e.g., /src)                              [string] [required]
+  uri   Provider URI (e.g., fs://./src)                      [string] [required]
+
+Options:
+      --json            Output in JSON format                          [boolean]
+      --yaml            Output in YAML format                          [boolean]
+      --view            Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --namespace       Mount namespace                                 [string]
+      --description     Mount description                               [string]
+      --sensitive-args  Field names to treat as sensitive credentials    [array]
+  -s, --set             Set credential key=value directly (repeatable, bypasses
+                        interactive)                                     [array]
+      --terminal        Use terminal readline for credential input (instead of b
+                        rowser)                                        [boolean]
+  -f, --force           Force re-collect credentials (ignore cached values)
+                                                                       [boolean]
+  -v, --version         Show version number                            [boolean]"
+`;
+
+exports[`Help and Version Commands mount subcommand help afs mount remove --help: mount-remove-help 1`] = `
+"afs mount remove <path>
+
+Unmount a path
+
+Options:
+      --json       Output in JSON format                               [boolean]
+      --yaml       Output in YAML format                               [boolean]
+      --view       Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --path       Mount path to remove                      [string] [required]
+      --namespace  Namespace of the mount                               [string]
+  -v, --version    Show version number                                 [boolean]"
+`;
+
+exports[`Help and Version Commands mount subcommand help afs mount validate --help: mount-validate-help 1`] = `
+"afs mount validate
+
+Validate mount configuration
+
+Options:
+      --json     Output in JSON format                                 [boolean]
+      --yaml     Output in YAML format                                 [boolean]
+      --view     Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+  -v, --version  Show version number                                   [boolean]"
+`;
+
+exports[`Help and Version Commands alias command help afs list --help (ls alias): list-alias-help 1`] = `
+"afs ls [path]
+
+List directory contents
+
+Options:
+      --json          Output in JSON format                            [boolean]
+      --yaml          Output in YAML format                            [boolean]
+      --view          Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --path          Path to list                       [string] [default: "/"]
+      --depth         Maximum depth to list                [number] [default: 1]
+  -l                  Long listing format (detailed view)
+                                                      [boolean] [default: false]
+  -R                  List recursively                [boolean] [default: false]
+      --limit         Maximum number of entries to return               [number]
+      --max-children  Maximum children per directory                    [number]
+      --pattern       Glob pattern to filter entries                    [string]
+  -h, --help          Show help                                        [boolean]
+  -v, --version       Show version number                              [boolean]"
+`;
+
+exports[`Help and Version Commands alias command help afs rm --help (delete alias): rm-alias-help 1`] = `
+"afs delete <path>
+
+Delete file or directory
+
+Options:
+      --json       Output in JSON format                               [boolean]
+      --yaml       Output in YAML format                               [boolean]
+      --view       Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --path       Path to delete                            [string] [required]
+  -r, --recursive  Delete directory recursively       [boolean] [default: false]
+  -h, --help       Show help                                           [boolean]
+  -v, --version    Show version number                                 [boolean]"
+`;
+
+exports[`Help and Version Commands exec with path help afs exec /mcp/tools/echo --help shows tool description: exec-mcp-tool-help 1`] = `
+"afs exec /mcp/tools/echo
+
+Echoes back the input string
+
+Action Parameters:
+      --message  Message to echo                             [string] [required]
+
+Positionals:
+  executable_path  Action path to execute                    [string] [required]
+
+Options:
+      --json     Output in JSON format                                 [boolean]
+      --yaml     Output in YAML format                                 [boolean]
+      --view     Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --args     JSON arguments: --args '{"key": "value"}'              [string]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]"
+`;
+
+exports[`Help and Version Commands exec with path help afs exec /sqlite/users/.actions/count --help shows action description: exec-sqlite-action-help 1`] = `
+"afs exec /sqlite/users/.actions/count
+
+Get the total row count for this table
+
+Positionals:
+  executable_path  Action path to execute                    [string] [required]
+
+Options:
+      --json     Output in JSON format                                 [boolean]
+      --yaml     Output in YAML format                                 [boolean]
+      --view     Output view format
+              [string] [choices: "default", "llm", "human"] [default: "default"]
+      --args     JSON arguments: --args '{"key": "value"}'              [string]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]"
+`;

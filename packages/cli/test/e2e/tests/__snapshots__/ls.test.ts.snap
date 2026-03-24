@@ -1,0 +1,3601 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`ls command view=human root (/) depth=0: ls-human-root-d0 1`] = `""`;
+
+exports[`ls command view=human root (/) depth=1: ls-human-root-d1 1`] = `
+"├── 📁 sqlite
+├── 📁 json
+├── 📁 mcp
+├── 📁 git
+└── 📁 fs"
+`;
+
+exports[`ls command view=human root (/) depth=2: ls-human-root-d2 1`] = `
+"├── 📁 sqlite
+│   ├── 📁 comments (sqlite:table)
+│   ├── 📁 posts (sqlite:table)
+│   └── 📁 users (sqlite:table)
+├── 📁 json
+│   ├── 📁 config (json:object)
+│   ├── 📁 users (json:array)
+│   └── 📁 metadata (json:object)
+├── 📁 mcp
+│   ├── 📄 WORLD.md (afs:document)
+│   ├── 📁 tools (afs:node)
+│   ├── 📁 prompts (afs:node)
+│   └── 📁 resources (afs:node)
+├── 📁 git
+│   └── 📁 main (git:branch)
+└── 📁 fs
+    ├── 📄 README.md (fs:file)  91B
+    ├── 📁 docs (afs:node)
+    ├── 📁 src (afs:node)
+    └── 📁 test (fs:directory)"
+`;
+
+exports[`ls command view=human root (/) depth=3: ls-human-root-d3 1`] = `
+"├── 📁 sqlite
+│   ├── 📁 comments (sqlite:table)
+│   │   ├── 📄 1 (sqlite:row)
+│   │   └── 📄 2 (sqlite:row)
+│   ├── 📁 posts (sqlite:table)
+│   │   ├── 📄 1 (sqlite:row)
+│   │   ├── 📄 2 (sqlite:row)
+│   │   └── 📄 3 (sqlite:row)
+│   └── 📁 users (sqlite:table)
+│       ├── 📄 1 (sqlite:row)
+│       └── 📄 2 (sqlite:row)
+├── 📁 json
+│   ├── 📁 config (json:object)
+│   │   ├── 📄 name (json:value)
+│   │   ├── 📄 version (json:value)
+│   │   └── 📁 settings (json:object)
+│   ├── 📁 users (json:array)
+│   │   ├── 📁 0 (json:object)
+│   │   └── 📁 1 (json:object)
+│   └── 📁 metadata (json:object)
+│       ├── 📄 created (json:value)
+│       └── 📁 tags (json:array)
+├── 📁 mcp
+│   ├── 📄 WORLD.md (afs:document)
+│   ├── 📁 tools (afs:node)
+│   │   ├── 📄 echo (mcp:tool)
+│   │   ├── 📄 get-annotated-message (mcp:tool)
+│   │   ├── 📄 get-env (mcp:tool)
+│   │   ├── 📄 get-resource-links (mcp:tool)
+│   │   ├── 📄 get-resource-reference (mcp:tool)
+│   │   ├── 📄 get-structured-content (mcp:tool)
+│   │   ├── 📄 get-sum (mcp:tool)
+│   │   ├── 📄 get-tiny-image (mcp:tool)
+│   │   ├── 📄 gzip-file-as-resource (mcp:tool)
+│   │   ├── 📄 toggle-simulated-logging (mcp:tool)
+│   │   ├── 📄 toggle-subscriber-updates (mcp:tool)
+│   │   ├── 📄 trigger-long-running-operation (mcp:tool)
+│   │   └── 📄 simulate-research-query (mcp:tool)
+│   ├── 📁 prompts (afs:node)
+│   │   ├── 📄 simple-prompt (mcp:prompt)
+│   │   ├── 📄 args-prompt (mcp:prompt)
+│   │   ├── 📄 completable-prompt (mcp:prompt)
+│   │   └── 📄 resource-prompt (mcp:prompt)
+│   └── 📁 resources (afs:node)
+│       └── 📁 resource (afs:node)
+├── 📁 git
+│   └── 📁 main (git:branch)
+│       ├── 📄 README.md (git:file)  99B
+│       ├── 📁 docs (git:directory)
+│       ├── 📄 package.json (git:file)  95B
+│       └── 📁 src (git:directory)
+└── 📁 fs
+    ├── 📄 README.md (fs:file)  91B
+    ├── 📁 docs (afs:node)
+    │   ├── 📁 api (fs:directory)
+    │   └── 📄 guide.md (afs:node)  91B
+    ├── 📁 src (afs:node)
+    │   ├── 📁 core (fs:directory)
+    │   ├── 📄 index.ts (fs:file)  149B
+    │   └── 📁 utils (fs:directory)
+    └── 📁 test (fs:directory)
+        └── 📄 sample.test.ts (fs:file)  204B"
+`;
+
+exports[`ls command view=human fs provider (/fs) depth=0: ls-human-fs-d0 1`] = `""`;
+
+exports[`ls command view=human fs provider (/fs) depth=1: ls-human-fs-d1 1`] = `
+"└── 📁 fs
+    ├── 📄 README.md (fs:file)  91B
+    ├── 📁 docs (afs:node)
+    ├── 📁 src (afs:node)
+    └── 📁 test (fs:directory)"
+`;
+
+exports[`ls command view=human fs provider (/fs) depth=2: ls-human-fs-d2 1`] = `
+"└── 📁 fs
+    ├── 📄 README.md (fs:file)  91B
+    ├── 📁 docs (afs:node)
+    │   ├── 📁 api (fs:directory)
+    │   └── 📄 guide.md (afs:node)  91B
+    ├── 📁 src (afs:node)
+    │   ├── 📁 core (fs:directory)
+    │   ├── 📄 index.ts (fs:file)  149B
+    │   └── 📁 utils (fs:directory)
+    └── 📁 test (fs:directory)
+        └── 📄 sample.test.ts (fs:file)  204B"
+`;
+
+exports[`ls command view=human fs provider (/fs) depth=3: ls-human-fs-d3 1`] = `
+"└── 📁 fs
+    ├── 📄 README.md (fs:file)  91B
+    ├── 📁 docs (afs:node)
+    │   ├── 📁 api (fs:directory)
+    │   │   ├── 📄 overview.md (fs:file)  95B
+    │   │   └── 📁 reference (fs:directory)
+    │   └── 📄 guide.md (afs:node)  91B
+    ├── 📁 src (afs:node)
+    │   ├── 📁 core (fs:directory)
+    │   │   └── 📄 main.ts (fs:file)  111B
+    │   ├── 📄 index.ts (fs:file)  149B
+    │   └── 📁 utils (fs:directory)
+    │       ├── 📄 constants.ts (fs:file)  126B
+    │       └── 📄 helpers.ts (fs:file)  143B
+    └── 📁 test (fs:directory)
+        └── 📄 sample.test.ts (fs:file)  204B"
+`;
+
+exports[`ls command view=human fs nested (/fs/docs) depth=0: ls-human-fs-docs-d0 1`] = `""`;
+
+exports[`ls command view=human fs nested (/fs/docs) depth=1: ls-human-fs-docs-d1 1`] = `
+"└── 📁 fs
+    └── 📁 docs
+        ├── 📁 api (fs:directory)
+        └── 📄 guide.md (afs:node)  91B"
+`;
+
+exports[`ls command view=human fs nested (/fs/docs) depth=2: ls-human-fs-docs-d2 1`] = `
+"└── 📁 fs
+    └── 📁 docs
+        ├── 📁 api (fs:directory)
+        │   ├── 📄 overview.md (fs:file)  95B
+        │   └── 📁 reference (fs:directory)
+        └── 📄 guide.md (afs:node)  91B"
+`;
+
+exports[`ls command view=human fs nested (/fs/docs) depth=3: ls-human-fs-docs-d3 1`] = `
+"└── 📁 fs
+    └── 📁 docs
+        ├── 📁 api (fs:directory)
+        │   ├── 📄 overview.md (fs:file)  95B
+        │   └── 📁 reference (fs:directory)
+        │       ├── 📁 advanced (fs:directory)
+        │       └── 📄 core.md (fs:file)  109B
+        └── 📄 guide.md (afs:node)  91B"
+`;
+
+exports[`ls command view=human json provider (/json) depth=0: ls-human-json-d0 1`] = `""`;
+
+exports[`ls command view=human json provider (/json) depth=1: ls-human-json-d1 1`] = `
+"└── 📁 json
+    ├── 📁 config (json:object)
+    ├── 📁 users (json:array)
+    └── 📁 metadata (json:object)"
+`;
+
+exports[`ls command view=human json provider (/json) depth=2: ls-human-json-d2 1`] = `
+"└── 📁 json
+    ├── 📁 config (json:object)
+    │   ├── 📄 name (json:value)
+    │   ├── 📄 version (json:value)
+    │   └── 📁 settings (json:object)
+    ├── 📁 users (json:array)
+    │   ├── 📁 0 (json:object)
+    │   └── 📁 1 (json:object)
+    └── 📁 metadata (json:object)
+        ├── 📄 created (json:value)
+        └── 📁 tags (json:array)"
+`;
+
+exports[`ls command view=human json provider (/json) depth=3: ls-human-json-d3 1`] = `
+"└── 📁 json
+    ├── 📁 config (json:object)
+    │   ├── 📄 name (json:value)
+    │   ├── 📄 version (json:value)
+    │   └── 📁 settings (json:object)
+    │       ├── 📄 debug (json:value)
+    │       └── 📁 logging (json:object)
+    ├── 📁 users (json:array)
+    │   ├── 📁 0 (json:object)
+    │   │   ├── 📄 id (json:value)
+    │   │   ├── 📄 name (json:value)
+    │   │   └── 📁 profile (json:object)
+    │   └── 📁 1 (json:object)
+    │       ├── 📄 id (json:value)
+    │       ├── 📄 name (json:value)
+    │       └── 📁 profile (json:object)
+    └── 📁 metadata (json:object)
+        ├── 📄 created (json:value)
+        └── 📁 tags (json:array)
+            ├── 📄 0 (json:value)
+            ├── 📄 1 (json:value)
+            └── 📄 2 (json:value)"
+`;
+
+exports[`ls command view=human json nested (/json/config) depth=0: ls-human-json-config-d0 1`] = `""`;
+
+exports[`ls command view=human json nested (/json/config) depth=1: ls-human-json-config-d1 1`] = `
+"└── 📁 json
+    └── 📁 config
+        ├── 📄 name (json:value)
+        ├── 📄 version (json:value)
+        └── 📁 settings (json:object)"
+`;
+
+exports[`ls command view=human json nested (/json/config) depth=2: ls-human-json-config-d2 1`] = `
+"└── 📁 json
+    └── 📁 config
+        ├── 📄 name (json:value)
+        ├── 📄 version (json:value)
+        └── 📁 settings (json:object)
+            ├── 📄 debug (json:value)
+            └── 📁 logging (json:object)"
+`;
+
+exports[`ls command view=human json nested (/json/config) depth=3: ls-human-json-config-d3 1`] = `
+"└── 📁 json
+    └── 📁 config
+        ├── 📄 name (json:value)
+        ├── 📄 version (json:value)
+        └── 📁 settings (json:object)
+            ├── 📄 debug (json:value)
+            └── 📁 logging (json:object)
+                ├── 📄 level (json:value)
+                ├── 📄 format (json:value)
+                └── 📁 options (json:object)"
+`;
+
+exports[`ls command view=human sqlite provider (/sqlite) depth=0: ls-human-sqlite-d0 1`] = `""`;
+
+exports[`ls command view=human sqlite provider (/sqlite) depth=1: ls-human-sqlite-d1 1`] = `
+"└── 📁 sqlite
+    ├── 📁 comments (sqlite:table)
+    ├── 📁 posts (sqlite:table)
+    └── 📁 users (sqlite:table)"
+`;
+
+exports[`ls command view=human sqlite provider (/sqlite) depth=2: ls-human-sqlite-d2 1`] = `
+"└── 📁 sqlite
+    ├── 📁 comments (sqlite:table)
+    │   ├── 📄 1 (sqlite:row)
+    │   └── 📄 2 (sqlite:row)
+    ├── 📁 posts (sqlite:table)
+    │   ├── 📄 1 (sqlite:row)
+    │   ├── 📄 2 (sqlite:row)
+    │   └── 📄 3 (sqlite:row)
+    └── 📁 users (sqlite:table)
+        ├── 📄 1 (sqlite:row)
+        └── 📄 2 (sqlite:row)"
+`;
+
+exports[`ls command view=human sqlite provider (/sqlite) depth=3: ls-human-sqlite-d3 1`] = `
+"└── 📁 sqlite
+    ├── 📁 comments (sqlite:table)
+    │   ├── 📄 1 (sqlite:row)
+    │   └── 📄 2 (sqlite:row)
+    ├── 📁 posts (sqlite:table)
+    │   ├── 📄 1 (sqlite:row)
+    │   ├── 📄 2 (sqlite:row)
+    │   └── 📄 3 (sqlite:row)
+    └── 📁 users (sqlite:table)
+        ├── 📄 1 (sqlite:row)
+        └── 📄 2 (sqlite:row)"
+`;
+
+exports[`ls command view=human sqlite nested (/sqlite/users) depth=0: ls-human-sqlite-users-d0 1`] = `""`;
+
+exports[`ls command view=human sqlite nested (/sqlite/users) depth=1: ls-human-sqlite-users-d1 1`] = `
+"└── 📁 sqlite
+    └── 📁 users
+        ├── 📄 1 (sqlite:row)
+        └── 📄 2 (sqlite:row)"
+`;
+
+exports[`ls command view=human sqlite nested (/sqlite/users) depth=2: ls-human-sqlite-users-d2 1`] = `
+"└── 📁 sqlite
+    └── 📁 users
+        ├── 📄 1 (sqlite:row)
+        └── 📄 2 (sqlite:row)"
+`;
+
+exports[`ls command view=human sqlite nested (/sqlite/users) depth=3: ls-human-sqlite-users-d3 1`] = `
+"└── 📁 sqlite
+    └── 📁 users
+        ├── 📄 1 (sqlite:row)
+        └── 📄 2 (sqlite:row)"
+`;
+
+exports[`ls command view=llm root (/) depth=0: ls-llm-root-d0 1`] = `"TOTAL 0"`;
+
+exports[`ls command view=llm root (/) depth=1: ls-llm-root-d1 1`] = `
+"ENTRY /sqlite CHILDREN=-1
+ENTRY /json CHILDREN=-1
+ENTRY /mcp CHILDREN=-1
+ENTRY /git CHILDREN=-1
+ENTRY /fs CHILDREN=-1
+TOTAL 5"
+`;
+
+exports[`ls command view=llm root (/) depth=2: ls-llm-root-d2 1`] = `
+"ENTRY /sqlite/comments KIND=sqlite:table CHILDREN=2
+ENTRY /sqlite/posts KIND=sqlite:table CHILDREN=3
+ENTRY /sqlite/users KIND=sqlite:table CHILDREN=2
+ENTRY /json/config KIND=json:object CHILDREN=3
+ENTRY /json/users KIND=json:array CHILDREN=2
+ENTRY /json/metadata KIND=json:object CHILDREN=2
+ENTRY /mcp/WORLD.md KIND=afs:document
+ENTRY /mcp/tools KIND=afs:node CHILDREN=13
+ENTRY /mcp/prompts KIND=afs:node CHILDREN=4
+ENTRY /mcp/resources KIND=afs:node CHILDREN=7
+ENTRY /git/main KIND=git:branch CHILDREN=4
+ENTRY /fs/README.md KIND=fs:file SIZE=91
+ENTRY /fs/docs KIND=afs:node CHILDREN=2
+ENTRY /fs/src KIND=afs:node CHILDREN=3
+ENTRY /fs/test KIND=fs:directory CHILDREN=1
+TOTAL 15"
+`;
+
+exports[`ls command view=llm root (/) depth=3: ls-llm-root-d3 1`] = `
+"ENTRY /sqlite/comments KIND=sqlite:table CHILDREN=2
+ENTRY /sqlite/posts KIND=sqlite:table CHILDREN=3
+ENTRY /sqlite/users KIND=sqlite:table CHILDREN=2
+ENTRY /sqlite/comments/1 KIND=sqlite:row
+ENTRY /sqlite/comments/2 KIND=sqlite:row
+ENTRY /sqlite/posts/1 KIND=sqlite:row
+ENTRY /sqlite/posts/2 KIND=sqlite:row
+ENTRY /sqlite/posts/3 KIND=sqlite:row
+ENTRY /sqlite/users/1 KIND=sqlite:row
+ENTRY /sqlite/users/2 KIND=sqlite:row
+ENTRY /json/config KIND=json:object CHILDREN=3
+ENTRY /json/users KIND=json:array CHILDREN=2
+ENTRY /json/metadata KIND=json:object CHILDREN=2
+ENTRY /json/config/name KIND=json:value
+ENTRY /json/config/version KIND=json:value
+ENTRY /json/config/settings KIND=json:object CHILDREN=2
+ENTRY /json/users/0 KIND=json:object CHILDREN=3
+ENTRY /json/users/1 KIND=json:object CHILDREN=3
+ENTRY /json/metadata/created KIND=json:value
+ENTRY /json/metadata/tags KIND=json:array CHILDREN=3
+ENTRY /mcp/WORLD.md KIND=afs:document
+ENTRY /mcp/tools KIND=afs:node CHILDREN=13
+ENTRY /mcp/prompts KIND=afs:node CHILDREN=4
+ENTRY /mcp/resources KIND=afs:node CHILDREN=7
+ENTRY /mcp/tools/echo KIND=mcp:tool
+ENTRY /mcp/tools/get-annotated-message KIND=mcp:tool
+ENTRY /mcp/tools/get-env KIND=mcp:tool
+ENTRY /mcp/tools/get-resource-links KIND=mcp:tool
+ENTRY /mcp/tools/get-resource-reference KIND=mcp:tool
+ENTRY /mcp/tools/get-structured-content KIND=mcp:tool
+ENTRY /mcp/tools/get-sum KIND=mcp:tool
+ENTRY /mcp/tools/get-tiny-image KIND=mcp:tool
+ENTRY /mcp/tools/gzip-file-as-resource KIND=mcp:tool
+ENTRY /mcp/tools/toggle-simulated-logging KIND=mcp:tool
+ENTRY /mcp/tools/toggle-subscriber-updates KIND=mcp:tool
+ENTRY /mcp/tools/trigger-long-running-operation KIND=mcp:tool
+ENTRY /mcp/tools/simulate-research-query KIND=mcp:tool
+ENTRY /mcp/prompts/simple-prompt KIND=mcp:prompt
+ENTRY /mcp/prompts/args-prompt KIND=mcp:prompt
+ENTRY /mcp/prompts/completable-prompt KIND=mcp:prompt
+ENTRY /mcp/prompts/resource-prompt KIND=mcp:prompt
+ENTRY /mcp/resources/resource KIND=afs:node CHILDREN=2
+ENTRY /git/main KIND=git:branch CHILDREN=4
+ENTRY /git/main/README.md KIND=git:file SIZE=99
+ENTRY /git/main/docs KIND=git:directory CHILDREN=2
+ENTRY /git/main/package.json KIND=git:file SIZE=95
+ENTRY /git/main/src KIND=git:directory CHILDREN=3
+ENTRY /fs/README.md KIND=fs:file SIZE=91
+ENTRY /fs/docs KIND=afs:node CHILDREN=2
+ENTRY /fs/src KIND=afs:node CHILDREN=3
+ENTRY /fs/test KIND=fs:directory CHILDREN=1
+ENTRY /fs/docs/api KIND=fs:directory CHILDREN=2
+ENTRY /fs/docs/guide.md KIND=afs:node SIZE=91
+ENTRY /fs/src/core KIND=fs:directory CHILDREN=1
+ENTRY /fs/src/index.ts KIND=fs:file SIZE=149
+ENTRY /fs/src/utils KIND=fs:directory CHILDREN=2
+ENTRY /fs/test/sample.test.ts KIND=fs:file SIZE=204
+TOTAL 57"
+`;
+
+exports[`ls command view=llm fs provider (/fs) depth=0: ls-llm-fs-d0 1`] = `"TOTAL 0"`;
+
+exports[`ls command view=llm fs provider (/fs) depth=1: ls-llm-fs-d1 1`] = `
+"ENTRY /fs/README.md KIND=fs:file SIZE=91
+ENTRY /fs/docs KIND=afs:node CHILDREN=2
+ENTRY /fs/src KIND=afs:node CHILDREN=3
+ENTRY /fs/test KIND=fs:directory CHILDREN=1
+TOTAL 4"
+`;
+
+exports[`ls command view=llm fs provider (/fs) depth=2: ls-llm-fs-d2 1`] = `
+"ENTRY /fs/README.md KIND=fs:file SIZE=91
+ENTRY /fs/docs KIND=afs:node CHILDREN=2
+ENTRY /fs/src KIND=afs:node CHILDREN=3
+ENTRY /fs/test KIND=fs:directory CHILDREN=1
+ENTRY /fs/docs/api KIND=fs:directory CHILDREN=2
+ENTRY /fs/docs/guide.md KIND=afs:node SIZE=91
+ENTRY /fs/src/core KIND=fs:directory CHILDREN=1
+ENTRY /fs/src/index.ts KIND=fs:file SIZE=149
+ENTRY /fs/src/utils KIND=fs:directory CHILDREN=2
+ENTRY /fs/test/sample.test.ts KIND=fs:file SIZE=204
+TOTAL 10"
+`;
+
+exports[`ls command view=llm fs provider (/fs) depth=3: ls-llm-fs-d3 1`] = `
+"ENTRY /fs/README.md KIND=fs:file SIZE=91
+ENTRY /fs/docs KIND=afs:node CHILDREN=2
+ENTRY /fs/src KIND=afs:node CHILDREN=3
+ENTRY /fs/test KIND=fs:directory CHILDREN=1
+ENTRY /fs/docs/api KIND=fs:directory CHILDREN=2
+ENTRY /fs/docs/guide.md KIND=afs:node SIZE=91
+ENTRY /fs/src/core KIND=fs:directory CHILDREN=1
+ENTRY /fs/src/index.ts KIND=fs:file SIZE=149
+ENTRY /fs/src/utils KIND=fs:directory CHILDREN=2
+ENTRY /fs/test/sample.test.ts KIND=fs:file SIZE=204
+ENTRY /fs/docs/api/overview.md KIND=fs:file SIZE=95
+ENTRY /fs/docs/api/reference KIND=fs:directory CHILDREN=2
+ENTRY /fs/src/core/main.ts KIND=fs:file SIZE=111
+ENTRY /fs/src/utils/constants.ts KIND=fs:file SIZE=126
+ENTRY /fs/src/utils/helpers.ts KIND=fs:file SIZE=143
+TOTAL 15"
+`;
+
+exports[`ls command view=llm fs nested (/fs/docs) depth=0: ls-llm-fs-docs-d0 1`] = `"TOTAL 0"`;
+
+exports[`ls command view=llm fs nested (/fs/docs) depth=1: ls-llm-fs-docs-d1 1`] = `
+"ENTRY /fs/docs/api KIND=fs:directory CHILDREN=2
+ENTRY /fs/docs/guide.md KIND=afs:node SIZE=91
+TOTAL 2"
+`;
+
+exports[`ls command view=llm fs nested (/fs/docs) depth=2: ls-llm-fs-docs-d2 1`] = `
+"ENTRY /fs/docs/api KIND=fs:directory CHILDREN=2
+ENTRY /fs/docs/guide.md KIND=afs:node SIZE=91
+ENTRY /fs/docs/api/overview.md KIND=fs:file SIZE=95
+ENTRY /fs/docs/api/reference KIND=fs:directory CHILDREN=2
+TOTAL 4"
+`;
+
+exports[`ls command view=llm fs nested (/fs/docs) depth=3: ls-llm-fs-docs-d3 1`] = `
+"ENTRY /fs/docs/api KIND=fs:directory CHILDREN=2
+ENTRY /fs/docs/guide.md KIND=afs:node SIZE=91
+ENTRY /fs/docs/api/overview.md KIND=fs:file SIZE=95
+ENTRY /fs/docs/api/reference KIND=fs:directory CHILDREN=2
+ENTRY /fs/docs/api/reference/advanced KIND=fs:directory CHILDREN=2
+ENTRY /fs/docs/api/reference/core.md KIND=fs:file SIZE=109
+TOTAL 6"
+`;
+
+exports[`ls command view=llm json provider (/json) depth=0: ls-llm-json-d0 1`] = `"TOTAL 0"`;
+
+exports[`ls command view=llm json provider (/json) depth=1: ls-llm-json-d1 1`] = `
+"ENTRY /json/config KIND=json:object CHILDREN=3
+ENTRY /json/users KIND=json:array CHILDREN=2
+ENTRY /json/metadata KIND=json:object CHILDREN=2
+TOTAL 3"
+`;
+
+exports[`ls command view=llm json provider (/json) depth=2: ls-llm-json-d2 1`] = `
+"ENTRY /json/config KIND=json:object CHILDREN=3
+ENTRY /json/users KIND=json:array CHILDREN=2
+ENTRY /json/metadata KIND=json:object CHILDREN=2
+ENTRY /json/config/name KIND=json:value
+ENTRY /json/config/version KIND=json:value
+ENTRY /json/config/settings KIND=json:object CHILDREN=2
+ENTRY /json/users/0 KIND=json:object CHILDREN=3
+ENTRY /json/users/1 KIND=json:object CHILDREN=3
+ENTRY /json/metadata/created KIND=json:value
+ENTRY /json/metadata/tags KIND=json:array CHILDREN=3
+TOTAL 10"
+`;
+
+exports[`ls command view=llm json provider (/json) depth=3: ls-llm-json-d3 1`] = `
+"ENTRY /json/config KIND=json:object CHILDREN=3
+ENTRY /json/users KIND=json:array CHILDREN=2
+ENTRY /json/metadata KIND=json:object CHILDREN=2
+ENTRY /json/config/name KIND=json:value
+ENTRY /json/config/version KIND=json:value
+ENTRY /json/config/settings KIND=json:object CHILDREN=2
+ENTRY /json/users/0 KIND=json:object CHILDREN=3
+ENTRY /json/users/1 KIND=json:object CHILDREN=3
+ENTRY /json/metadata/created KIND=json:value
+ENTRY /json/metadata/tags KIND=json:array CHILDREN=3
+ENTRY /json/config/settings/debug KIND=json:value
+ENTRY /json/config/settings/logging KIND=json:object CHILDREN=3
+ENTRY /json/users/0/id KIND=json:value
+ENTRY /json/users/0/name KIND=json:value
+ENTRY /json/users/0/profile KIND=json:object CHILDREN=2
+ENTRY /json/users/1/id KIND=json:value
+ENTRY /json/users/1/name KIND=json:value
+ENTRY /json/users/1/profile KIND=json:object CHILDREN=2
+ENTRY /json/metadata/tags/0 KIND=json:value
+ENTRY /json/metadata/tags/1 KIND=json:value
+ENTRY /json/metadata/tags/2 KIND=json:value
+TOTAL 21"
+`;
+
+exports[`ls command view=llm json nested (/json/config) depth=0: ls-llm-json-config-d0 1`] = `"TOTAL 0"`;
+
+exports[`ls command view=llm json nested (/json/config) depth=1: ls-llm-json-config-d1 1`] = `
+"ENTRY /json/config/name KIND=json:value
+ENTRY /json/config/version KIND=json:value
+ENTRY /json/config/settings KIND=json:object CHILDREN=2
+TOTAL 3"
+`;
+
+exports[`ls command view=llm json nested (/json/config) depth=2: ls-llm-json-config-d2 1`] = `
+"ENTRY /json/config/name KIND=json:value
+ENTRY /json/config/version KIND=json:value
+ENTRY /json/config/settings KIND=json:object CHILDREN=2
+ENTRY /json/config/settings/debug KIND=json:value
+ENTRY /json/config/settings/logging KIND=json:object CHILDREN=3
+TOTAL 5"
+`;
+
+exports[`ls command view=llm json nested (/json/config) depth=3: ls-llm-json-config-d3 1`] = `
+"ENTRY /json/config/name KIND=json:value
+ENTRY /json/config/version KIND=json:value
+ENTRY /json/config/settings KIND=json:object CHILDREN=2
+ENTRY /json/config/settings/debug KIND=json:value
+ENTRY /json/config/settings/logging KIND=json:object CHILDREN=3
+ENTRY /json/config/settings/logging/level KIND=json:value
+ENTRY /json/config/settings/logging/format KIND=json:value
+ENTRY /json/config/settings/logging/options KIND=json:object CHILDREN=2
+TOTAL 8"
+`;
+
+exports[`ls command view=llm sqlite provider (/sqlite) depth=0: ls-llm-sqlite-d0 1`] = `"TOTAL 0"`;
+
+exports[`ls command view=llm sqlite provider (/sqlite) depth=1: ls-llm-sqlite-d1 1`] = `
+"ENTRY /sqlite/comments KIND=sqlite:table CHILDREN=2
+ENTRY /sqlite/posts KIND=sqlite:table CHILDREN=3
+ENTRY /sqlite/users KIND=sqlite:table CHILDREN=2
+TOTAL 3"
+`;
+
+exports[`ls command view=llm sqlite provider (/sqlite) depth=2: ls-llm-sqlite-d2 1`] = `
+"ENTRY /sqlite/comments KIND=sqlite:table CHILDREN=2
+ENTRY /sqlite/posts KIND=sqlite:table CHILDREN=3
+ENTRY /sqlite/users KIND=sqlite:table CHILDREN=2
+ENTRY /sqlite/comments/1 KIND=sqlite:row
+ENTRY /sqlite/comments/2 KIND=sqlite:row
+ENTRY /sqlite/posts/1 KIND=sqlite:row
+ENTRY /sqlite/posts/2 KIND=sqlite:row
+ENTRY /sqlite/posts/3 KIND=sqlite:row
+ENTRY /sqlite/users/1 KIND=sqlite:row
+ENTRY /sqlite/users/2 KIND=sqlite:row
+TOTAL 10"
+`;
+
+exports[`ls command view=llm sqlite provider (/sqlite) depth=3: ls-llm-sqlite-d3 1`] = `
+"ENTRY /sqlite/comments KIND=sqlite:table CHILDREN=2
+ENTRY /sqlite/posts KIND=sqlite:table CHILDREN=3
+ENTRY /sqlite/users KIND=sqlite:table CHILDREN=2
+ENTRY /sqlite/comments/1 KIND=sqlite:row
+ENTRY /sqlite/comments/2 KIND=sqlite:row
+ENTRY /sqlite/posts/1 KIND=sqlite:row
+ENTRY /sqlite/posts/2 KIND=sqlite:row
+ENTRY /sqlite/posts/3 KIND=sqlite:row
+ENTRY /sqlite/users/1 KIND=sqlite:row
+ENTRY /sqlite/users/2 KIND=sqlite:row
+TOTAL 10"
+`;
+
+exports[`ls command view=llm sqlite nested (/sqlite/users) depth=0: ls-llm-sqlite-users-d0 1`] = `"TOTAL 0"`;
+
+exports[`ls command view=llm sqlite nested (/sqlite/users) depth=1: ls-llm-sqlite-users-d1 1`] = `
+"ENTRY /sqlite/users/1 KIND=sqlite:row
+ENTRY /sqlite/users/2 KIND=sqlite:row
+TOTAL 2"
+`;
+
+exports[`ls command view=llm sqlite nested (/sqlite/users) depth=2: ls-llm-sqlite-users-d2 1`] = `
+"ENTRY /sqlite/users/1 KIND=sqlite:row
+ENTRY /sqlite/users/2 KIND=sqlite:row
+TOTAL 2"
+`;
+
+exports[`ls command view=llm sqlite nested (/sqlite/users) depth=3: ls-llm-sqlite-users-d3 1`] = `
+"ENTRY /sqlite/users/1 KIND=sqlite:row
+ENTRY /sqlite/users/2 KIND=sqlite:row
+TOTAL 2"
+`;
+
+exports[`ls command view=json root (/) depth=0: ls-json-root-d0 1`] = `
+"{
+  "entries": [],
+  "total": 0
+}"
+`;
+
+exports[`ls command view=json root (/) depth=1: ls-json-root-d1 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/sqlite",
+      "meta": {
+        "childrenCount": -1,
+        "description": "E2E Test SQLite Provider"
+      }
+    },
+    {
+      "path": "/json",
+      "meta": {
+        "childrenCount": -1,
+        "description": "E2E Test JSON Provider"
+      }
+    },
+    {
+      "path": "/mcp",
+      "meta": {
+        "childrenCount": -1,
+        "description": "E2E Test MCP Provider"
+      }
+    },
+    {
+      "path": "/git",
+      "meta": {
+        "childrenCount": -1,
+        "description": "E2E Test Git Provider"
+      }
+    },
+    {
+      "path": "/fs",
+      "meta": {
+        "childrenCount": -1,
+        "description": "E2E Test FS Provider"
+      }
+    }
+  ],
+  "total": 5
+}"
+`;
+
+exports[`ls command view=json root (/) depth=2: ls-json-root-d2 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/sqlite/comments",
+      "meta": {
+        "kind": "sqlite:table",
+        "description": "Table: comments (4 columns)",
+        "table": "comments",
+        "columnCount": 4,
+        "primaryKey": [
+          "id"
+        ],
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/sqlite/posts",
+      "meta": {
+        "kind": "sqlite:table",
+        "description": "Table: posts (5 columns)",
+        "table": "posts",
+        "columnCount": 5,
+        "primaryKey": [
+          "id"
+        ],
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/sqlite/users",
+      "meta": {
+        "kind": "sqlite:table",
+        "description": "Table: users (4 columns)",
+        "table": "users",
+        "columnCount": 4,
+        "primaryKey": [
+          "id"
+        ],
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/json/config",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/json/users",
+      "meta": {
+        "kind": "json:array",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/json/metadata",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/mcp/WORLD.md",
+      "meta": {
+        "kind": "afs:document",
+        "kinds": [
+          "afs:document",
+          "afs:node"
+        ],
+        "description": "MCP Server World Documentation",
+        "mimeType": "text/markdown",
+        "mcp": {
+          "type": "world"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools",
+      "meta": {
+        "kind": "afs:node",
+        "kinds": [
+          "afs:node"
+        ],
+        "description": "13 tools available",
+        "childrenCount": 13
+      }
+    },
+    {
+      "path": "/mcp/prompts",
+      "meta": {
+        "kind": "afs:node",
+        "kinds": [
+          "afs:node"
+        ],
+        "description": "4 prompts available",
+        "childrenCount": 4
+      }
+    },
+    {
+      "path": "/mcp/resources",
+      "meta": {
+        "kind": "afs:node",
+        "kinds": [
+          "afs:node"
+        ],
+        "description": "7 resources available",
+        "childrenCount": 7
+      }
+    },
+    {
+      "path": "/git/main",
+      "meta": {
+        "kind": "git:branch",
+        "childrenCount": 4
+      }
+    },
+    {
+      "path": "/fs/README.md",
+      "meta": {
+        "size": 91,
+        "kind": "fs:file",
+        "mimeType": "text/markdown"
+      }
+    },
+    {
+      "path": "/fs/docs",
+      "meta": {
+        "kind": "afs:node",
+        "name": "Documentation",
+        "description": "Project documentation directory",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/fs/src",
+      "meta": {
+        "kind": "afs:node",
+        "name": "Source Code",
+        "description": "Source code directory",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/fs/test",
+      "meta": {
+        "childrenCount": 1,
+        "kind": "fs:directory"
+      }
+    }
+  ],
+  "total": 15
+}"
+`;
+
+exports[`ls command view=json root (/) depth=3: ls-json-root-d3 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/sqlite/comments",
+      "meta": {
+        "kind": "sqlite:table",
+        "description": "Table: comments (4 columns)",
+        "table": "comments",
+        "columnCount": 4,
+        "primaryKey": [
+          "id"
+        ],
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/sqlite/posts",
+      "meta": {
+        "kind": "sqlite:table",
+        "description": "Table: posts (5 columns)",
+        "table": "posts",
+        "columnCount": 5,
+        "primaryKey": [
+          "id"
+        ],
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/sqlite/users",
+      "meta": {
+        "kind": "sqlite:table",
+        "description": "Table: users (4 columns)",
+        "table": "users",
+        "columnCount": 4,
+        "primaryKey": [
+          "id"
+        ],
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/sqlite/comments/1",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "comments",
+        "primaryKey": "id",
+        "primaryKeyValue": "1"
+      }
+    },
+    {
+      "path": "/sqlite/comments/2",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "comments",
+        "primaryKey": "id",
+        "primaryKeyValue": "2"
+      }
+    },
+    {
+      "path": "/sqlite/posts/1",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "posts",
+        "primaryKey": "id",
+        "primaryKeyValue": "1"
+      }
+    },
+    {
+      "path": "/sqlite/posts/2",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "posts",
+        "primaryKey": "id",
+        "primaryKeyValue": "2"
+      }
+    },
+    {
+      "path": "/sqlite/posts/3",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "posts",
+        "primaryKey": "id",
+        "primaryKeyValue": "3"
+      }
+    },
+    {
+      "path": "/sqlite/users/1",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "users",
+        "primaryKey": "id",
+        "primaryKeyValue": "1"
+      }
+    },
+    {
+      "path": "/sqlite/users/2",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "users",
+        "primaryKey": "id",
+        "primaryKeyValue": "2"
+      }
+    },
+    {
+      "path": "/json/config",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/json/users",
+      "meta": {
+        "kind": "json:array",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/json/metadata",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/json/config/name",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/config/version",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/config/settings",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/json/users/0",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/json/users/1",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/json/metadata/created",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/metadata/tags",
+      "meta": {
+        "kind": "json:array",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/mcp/WORLD.md",
+      "meta": {
+        "kind": "afs:document",
+        "kinds": [
+          "afs:document",
+          "afs:node"
+        ],
+        "description": "MCP Server World Documentation",
+        "mimeType": "text/markdown",
+        "mcp": {
+          "type": "world"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools",
+      "meta": {
+        "kind": "afs:node",
+        "kinds": [
+          "afs:node"
+        ],
+        "description": "13 tools available",
+        "childrenCount": 13
+      }
+    },
+    {
+      "path": "/mcp/prompts",
+      "meta": {
+        "kind": "afs:node",
+        "kinds": [
+          "afs:node"
+        ],
+        "description": "4 prompts available",
+        "childrenCount": 4
+      }
+    },
+    {
+      "path": "/mcp/resources",
+      "meta": {
+        "kind": "afs:node",
+        "kinds": [
+          "afs:node"
+        ],
+        "description": "7 resources available",
+        "childrenCount": 7
+      }
+    },
+    {
+      "path": "/mcp/tools/echo",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Echoes back the input string",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string",
+              "description": "Message to echo"
+            }
+          },
+          "required": [
+            "message"
+          ],
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "echo"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/get-annotated-message",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Demonstrates how annotations can be used to provide metadata about content.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "messageType": {
+              "type": "string",
+              "enum": [
+                "error",
+                "success",
+                "debug"
+              ],
+              "description": "Type of message to demonstrate different annotation patterns"
+            },
+            "includeImage": {
+              "default": false,
+              "description": "Whether to include an example image",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "messageType"
+          ],
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "get-annotated-message"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/get-env",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Returns all environment variables, helpful for debugging MCP server configuration",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "get-env"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/get-resource-links",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Returns up to ten resource links that reference different types of resources",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "count": {
+              "default": 3,
+              "description": "Number of resource links to return (1-10)",
+              "type": "number",
+              "minimum": 1,
+              "maximum": 10
+            }
+          },
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "get-resource-links"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/get-resource-reference",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Returns a resource reference that can be used by MCP clients",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "resourceType": {
+              "default": "Text",
+              "type": "string",
+              "enum": [
+                "Text",
+                "Blob"
+              ]
+            },
+            "resourceId": {
+              "default": 1,
+              "description": "ID of the text resource to fetch",
+              "type": "number"
+            }
+          },
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "get-resource-reference"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/get-structured-content",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Returns structured content along with an output schema for client data validation",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "location": {
+              "type": "string",
+              "enum": [
+                "New York",
+                "Chicago",
+                "Los Angeles"
+              ],
+              "description": "Choose city"
+            }
+          },
+          "required": [
+            "location"
+          ],
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "get-structured-content"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/get-sum",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Returns the sum of two numbers",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "a": {
+              "type": "number",
+              "description": "First number"
+            },
+            "b": {
+              "type": "number",
+              "description": "Second number"
+            }
+          },
+          "required": [
+            "a",
+            "b"
+          ],
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "get-sum"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/get-tiny-image",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Returns a tiny MCP logo image.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "get-tiny-image"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/gzip-file-as-resource",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Compresses a single file using gzip compression. Depending upon the selected output type, returns either the compressed data as a gzipped resource or a resource link, allowing it to be downloaded in a subsequent request during the current session.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "default": "README.md.gz",
+              "type": "string",
+              "description": "Name of the output file"
+            },
+            "data": {
+              "default": "https://raw.githubusercontent.com/modelcontextprotocol/servers/refs/heads/main/README.md",
+              "type": "string",
+              "format": "uri",
+              "description": "URL or data URI of the file content to compress"
+            },
+            "outputType": {
+              "default": "resourceLink",
+              "description": "How the resulting gzipped file should be returned. 'resourceLink' returns a link to a resource that can be read later, 'resource' returns a full resource object.",
+              "type": "string",
+              "enum": [
+                "resourceLink",
+                "resource"
+              ]
+            }
+          },
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "gzip-file-as-resource"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/toggle-simulated-logging",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Toggles simulated, random-leveled logging on or off.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "toggle-simulated-logging"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/toggle-subscriber-updates",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Toggles simulated resource subscription updates on or off.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "toggle-subscriber-updates"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/trigger-long-running-operation",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Demonstrates a long running operation with progress updates.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "duration": {
+              "default": 10,
+              "description": "Duration of the operation in seconds",
+              "type": "number"
+            },
+            "steps": {
+              "default": 5,
+              "description": "Number of steps in the operation",
+              "type": "number"
+            }
+          },
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "trigger-long-running-operation"
+        }
+      }
+    },
+    {
+      "path": "/mcp/tools/simulate-research-query",
+      "meta": {
+        "kind": "mcp:tool",
+        "kinds": [
+          "mcp:tool",
+          "afs:executable",
+          "afs:node"
+        ],
+        "description": "Simulates a deep research operation that gathers, analyzes, and synthesizes information. Demonstrates MCP task-based operations with progress through multiple stages. If 'ambiguous' is true and client supports elicitation, sends an elicitation request for clarification.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "topic": {
+              "type": "string",
+              "description": "The research topic to investigate"
+            },
+            "ambiguous": {
+              "default": false,
+              "description": "Simulate an ambiguous query that requires clarification (triggers input_required status)",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "topic"
+          ],
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "mcp": {
+          "name": "simulate-research-query"
+        }
+      }
+    },
+    {
+      "path": "/mcp/prompts/simple-prompt",
+      "meta": {
+        "kind": "mcp:prompt",
+        "kinds": [
+          "mcp:prompt",
+          "afs:node"
+        ],
+        "description": "A prompt with no arguments",
+        "mcp": {
+          "name": "simple-prompt"
+        }
+      }
+    },
+    {
+      "path": "/mcp/prompts/args-prompt",
+      "meta": {
+        "kind": "mcp:prompt",
+        "kinds": [
+          "mcp:prompt",
+          "afs:node"
+        ],
+        "description": "A prompt with two arguments, one required and one optional",
+        "mcp": {
+          "name": "args-prompt",
+          "arguments": [
+            {
+              "name": "city",
+              "description": "Name of the city",
+              "required": true
+            },
+            {
+              "name": "state",
+              "required": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/mcp/prompts/completable-prompt",
+      "meta": {
+        "kind": "mcp:prompt",
+        "kinds": [
+          "mcp:prompt",
+          "afs:node"
+        ],
+        "description": "First argument choice narrows values for second argument.",
+        "mcp": {
+          "name": "completable-prompt",
+          "arguments": [
+            {
+              "name": "department",
+              "description": "Choose the department.",
+              "required": true
+            },
+            {
+              "name": "name",
+              "description": "Choose a team member to lead the selected department.",
+              "required": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/mcp/prompts/resource-prompt",
+      "meta": {
+        "kind": "mcp:prompt",
+        "kinds": [
+          "mcp:prompt",
+          "afs:node"
+        ],
+        "description": "A prompt that includes an embedded resource reference",
+        "mcp": {
+          "name": "resource-prompt",
+          "arguments": [
+            {
+              "name": "resourceType",
+              "description": "Type of resource to fetch",
+              "required": true
+            },
+            {
+              "name": "resourceId",
+              "description": "ID of the text resource to fetch",
+              "required": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/mcp/resources/resource",
+      "meta": {
+        "kind": "afs:node",
+        "kinds": [
+          "afs:node"
+        ],
+        "childrenCount": 2,
+        "mcp": {
+          "isResource": true
+        }
+      }
+    },
+    {
+      "path": "/git/main",
+      "meta": {
+        "kind": "git:branch",
+        "childrenCount": 4
+      }
+    },
+    {
+      "path": "/git/main/README.md",
+      "meta": {
+        "kind": "git:file",
+        "size": 99
+      }
+    },
+    {
+      "path": "/git/main/docs",
+      "meta": {
+        "kind": "git:directory",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/git/main/package.json",
+      "meta": {
+        "kind": "git:file",
+        "size": 95
+      }
+    },
+    {
+      "path": "/git/main/src",
+      "meta": {
+        "kind": "git:directory",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/fs/README.md",
+      "meta": {
+        "size": 91,
+        "kind": "fs:file",
+        "mimeType": "text/markdown"
+      }
+    },
+    {
+      "path": "/fs/docs",
+      "meta": {
+        "kind": "afs:node",
+        "name": "Documentation",
+        "description": "Project documentation directory",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/fs/src",
+      "meta": {
+        "kind": "afs:node",
+        "name": "Source Code",
+        "description": "Source code directory",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/fs/test",
+      "meta": {
+        "childrenCount": 1,
+        "kind": "fs:directory"
+      }
+    },
+    {
+      "path": "/fs/docs/api",
+      "meta": {
+        "childrenCount": 2,
+        "kind": "fs:directory"
+      }
+    },
+    {
+      "path": "/fs/docs/guide.md",
+      "meta": {
+        "kind": "afs:node",
+        "name": "User Guide",
+        "author": "Test Author",
+        "size": 91,
+        "mimeType": "text/markdown"
+      }
+    },
+    {
+      "path": "/fs/src/core",
+      "meta": {
+        "childrenCount": 1,
+        "kind": "fs:directory"
+      }
+    },
+    {
+      "path": "/fs/src/index.ts",
+      "meta": {
+        "size": 149,
+        "kind": "fs:file",
+        "mimeType": "text/typescript"
+      }
+    },
+    {
+      "path": "/fs/src/utils",
+      "meta": {
+        "childrenCount": 2,
+        "kind": "fs:directory"
+      }
+    },
+    {
+      "path": "/fs/test/sample.test.ts",
+      "meta": {
+        "size": 204,
+        "kind": "fs:file",
+        "mimeType": "text/typescript"
+      }
+    }
+  ],
+  "total": 10
+}"
+`;
+
+exports[`ls command view=json fs provider (/fs) depth=0: ls-json-fs-d0 1`] = `
+"{
+  "entries": [],
+  "total": 0
+}"
+`;
+
+exports[`ls command view=json fs provider (/fs) depth=1: ls-json-fs-d1 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/fs/README.md",
+      "meta": {
+        "size": 91,
+        "kind": "fs:file",
+        "mimeType": "text/markdown"
+      }
+    },
+    {
+      "path": "/fs/docs",
+      "meta": {
+        "kind": "afs:node",
+        "name": "Documentation",
+        "description": "Project documentation directory",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/fs/src",
+      "meta": {
+        "kind": "afs:node",
+        "name": "Source Code",
+        "description": "Source code directory",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/fs/test",
+      "meta": {
+        "childrenCount": 1,
+        "kind": "fs:directory"
+      }
+    }
+  ],
+  "total": 4
+}"
+`;
+
+exports[`ls command view=json fs provider (/fs) depth=2: ls-json-fs-d2 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/fs/README.md",
+      "meta": {
+        "size": 91,
+        "kind": "fs:file",
+        "mimeType": "text/markdown"
+      }
+    },
+    {
+      "path": "/fs/docs",
+      "meta": {
+        "kind": "afs:node",
+        "name": "Documentation",
+        "description": "Project documentation directory",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/fs/src",
+      "meta": {
+        "kind": "afs:node",
+        "name": "Source Code",
+        "description": "Source code directory",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/fs/test",
+      "meta": {
+        "childrenCount": 1,
+        "kind": "fs:directory"
+      }
+    },
+    {
+      "path": "/fs/docs/api",
+      "meta": {
+        "childrenCount": 2,
+        "kind": "fs:directory"
+      }
+    },
+    {
+      "path": "/fs/docs/guide.md",
+      "meta": {
+        "kind": "afs:node",
+        "name": "User Guide",
+        "author": "Test Author",
+        "size": 91,
+        "mimeType": "text/markdown"
+      }
+    },
+    {
+      "path": "/fs/src/core",
+      "meta": {
+        "childrenCount": 1,
+        "kind": "fs:directory"
+      }
+    },
+    {
+      "path": "/fs/src/index.ts",
+      "meta": {
+        "size": 149,
+        "kind": "fs:file",
+        "mimeType": "text/typescript"
+      }
+    },
+    {
+      "path": "/fs/src/utils",
+      "meta": {
+        "childrenCount": 2,
+        "kind": "fs:directory"
+      }
+    },
+    {
+      "path": "/fs/test/sample.test.ts",
+      "meta": {
+        "size": 204,
+        "kind": "fs:file",
+        "mimeType": "text/typescript"
+      }
+    }
+  ],
+  "total": 10
+}"
+`;
+
+exports[`ls command view=json fs provider (/fs) depth=3: ls-json-fs-d3 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/fs/README.md",
+      "meta": {
+        "size": 91,
+        "kind": "fs:file",
+        "mimeType": "text/markdown"
+      }
+    },
+    {
+      "path": "/fs/docs",
+      "meta": {
+        "kind": "afs:node",
+        "name": "Documentation",
+        "description": "Project documentation directory",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/fs/src",
+      "meta": {
+        "kind": "afs:node",
+        "name": "Source Code",
+        "description": "Source code directory",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/fs/test",
+      "meta": {
+        "childrenCount": 1,
+        "kind": "fs:directory"
+      }
+    },
+    {
+      "path": "/fs/docs/api",
+      "meta": {
+        "childrenCount": 2,
+        "kind": "fs:directory"
+      }
+    },
+    {
+      "path": "/fs/docs/guide.md",
+      "meta": {
+        "kind": "afs:node",
+        "name": "User Guide",
+        "author": "Test Author",
+        "size": 91,
+        "mimeType": "text/markdown"
+      }
+    },
+    {
+      "path": "/fs/src/core",
+      "meta": {
+        "childrenCount": 1,
+        "kind": "fs:directory"
+      }
+    },
+    {
+      "path": "/fs/src/index.ts",
+      "meta": {
+        "size": 149,
+        "kind": "fs:file",
+        "mimeType": "text/typescript"
+      }
+    },
+    {
+      "path": "/fs/src/utils",
+      "meta": {
+        "childrenCount": 2,
+        "kind": "fs:directory"
+      }
+    },
+    {
+      "path": "/fs/test/sample.test.ts",
+      "meta": {
+        "size": 204,
+        "kind": "fs:file",
+        "mimeType": "text/typescript"
+      }
+    },
+    {
+      "path": "/fs/docs/api/overview.md",
+      "meta": {
+        "size": 95,
+        "kind": "fs:file",
+        "mimeType": "text/markdown"
+      }
+    },
+    {
+      "path": "/fs/docs/api/reference",
+      "meta": {
+        "childrenCount": 2,
+        "kind": "fs:directory"
+      }
+    },
+    {
+      "path": "/fs/src/core/main.ts",
+      "meta": {
+        "size": 111,
+        "kind": "fs:file",
+        "mimeType": "text/typescript"
+      }
+    },
+    {
+      "path": "/fs/src/utils/constants.ts",
+      "meta": {
+        "size": 126,
+        "kind": "fs:file",
+        "mimeType": "text/typescript"
+      }
+    },
+    {
+      "path": "/fs/src/utils/helpers.ts",
+      "meta": {
+        "size": 143,
+        "kind": "fs:file",
+        "mimeType": "text/typescript"
+      }
+    }
+  ],
+  "total": 15
+}"
+`;
+
+exports[`ls command view=json fs nested (/fs/docs) depth=0: ls-json-fs-docs-d0 1`] = `
+"{
+  "entries": [],
+  "total": 0
+}"
+`;
+
+exports[`ls command view=json fs nested (/fs/docs) depth=1: ls-json-fs-docs-d1 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/fs/docs/api",
+      "meta": {
+        "childrenCount": 2,
+        "kind": "fs:directory"
+      }
+    },
+    {
+      "path": "/fs/docs/guide.md",
+      "meta": {
+        "kind": "afs:node",
+        "name": "User Guide",
+        "author": "Test Author",
+        "size": 91,
+        "mimeType": "text/markdown"
+      }
+    }
+  ],
+  "total": 2
+}"
+`;
+
+exports[`ls command view=json fs nested (/fs/docs) depth=2: ls-json-fs-docs-d2 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/fs/docs/api",
+      "meta": {
+        "childrenCount": 2,
+        "kind": "fs:directory"
+      }
+    },
+    {
+      "path": "/fs/docs/guide.md",
+      "meta": {
+        "kind": "afs:node",
+        "name": "User Guide",
+        "author": "Test Author",
+        "size": 91,
+        "mimeType": "text/markdown"
+      }
+    },
+    {
+      "path": "/fs/docs/api/overview.md",
+      "meta": {
+        "size": 95,
+        "kind": "fs:file",
+        "mimeType": "text/markdown"
+      }
+    },
+    {
+      "path": "/fs/docs/api/reference",
+      "meta": {
+        "childrenCount": 2,
+        "kind": "fs:directory"
+      }
+    }
+  ],
+  "total": 4
+}"
+`;
+
+exports[`ls command view=json fs nested (/fs/docs) depth=3: ls-json-fs-docs-d3 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/fs/docs/api",
+      "meta": {
+        "childrenCount": 2,
+        "kind": "fs:directory"
+      }
+    },
+    {
+      "path": "/fs/docs/guide.md",
+      "meta": {
+        "kind": "afs:node",
+        "name": "User Guide",
+        "author": "Test Author",
+        "size": 91,
+        "mimeType": "text/markdown"
+      }
+    },
+    {
+      "path": "/fs/docs/api/overview.md",
+      "meta": {
+        "size": 95,
+        "kind": "fs:file",
+        "mimeType": "text/markdown"
+      }
+    },
+    {
+      "path": "/fs/docs/api/reference",
+      "meta": {
+        "childrenCount": 2,
+        "kind": "fs:directory"
+      }
+    },
+    {
+      "path": "/fs/docs/api/reference/advanced",
+      "meta": {
+        "childrenCount": 2,
+        "kind": "fs:directory"
+      }
+    },
+    {
+      "path": "/fs/docs/api/reference/core.md",
+      "meta": {
+        "size": 109,
+        "kind": "fs:file",
+        "mimeType": "text/markdown"
+      }
+    }
+  ],
+  "total": 6
+}"
+`;
+
+exports[`ls command view=json json provider (/json) depth=0: ls-json-json-d0 1`] = `
+"{
+  "entries": [],
+  "total": 0
+}"
+`;
+
+exports[`ls command view=json json provider (/json) depth=1: ls-json-json-d1 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/json/config",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/json/users",
+      "meta": {
+        "kind": "json:array",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/json/metadata",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 2
+      }
+    }
+  ],
+  "total": 3
+}"
+`;
+
+exports[`ls command view=json json provider (/json) depth=2: ls-json-json-d2 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/json/config",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/json/users",
+      "meta": {
+        "kind": "json:array",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/json/metadata",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/json/config/name",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/config/version",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/config/settings",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/json/users/0",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/json/users/1",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/json/metadata/created",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/metadata/tags",
+      "meta": {
+        "kind": "json:array",
+        "childrenCount": 3
+      }
+    }
+  ],
+  "total": 10
+}"
+`;
+
+exports[`ls command view=json json provider (/json) depth=3: ls-json-json-d3 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/json/config",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/json/users",
+      "meta": {
+        "kind": "json:array",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/json/metadata",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/json/config/name",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/config/version",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/config/settings",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/json/users/0",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/json/users/1",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/json/metadata/created",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/metadata/tags",
+      "meta": {
+        "kind": "json:array",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/json/config/settings/debug",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/config/settings/logging",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/json/users/0/id",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/users/0/name",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/users/0/profile",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/json/users/1/id",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/users/1/name",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/users/1/profile",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/json/metadata/tags/0",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/metadata/tags/1",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/metadata/tags/2",
+      "meta": {
+        "kind": "json:value"
+      }
+    }
+  ],
+  "total": 21
+}"
+`;
+
+exports[`ls command view=json json nested (/json/config) depth=0: ls-json-json-config-d0 1`] = `
+"{
+  "entries": [],
+  "total": 0
+}"
+`;
+
+exports[`ls command view=json json nested (/json/config) depth=1: ls-json-json-config-d1 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/json/config/name",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/config/version",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/config/settings",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 2
+      }
+    }
+  ],
+  "total": 3
+}"
+`;
+
+exports[`ls command view=json json nested (/json/config) depth=2: ls-json-json-config-d2 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/json/config/name",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/config/version",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/config/settings",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/json/config/settings/debug",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/config/settings/logging",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 3
+      }
+    }
+  ],
+  "total": 5
+}"
+`;
+
+exports[`ls command view=json json nested (/json/config) depth=3: ls-json-json-config-d3 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/json/config/name",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/config/version",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/config/settings",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/json/config/settings/debug",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/config/settings/logging",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/json/config/settings/logging/level",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/config/settings/logging/format",
+      "meta": {
+        "kind": "json:value"
+      }
+    },
+    {
+      "path": "/json/config/settings/logging/options",
+      "meta": {
+        "kind": "json:object",
+        "childrenCount": 2
+      }
+    }
+  ],
+  "total": 8
+}"
+`;
+
+exports[`ls command view=json sqlite provider (/sqlite) depth=0: ls-json-sqlite-d0 1`] = `
+"{
+  "entries": [],
+  "total": 0
+}"
+`;
+
+exports[`ls command view=json sqlite provider (/sqlite) depth=1: ls-json-sqlite-d1 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/sqlite/comments",
+      "meta": {
+        "kind": "sqlite:table",
+        "description": "Table: comments (4 columns)",
+        "table": "comments",
+        "columnCount": 4,
+        "primaryKey": [
+          "id"
+        ],
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/sqlite/posts",
+      "meta": {
+        "kind": "sqlite:table",
+        "description": "Table: posts (5 columns)",
+        "table": "posts",
+        "columnCount": 5,
+        "primaryKey": [
+          "id"
+        ],
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/sqlite/users",
+      "meta": {
+        "kind": "sqlite:table",
+        "description": "Table: users (4 columns)",
+        "table": "users",
+        "columnCount": 4,
+        "primaryKey": [
+          "id"
+        ],
+        "childrenCount": 2
+      }
+    }
+  ],
+  "total": 3
+}"
+`;
+
+exports[`ls command view=json sqlite provider (/sqlite) depth=2: ls-json-sqlite-d2 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/sqlite/comments",
+      "meta": {
+        "kind": "sqlite:table",
+        "description": "Table: comments (4 columns)",
+        "table": "comments",
+        "columnCount": 4,
+        "primaryKey": [
+          "id"
+        ],
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/sqlite/posts",
+      "meta": {
+        "kind": "sqlite:table",
+        "description": "Table: posts (5 columns)",
+        "table": "posts",
+        "columnCount": 5,
+        "primaryKey": [
+          "id"
+        ],
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/sqlite/users",
+      "meta": {
+        "kind": "sqlite:table",
+        "description": "Table: users (4 columns)",
+        "table": "users",
+        "columnCount": 4,
+        "primaryKey": [
+          "id"
+        ],
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/sqlite/comments/1",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "comments",
+        "primaryKey": "id",
+        "primaryKeyValue": "1"
+      }
+    },
+    {
+      "path": "/sqlite/comments/2",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "comments",
+        "primaryKey": "id",
+        "primaryKeyValue": "2"
+      }
+    },
+    {
+      "path": "/sqlite/posts/1",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "posts",
+        "primaryKey": "id",
+        "primaryKeyValue": "1"
+      }
+    },
+    {
+      "path": "/sqlite/posts/2",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "posts",
+        "primaryKey": "id",
+        "primaryKeyValue": "2"
+      }
+    },
+    {
+      "path": "/sqlite/posts/3",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "posts",
+        "primaryKey": "id",
+        "primaryKeyValue": "3"
+      }
+    },
+    {
+      "path": "/sqlite/users/1",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "users",
+        "primaryKey": "id",
+        "primaryKeyValue": "1"
+      }
+    },
+    {
+      "path": "/sqlite/users/2",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "users",
+        "primaryKey": "id",
+        "primaryKeyValue": "2"
+      }
+    }
+  ],
+  "total": 10
+}"
+`;
+
+exports[`ls command view=json sqlite provider (/sqlite) depth=3: ls-json-sqlite-d3 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/sqlite/comments",
+      "meta": {
+        "kind": "sqlite:table",
+        "description": "Table: comments (4 columns)",
+        "table": "comments",
+        "columnCount": 4,
+        "primaryKey": [
+          "id"
+        ],
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/sqlite/posts",
+      "meta": {
+        "kind": "sqlite:table",
+        "description": "Table: posts (5 columns)",
+        "table": "posts",
+        "columnCount": 5,
+        "primaryKey": [
+          "id"
+        ],
+        "childrenCount": 3
+      }
+    },
+    {
+      "path": "/sqlite/users",
+      "meta": {
+        "kind": "sqlite:table",
+        "description": "Table: users (4 columns)",
+        "table": "users",
+        "columnCount": 4,
+        "primaryKey": [
+          "id"
+        ],
+        "childrenCount": 2
+      }
+    },
+    {
+      "path": "/sqlite/comments/1",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "comments",
+        "primaryKey": "id",
+        "primaryKeyValue": "1"
+      }
+    },
+    {
+      "path": "/sqlite/comments/2",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "comments",
+        "primaryKey": "id",
+        "primaryKeyValue": "2"
+      }
+    },
+    {
+      "path": "/sqlite/posts/1",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "posts",
+        "primaryKey": "id",
+        "primaryKeyValue": "1"
+      }
+    },
+    {
+      "path": "/sqlite/posts/2",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "posts",
+        "primaryKey": "id",
+        "primaryKeyValue": "2"
+      }
+    },
+    {
+      "path": "/sqlite/posts/3",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "posts",
+        "primaryKey": "id",
+        "primaryKeyValue": "3"
+      }
+    },
+    {
+      "path": "/sqlite/users/1",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "users",
+        "primaryKey": "id",
+        "primaryKeyValue": "1"
+      }
+    },
+    {
+      "path": "/sqlite/users/2",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "users",
+        "primaryKey": "id",
+        "primaryKeyValue": "2"
+      }
+    }
+  ],
+  "total": 10
+}"
+`;
+
+exports[`ls command view=json sqlite nested (/sqlite/users) depth=0: ls-json-sqlite-users-d0 1`] = `
+"{
+  "entries": [],
+  "total": 0
+}"
+`;
+
+exports[`ls command view=json sqlite nested (/sqlite/users) depth=1: ls-json-sqlite-users-d1 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/sqlite/users/1",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "users",
+        "primaryKey": "id",
+        "primaryKeyValue": "1"
+      }
+    },
+    {
+      "path": "/sqlite/users/2",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "users",
+        "primaryKey": "id",
+        "primaryKeyValue": "2"
+      }
+    }
+  ],
+  "total": 2
+}"
+`;
+
+exports[`ls command view=json sqlite nested (/sqlite/users) depth=2: ls-json-sqlite-users-d2 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/sqlite/users/1",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "users",
+        "primaryKey": "id",
+        "primaryKeyValue": "1"
+      }
+    },
+    {
+      "path": "/sqlite/users/2",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "users",
+        "primaryKey": "id",
+        "primaryKeyValue": "2"
+      }
+    }
+  ],
+  "total": 2
+}"
+`;
+
+exports[`ls command view=json sqlite nested (/sqlite/users) depth=3: ls-json-sqlite-users-d3 1`] = `
+"{
+  "entries": [
+    {
+      "path": "/sqlite/users/1",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "users",
+        "primaryKey": "id",
+        "primaryKeyValue": "1"
+      }
+    },
+    {
+      "path": "/sqlite/users/2",
+      "meta": {
+        "kind": "sqlite:row",
+        "table": "users",
+        "primaryKey": "id",
+        "primaryKeyValue": "2"
+      }
+    }
+  ],
+  "total": 2
+}"
+`;
+
+exports[`ls command .actions paths view=human sqlite root actions (/sqlite/.actions): ls-human-sqlite-_actions 1`] = `
+"Available actions for /sqlite:
+
+  create_table  Create a new table in the database
+  drop_table    Drop a table from the database
+  rename_table  Rename a table in the database
+  pragma        Execute a PRAGMA command (whitelist-restricted)
+  vacuum        Compact the database file and reclaim unused space"
+`;
+
+exports[`ls command .actions paths view=human sqlite table actions (/sqlite/users/.actions): ls-human-sqlite-users-_actions 1`] = `
+"Available actions for /sqlite/users:
+
+  export         Export table data in specified format (json, csv)
+  count          Get the total row count for this table
+  insert         Insert a new row into the table
+  add_column     Add a new column to the table
+  rename_column  Rename a column in the table
+  drop_column    Drop a column from the table
+  create_index   Create an index on the table
+  drop_index     Drop an index from the table
+  query          Query rows with conditions, ordering, and pagination
+  update_where   Update rows matching conditions
+  delete_where   Delete rows matching conditions
+  bulk_insert    Insert multiple rows at once
+  import         Import data into table from JSON or CSV format"
+`;
+
+exports[`ls command .actions paths view=human sqlite row actions (/sqlite/users/1/.actions): ls-human-sqlite-users-1-_actions 1`] = `
+"Available actions for /sqlite/users/1:
+
+  duplicate  Create a copy of this row
+  validate   Validate row data against schema constraints
+  update     Update this row
+  delete     Delete this row"
+`;
+
+exports[`ls command .actions paths view=llm sqlite root actions (/sqlite/.actions): ls-llm-sqlite-_actions 1`] = `
+"ACTIONS /sqlite/.actions
+ACTION create_table DESCRIPTION "Create a new table in the database" SCHEMA {"type":"object","description":"Create a new SQLite table with specified columns","properties":{"name":{"type":"string","description":"Table name (alphanumeric and underscores, must start with letter)","pattern":"^[a-zA-Z][a-zA-Z0-9_]*$","minLength":1,"maxLength":128},"columns":{"type":"array","description":"Column definitions (at least one required)","minItems":1,"items":{"type":"object","description":"Column definition","properties":{"name":{"type":"string","description":"Column name (alphanumeric and underscores)","pattern":"^[a-zA-Z_][a-zA-Z0-9_]*$","minLength":1,"maxLength":128},"type":{"type":"string","description":"SQLite column type","enum":["INTEGER","TEXT","REAL","BLOB","NUMERIC","INT","TINYINT","SMALLINT","MEDIUMINT","BIGINT","UNSIGNED BIG INT","INT2","INT8","CHARACTER","VARCHAR","VARYING CHARACTER","NCHAR","NATIVE CHARACTER","NVARCHAR","CLOB","DOUBLE","DOUBLE PRECISION","FLOAT","DECIMAL","BOOLEAN","DATE","DATETIME","TIMESTAMP"],"x-affinity-mapping":{"INTEGER":["INTEGER","INT","TINYINT","SMALLINT","MEDIUMINT","BIGINT","UNSIGNED BIG INT","INT2","INT8"],"TEXT":["TEXT","CHARACTER","VARCHAR","VARYING CHARACTER","NCHAR","NATIVE CHARACTER","NVARCHAR","CLOB"],"REAL":["REAL","DOUBLE","DOUBLE PRECISION","FLOAT"],"NUMERIC":["NUMERIC","DECIMAL","BOOLEAN","DATE","DATETIME","TIMESTAMP"],"BLOB":["BLOB"]}},"nullable":{"type":"boolean","description":"Whether the column allows NULL values (default: true)","default":true},"primaryKey":{"type":"boolean","description":"Whether this column is the primary key (default: false). INTEGER PRIMARY KEY will auto-increment.","default":false},"unique":{"type":"boolean","description":"Whether this column must have unique values (default: false)","default":false},"defaultValue":{"oneOf":[{"type":"string"},{"type":"number"},{"type":"boolean"},{"type":"null"}],"description":"Default value for the column. Use string 'CURRENT_TIMESTAMP' for auto timestamp."},"references":{"type":"object","description":"Foreign key reference","properties":{"table":{"type":"string","description":"Referenced table name"},"column":{"type":"string","description":"Referenced column name"},"onDelete":{"type":"string","enum":["CASCADE","SET NULL","SET DEFAULT","RESTRICT","NO ACTION"],"description":"Action on delete (default: NO ACTION)"},"onUpdate":{"type":"string","enum":["CASCADE","SET NULL","SET DEFAULT","RESTRICT","NO ACTION"],"description":"Action on update (default: NO ACTION)"}},"required":["table","column"]}},"required":["name","type"],"additionalProperties":false}},"ifNotExists":{"type":"boolean","description":"If true, do not throw error if table already exists (default: false)","default":false}},"required":["name","columns"],"additionalProperties":false}
+ACTION drop_table DESCRIPTION "Drop a table from the database" SCHEMA {"type":"object","properties":{"name":{"type":"string","description":"Table name to drop"},"ifExists":{"type":"boolean","default":false,"description":"Don't error if table doesn't exist"}},"required":["name"]}
+ACTION rename_table DESCRIPTION "Rename a table in the database" SCHEMA {"type":"object","properties":{"oldName":{"type":"string","description":"Current table name"},"newName":{"type":"string","description":"New table name"}},"required":["oldName","newName"]}
+ACTION pragma DESCRIPTION "Execute a PRAGMA command (whitelist-restricted)" SCHEMA {"type":"object","properties":{"command":{"type":"string","enum":["table_info","table_list","index_list","index_info","foreign_key_list","database_list","collation_list","journal_mode","synchronous","cache_size","page_size","encoding","auto_vacuum","integrity_check","quick_check"],"description":"PRAGMA command to execute"},"argument":{"type":"string","description":"Argument for the command (e.g., table name)"},"value":{"oneOf":[{"type":"string"},{"type":"number"}],"description":"Value for writable PRAGMAs"}},"required":["command"]}
+ACTION vacuum DESCRIPTION "Compact the database file and reclaim unused space" SCHEMA {"type":"object","properties":{},"additionalProperties":false}"
+`;
+
+exports[`ls command .actions paths view=llm sqlite table actions (/sqlite/users/.actions): ls-llm-sqlite-users-_actions 1`] = `
+"ACTIONS /sqlite/users/.actions
+ACTION export DESCRIPTION "Export table data in specified format (json, csv)" SCHEMA {"type":"object","properties":{"format":{"type":"string","enum":["json","csv"],"default":"json"}}}
+ACTION count DESCRIPTION "Get the total row count for this table"
+ACTION insert DESCRIPTION "Insert a new row into the table" SCHEMA {"type":"object","description":"Insert a new row into \\"users\\" table","properties":{"data":{"type":"object","description":"Row data to insert","properties":{"name":{"type":"string"},"email":{"type":"string"},"created_at":{"type":"string","default":"CURRENT_TIMESTAMP","description":"Default: CURRENT_TIMESTAMP"}},"required":["name"],"additionalProperties":false}},"required":["data"]}
+ACTION add_column DESCRIPTION "Add a new column to the table" SCHEMA {"type":"object","properties":{"name":{"type":"string","description":"Column name"},"type":{"type":"string","enum":["INTEGER","TEXT","REAL","BLOB","NUMERIC"],"description":"Column type"},"nullable":{"type":"boolean","default":true,"description":"Whether the column allows NULL values"},"defaultValue":{"oneOf":[{"type":"string"},{"type":"number"},{"type":"boolean"},{"type":"null"}],"description":"Default value for the column"}},"required":["name","type"]}
+ACTION rename_column DESCRIPTION "Rename a column in the table" SCHEMA {"type":"object","properties":{"oldName":{"type":"string","description":"Current column name"},"newName":{"type":"string","description":"New column name"}},"required":["oldName","newName"]}
+ACTION drop_column DESCRIPTION "Drop a column from the table" SCHEMA {"type":"object","properties":{"name":{"type":"string","description":"Column name to drop"}},"required":["name"]}
+ACTION create_index DESCRIPTION "Create an index on the table" SCHEMA {"type":"object","properties":{"name":{"type":"string","description":"Index name"},"columns":{"type":"array","items":{"type":"string"},"minItems":1,"description":"Columns to index (supports compound indexes)"},"unique":{"type":"boolean","default":false,"description":"Whether the index is unique"},"ifNotExists":{"type":"boolean","default":false,"description":"Don't error if index already exists"}},"required":["name","columns"]}
+ACTION drop_index DESCRIPTION "Drop an index from the table" SCHEMA {"type":"object","properties":{"name":{"type":"string","description":"Index name to drop"},"ifExists":{"type":"boolean","default":false,"description":"Don't error if index doesn't exist"}},"required":["name"]}
+ACTION query DESCRIPTION "Query rows with conditions, ordering, and pagination" SCHEMA {"type":"object","properties":{"where":{"type":"object","description":"Query conditions (MongoDB-style operators)"},"orderBy":{"type":"array","items":{"type":"object","properties":{"column":{"type":"string"},"direction":{"type":"string","enum":["asc","desc"],"default":"asc"}},"required":["column"]},"description":"Sort order"},"limit":{"type":"integer","minimum":1,"description":"Maximum rows to return"},"offset":{"type":"integer","minimum":0,"description":"Number of rows to skip"}}}
+ACTION update_where DESCRIPTION "Update rows matching conditions" SCHEMA {"type":"object","properties":{"where":{"type":"object","description":"Update conditions (MongoDB-style operators)"},"data":{"type":"object","description":"Fields to update"}},"required":["where","data"]}
+ACTION delete_where DESCRIPTION "Delete rows matching conditions" SCHEMA {"type":"object","properties":{"where":{"type":"object","description":"Delete conditions (MongoDB-style operators)"}},"required":["where"]}
+ACTION bulk_insert DESCRIPTION "Insert multiple rows at once" SCHEMA {"type":"object","properties":{"rows":{"type":"array","items":{"type":"object"},"minItems":1,"description":"Array of row data to insert"}},"required":["rows"]}
+ACTION import DESCRIPTION "Import data into table from JSON or CSV format" SCHEMA {"type":"object","properties":{"format":{"type":"string","enum":["json","csv"],"description":"Data format (json or csv)"},"data":{"type":"string","description":"The data to import (JSON array string or CSV string)"},"onConflict":{"type":"string","enum":["abort","ignore","replace"],"default":"abort","description":"Conflict resolution strategy"},"delimiter":{"type":"string","default":",","description":"CSV delimiter character"},"header":{"type":"boolean","default":true,"description":"Whether CSV has a header row"}},"required":["format","data"]}"
+`;
+
+exports[`ls command .actions paths view=llm sqlite row actions (/sqlite/users/1/.actions): ls-llm-sqlite-users-1-_actions 1`] = `
+"ACTIONS /sqlite/users/1/.actions
+ACTION duplicate DESCRIPTION "Create a copy of this row" SCHEMA {"type":"object","description":"Create a copy of the row (excluding primary key \\"id\\")","properties":{},"additionalProperties":false,"x-copied-columns":["name","email","created_at"]}
+ACTION validate DESCRIPTION "Validate row data against schema constraints" SCHEMA {"type":"object","description":"Validate row data against \\"users\\" table constraints","properties":{},"additionalProperties":false,"x-table-schema":{"columns":[{"name":"id","type":"INTEGER","nullable":true,"primaryKey":true},{"name":"name","type":"TEXT","nullable":false,"primaryKey":false},{"name":"email","type":"TEXT","nullable":true,"primaryKey":false},{"name":"created_at","type":"TEXT","nullable":true,"primaryKey":false}],"foreignKeys":[]}}
+ACTION update DESCRIPTION "Update this row" SCHEMA {"type":"object","description":"Update fields in \\"users\\" table","properties":{"data":{"type":"object","description":"Fields to update","properties":{"name":{"type":"string"},"email":{"type":"string"},"created_at":{"type":"string"}},"additionalProperties":false}},"required":["data"]}
+ACTION delete DESCRIPTION "Delete this row" SCHEMA {"type":"object","properties":{},"description":"Delete the current row"}"
+`;
+
+exports[`ls command .actions paths view=json sqlite root actions (/sqlite/.actions): ls-json-sqlite-_actions 1`] = `
+"{
+  "path": "/sqlite/.actions",
+  "data": [
+    {
+      "name": "create_table",
+      "description": "Create a new table in the database",
+      "inputSchema": {
+        "type": "object",
+        "description": "Create a new SQLite table with specified columns",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Table name (alphanumeric and underscores, must start with letter)",
+            "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "columns": {
+            "type": "array",
+            "description": "Column definitions (at least one required)",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "description": "Column definition",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Column name (alphanumeric and underscores)",
+                  "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+                  "minLength": 1,
+                  "maxLength": 128
+                },
+                "type": {
+                  "type": "string",
+                  "description": "SQLite column type",
+                  "enum": [
+                    "INTEGER",
+                    "TEXT",
+                    "REAL",
+                    "BLOB",
+                    "NUMERIC",
+                    "INT",
+                    "TINYINT",
+                    "SMALLINT",
+                    "MEDIUMINT",
+                    "BIGINT",
+                    "UNSIGNED BIG INT",
+                    "INT2",
+                    "INT8",
+                    "CHARACTER",
+                    "VARCHAR",
+                    "VARYING CHARACTER",
+                    "NCHAR",
+                    "NATIVE CHARACTER",
+                    "NVARCHAR",
+                    "CLOB",
+                    "DOUBLE",
+                    "DOUBLE PRECISION",
+                    "FLOAT",
+                    "DECIMAL",
+                    "BOOLEAN",
+                    "DATE",
+                    "DATETIME",
+                    "TIMESTAMP"
+                  ],
+                  "x-affinity-mapping": {
+                    "INTEGER": [
+                      "INTEGER",
+                      "INT",
+                      "TINYINT",
+                      "SMALLINT",
+                      "MEDIUMINT",
+                      "BIGINT",
+                      "UNSIGNED BIG INT",
+                      "INT2",
+                      "INT8"
+                    ],
+                    "TEXT": [
+                      "TEXT",
+                      "CHARACTER",
+                      "VARCHAR",
+                      "VARYING CHARACTER",
+                      "NCHAR",
+                      "NATIVE CHARACTER",
+                      "NVARCHAR",
+                      "CLOB"
+                    ],
+                    "REAL": [
+                      "REAL",
+                      "DOUBLE",
+                      "DOUBLE PRECISION",
+                      "FLOAT"
+                    ],
+                    "NUMERIC": [
+                      "NUMERIC",
+                      "DECIMAL",
+                      "BOOLEAN",
+                      "DATE",
+                      "DATETIME",
+                      "TIMESTAMP"
+                    ],
+                    "BLOB": [
+                      "BLOB"
+                    ]
+                  }
+                },
+                "nullable": {
+                  "type": "boolean",
+                  "description": "Whether the column allows NULL values (default: true)",
+                  "default": true
+                },
+                "primaryKey": {
+                  "type": "boolean",
+                  "description": "Whether this column is the primary key (default: false). INTEGER PRIMARY KEY will auto-increment.",
+                  "default": false
+                },
+                "unique": {
+                  "type": "boolean",
+                  "description": "Whether this column must have unique values (default: false)",
+                  "default": false
+                },
+                "defaultValue": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "description": "Default value for the column. Use string 'CURRENT_TIMESTAMP' for auto timestamp."
+                },
+                "references": {
+                  "type": "object",
+                  "description": "Foreign key reference",
+                  "properties": {
+                    "table": {
+                      "type": "string",
+                      "description": "Referenced table name"
+                    },
+                    "column": {
+                      "type": "string",
+                      "description": "Referenced column name"
+                    },
+                    "onDelete": {
+                      "type": "string",
+                      "enum": [
+                        "CASCADE",
+                        "SET NULL",
+                        "SET DEFAULT",
+                        "RESTRICT",
+                        "NO ACTION"
+                      ],
+                      "description": "Action on delete (default: NO ACTION)"
+                    },
+                    "onUpdate": {
+                      "type": "string",
+                      "enum": [
+                        "CASCADE",
+                        "SET NULL",
+                        "SET DEFAULT",
+                        "RESTRICT",
+                        "NO ACTION"
+                      ],
+                      "description": "Action on update (default: NO ACTION)"
+                    }
+                  },
+                  "required": [
+                    "table",
+                    "column"
+                  ]
+                }
+              },
+              "required": [
+                "name",
+                "type"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "ifNotExists": {
+            "type": "boolean",
+            "description": "If true, do not throw error if table already exists (default: false)",
+            "default": false
+          }
+        },
+        "required": [
+          "name",
+          "columns"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "drop_table",
+      "description": "Drop a table from the database",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Table name to drop"
+          },
+          "ifExists": {
+            "type": "boolean",
+            "default": false,
+            "description": "Don't error if table doesn't exist"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "rename_table",
+      "description": "Rename a table in the database",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "oldName": {
+            "type": "string",
+            "description": "Current table name"
+          },
+          "newName": {
+            "type": "string",
+            "description": "New table name"
+          }
+        },
+        "required": [
+          "oldName",
+          "newName"
+        ]
+      }
+    },
+    {
+      "name": "pragma",
+      "description": "Execute a PRAGMA command (whitelist-restricted)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "enum": [
+              "table_info",
+              "table_list",
+              "index_list",
+              "index_info",
+              "foreign_key_list",
+              "database_list",
+              "collation_list",
+              "journal_mode",
+              "synchronous",
+              "cache_size",
+              "page_size",
+              "encoding",
+              "auto_vacuum",
+              "integrity_check",
+              "quick_check"
+            ],
+            "description": "PRAGMA command to execute"
+          },
+          "argument": {
+            "type": "string",
+            "description": "Argument for the command (e.g., table name)"
+          },
+          "value": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "description": "Value for writable PRAGMAs"
+          }
+        },
+        "required": [
+          "command"
+        ]
+      }
+    },
+    {
+      "name": "vacuum",
+      "description": "Compact the database file and reclaim unused space",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    }
+  ]
+}"
+`;
+
+exports[`ls command .actions paths view=json sqlite table actions (/sqlite/users/.actions): ls-json-sqlite-users-_actions 1`] = `
+"{
+  "path": "/sqlite/users/.actions",
+  "data": [
+    {
+      "name": "export",
+      "description": "Export table data in specified format (json, csv)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "format": {
+            "type": "string",
+            "enum": [
+              "json",
+              "csv"
+            ],
+            "default": "json"
+          }
+        }
+      }
+    },
+    {
+      "name": "count",
+      "description": "Get the total row count for this table"
+    },
+    {
+      "name": "insert",
+      "description": "Insert a new row into the table",
+      "inputSchema": {
+        "type": "object",
+        "description": "Insert a new row into \\"users\\" table",
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "Row data to insert",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string",
+                "default": "CURRENT_TIMESTAMP",
+                "description": "Default: CURRENT_TIMESTAMP"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "data"
+        ]
+      }
+    },
+    {
+      "name": "add_column",
+      "description": "Add a new column to the table",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Column name"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "INTEGER",
+              "TEXT",
+              "REAL",
+              "BLOB",
+              "NUMERIC"
+            ],
+            "description": "Column type"
+          },
+          "nullable": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether the column allows NULL values"
+          },
+          "defaultValue": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Default value for the column"
+          }
+        },
+        "required": [
+          "name",
+          "type"
+        ]
+      }
+    },
+    {
+      "name": "rename_column",
+      "description": "Rename a column in the table",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "oldName": {
+            "type": "string",
+            "description": "Current column name"
+          },
+          "newName": {
+            "type": "string",
+            "description": "New column name"
+          }
+        },
+        "required": [
+          "oldName",
+          "newName"
+        ]
+      }
+    },
+    {
+      "name": "drop_column",
+      "description": "Drop a column from the table",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Column name to drop"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "create_index",
+      "description": "Create an index on the table",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Index name"
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "description": "Columns to index (supports compound indexes)"
+          },
+          "unique": {
+            "type": "boolean",
+            "default": false,
+            "description": "Whether the index is unique"
+          },
+          "ifNotExists": {
+            "type": "boolean",
+            "default": false,
+            "description": "Don't error if index already exists"
+          }
+        },
+        "required": [
+          "name",
+          "columns"
+        ]
+      }
+    },
+    {
+      "name": "drop_index",
+      "description": "Drop an index from the table",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Index name to drop"
+          },
+          "ifExists": {
+            "type": "boolean",
+            "default": false,
+            "description": "Don't error if index doesn't exist"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "query",
+      "description": "Query rows with conditions, ordering, and pagination",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "where": {
+            "type": "object",
+            "description": "Query conditions (MongoDB-style operators)"
+          },
+          "orderBy": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "column": {
+                  "type": "string"
+                },
+                "direction": {
+                  "type": "string",
+                  "enum": [
+                    "asc",
+                    "desc"
+                  ],
+                  "default": "asc"
+                }
+              },
+              "required": [
+                "column"
+              ]
+            },
+            "description": "Sort order"
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Maximum rows to return"
+          },
+          "offset": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Number of rows to skip"
+          }
+        }
+      }
+    },
+    {
+      "name": "update_where",
+      "description": "Update rows matching conditions",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "where": {
+            "type": "object",
+            "description": "Update conditions (MongoDB-style operators)"
+          },
+          "data": {
+            "type": "object",
+            "description": "Fields to update"
+          }
+        },
+        "required": [
+          "where",
+          "data"
+        ]
+      }
+    },
+    {
+      "name": "delete_where",
+      "description": "Delete rows matching conditions",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "where": {
+            "type": "object",
+            "description": "Delete conditions (MongoDB-style operators)"
+          }
+        },
+        "required": [
+          "where"
+        ]
+      }
+    },
+    {
+      "name": "bulk_insert",
+      "description": "Insert multiple rows at once",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "rows": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "minItems": 1,
+            "description": "Array of row data to insert"
+          }
+        },
+        "required": [
+          "rows"
+        ]
+      }
+    },
+    {
+      "name": "import",
+      "description": "Import data into table from JSON or CSV format",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "format": {
+            "type": "string",
+            "enum": [
+              "json",
+              "csv"
+            ],
+            "description": "Data format (json or csv)"
+          },
+          "data": {
+            "type": "string",
+            "description": "The data to import (JSON array string or CSV string)"
+          },
+          "onConflict": {
+            "type": "string",
+            "enum": [
+              "abort",
+              "ignore",
+              "replace"
+            ],
+            "default": "abort",
+            "description": "Conflict resolution strategy"
+          },
+          "delimiter": {
+            "type": "string",
+            "default": ",",
+            "description": "CSV delimiter character"
+          },
+          "header": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether CSV has a header row"
+          }
+        },
+        "required": [
+          "format",
+          "data"
+        ]
+      }
+    }
+  ]
+}"
+`;
+
+exports[`ls command .actions paths view=json sqlite row actions (/sqlite/users/1/.actions): ls-json-sqlite-users-1-_actions 1`] = `
+"{
+  "path": "/sqlite/users/1/.actions",
+  "data": [
+    {
+      "name": "duplicate",
+      "description": "Create a copy of this row",
+      "inputSchema": {
+        "type": "object",
+        "description": "Create a copy of the row (excluding primary key \\"id\\")",
+        "properties": {},
+        "additionalProperties": false,
+        "x-copied-columns": [
+          "name",
+          "email",
+          "created_at"
+        ]
+      }
+    },
+    {
+      "name": "validate",
+      "description": "Validate row data against schema constraints",
+      "inputSchema": {
+        "type": "object",
+        "description": "Validate row data against \\"users\\" table constraints",
+        "properties": {},
+        "additionalProperties": false,
+        "x-table-schema": {
+          "columns": [
+            {
+              "name": "id",
+              "type": "INTEGER",
+              "nullable": true,
+              "primaryKey": true
+            },
+            {
+              "name": "name",
+              "type": "TEXT",
+              "nullable": false,
+              "primaryKey": false
+            },
+            {
+              "name": "email",
+              "type": "TEXT",
+              "nullable": true,
+              "primaryKey": false
+            },
+            {
+              "name": "created_at",
+              "type": "TEXT",
+              "nullable": true,
+              "primaryKey": false
+            }
+          ],
+          "foreignKeys": []
+        }
+      }
+    },
+    {
+      "name": "update",
+      "description": "Update this row",
+      "inputSchema": {
+        "type": "object",
+        "description": "Update fields in \\"users\\" table",
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "Fields to update",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "data"
+        ]
+      }
+    },
+    {
+      "name": "delete",
+      "description": "Delete this row",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "description": "Delete the current row"
+      }
+    }
+  ]
+}"
+`;

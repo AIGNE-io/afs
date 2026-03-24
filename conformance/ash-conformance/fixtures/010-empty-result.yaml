@@ -1,0 +1,11 @@
+name: "find on empty path returns zero records"
+script: |
+  job empty {
+    find /nothing
+  }
+mockWorld:
+  read:
+    /nothing: []
+expected:
+  status: "ok"
+  recordCount: 0

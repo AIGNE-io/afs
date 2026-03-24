@@ -1,0 +1,23 @@
+{
+  "name": "@aigne/afs-evaluation",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "bun scripts/setup-fixtures.ts",
+    "rq1": "bun scripts/run-rq1.ts",
+    "rq2": "bun scripts/run-rq2.ts",
+    "rq3": "bun scripts/run-rq3.ts",
+    "eval": "bun scripts/run-all.ts",
+    "test": "bun scripts/run-rq1.ts"
+  },
+  "dependencies": {
+    "@aigne/afs": "workspace:*",
+    "@aigne/afs-json": "workspace:*",
+    "@aigne/afs-toml": "workspace:*",
+    "@aigne/afs-sqlite": "workspace:*",
+    "@aigne/afs-fs": "workspace:*",
+    "@aigne/afs-markdown": "workspace:*",
+    "@aigne/afs-ui": "workspace:*"
+  }
+}

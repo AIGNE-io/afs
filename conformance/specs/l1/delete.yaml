@@ -1,0 +1,25 @@
+name: "delete - existing file"
+description: "Delete a file that was written by a previous test"
+operation: delete
+params:
+  path: "/test-delete-target.txt"
+expect:
+  success: true
+---
+name: "delete - not found"
+operation: delete
+params:
+  path: "/nonexistent-delete-target.txt"
+expect:
+  success: false
+  error:
+    code: 1
+---
+name: "delete - directory recursive"
+operation: delete
+params:
+  path: "/test-delete-dir"
+  options:
+    recursive: true
+expect:
+  success: true

@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-03-24T22:30:44.012Z",
+  "taskCount": 11,
+  "tokenEstimation": "~4 chars/token (cl100k_base approximation)",
+  "pricing": {
+    "model": "Claude Sonnet",
+    "inputPerMillion": 3,
+    "outputPerMillion": 15
+  },
+  "systemPromptTokens": {
+    "afs-ui": {
+      "tokens": 460,
+      "chars": 1837
+    },
+    "afs-markdown": {
+      "tokens": 210,
+      "chars": 837
+    },
+    "baseline-skills": {
+      "tokens": 305,
+      "chars": 1218
+    }
+  },
+  "approaches": {
+    "afs-ui": {
+      "totalInputTokens": 12932,
+      "totalOutputTokens": 1637,
+      "totalTokens": 14569,
+      "totalCostUsd": 0.063351,
+      "totalLlmCalls": 0
+    },
+    "afs-markdown": {
+      "totalInputTokens": 10627,
+      "totalOutputTokens": 2239,
+      "totalTokens": 12866,
+      "totalCostUsd": 0.065466,
+      "totalLlmCalls": 13
+    },
+    "baseline-skills": {
+      "totalInputTokens": 11672,
+      "totalOutputTokens": 12224,
+      "totalTokens": 23896,
+      "totalCostUsd": 0.218376,
+      "totalLlmCalls": 13
+    }
+  },
+  "savings": {
+    "afs-ui-vs-baseline": {
+      "tokenSavings": "39.0%",
+      "costSavings": "71.0%"
+    },
+    "afs-ui-vs-markdown": {
+      "tokenSavings": "-13.2%",
+      "costSavings": "3.2%"
+    },
+    "markdown-vs-baseline": {
+      "tokenSavings": "46.2%",
+      "costSavings": "70.0%"
+    }
+  }
+}

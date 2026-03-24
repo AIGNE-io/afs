@@ -1,0 +1,39 @@
+name: "delete then read - returns not found"
+steps:
+  - operation: write
+    params:
+      path: "/l2-delete-target.txt"
+      content:
+        content: "delete me"
+    expect:
+      success: true
+  - operation: delete
+    params:
+      path: "/l2-delete-target.txt"
+    expect:
+      success: true
+  - operation: read
+    params:
+      path: "/l2-delete-target.txt"
+    expect:
+      success: false
+      error:
+        code: 1
+---
+name: "delete then stat - returns not found"
+steps:
+  - operation: write
+    params:
+      path: "/l2-delete-stat.txt"
+      content:
+        content: "delete me too"
+  - operation: delete
+    params:
+      path: "/l2-delete-stat.txt"
+  - operation: stat
+    params:
+      path: "/l2-delete-stat.txt"
+    expect:
+      success: false
+      error:
+        code: 1

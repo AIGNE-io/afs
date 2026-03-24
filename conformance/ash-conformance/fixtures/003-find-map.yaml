@@ -1,0 +1,19 @@
+name: "find with map transforms records and saves"
+script: |
+  job transform {
+    find /data
+    | map { name: title, num: id }
+    | save /output
+  }
+mockWorld:
+  read:
+    /data:
+      - { id: 1, title: "Hello World" }
+      - { id: 2, title: "Goodbye World" }
+expected:
+  status: "ok"
+  recordCount: 0
+  writes:
+    /output:
+      - { name: "Hello World", num: 1 }
+      - { name: "Goodbye World", num: 2 }

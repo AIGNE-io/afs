@@ -1,0 +1,267 @@
+# AUP WebSocket Session Conformance Specs
+#
+# These specs test the AUP real-time protocol over WebSocket.
+# Transport: ws (requires WebSocket harness, not HTTP RPC).
+# Reference: spec/aup-protocol.md
+
+name: "AUP session join handshake"
+transport: ws
+description: >
+  Client connects via WebSocket, sends join_session with DeviceCaps,
+  and receives a session acknowledgment with sessionId.
+steps:
+  - action: send
+    name: send join_session
+    message:
+      type: join_session
+      caps:
+        platform: web
+        formFactor: desktop
+        primitives:
+          view: native
+          text: native
+          input: native
+          action: native
+
+  - action: expect
+    name: receive session ack
+    messageType: session
+    timeoutMs: 3000
+    match:
+      type: session
+      sessionId: "$exists"
+
+---
+
+name: "AUP initial render after join"
+transport: ws
+description: >
+  After join_session handshake, the server sends an initial render
+  message containing the root node tree.
+steps:
+  - action: send
+    name: send join_session
+    message:
+      type: join_session
+      caps:
+        platform: web
+        formFactor: desktop
+        primitives:
+          view: native
+          text: native
+          input: native
+          action: native
+
+  - action: expect
+    name: receive session ack
+    messageType: session
+    timeoutMs: 3000
+    match:
+      type: session
+      sessionId: "$exists"
+
+  - action: expect
+    name: receive initial render
+    messageType: aup
+    messageAction: render
+    timeoutMs: 5000
+    match:
+      type: aup
+      action: render
+      root:
+        id: "$exists"
+        type: "$exists"
+      treeVersion:
+        gte: 1
+
+---
+
+name: "AUP event roundtrip"
+transport: ws
+description: >
+  Client sends an aup_event for a node interaction and receives
+  an aup_event_result from the server.
+steps:
+  - action: send
+    name: send join_session
+    message:
+      type: join_session
+      caps:
+        platform: web
+        formFactor: desktop
+        primitives:
+          view: native
+          text: native
+          input: native
+          action: native
+
+  - action: expect
+    name: receive session ack
+    messageType: session
+    timeoutMs: 3000
+
+  - action: expect
+    name: receive initial render
+    messageType: aup
+    messageAction: render
+    timeoutMs: 5000
+
+  - action: send
+    name: send click event
+    message:
+      type: aup_event
+      nodeId: btn-submit
+      event: click
+
+  - action: expect
+    name: receive event result
+    messageType: aup_event_result
+    timeoutMs: 3000
+    match:
+      type: aup_event_result
+      nodeId: btn-submit
+      event: click
+
+---
+
+name: "AUP patch application"
+transport: ws
+description: >
+  After initial render, the server may send incremental patch messages.
+  The client validates that patches contain valid ops and an incremented treeVersion.
+steps:
+  - action: send
+    name: send join_session
+    message:
+      type: join_session
+      caps:
+        platform: web
+        formFactor: desktop
+        primitives:
+          view: native
+          text: native
+          input: native
+          action: native
+
+  - action: expect
+    name: receive session ack
+    messageType: session
+    timeoutMs: 3000
+
+  - action: expect
+    name: receive initial render
+    messageType: aup
+    messageAction: render
+    timeoutMs: 5000
+
+  # Trigger an action that causes a patch (e.g. a change event on an input)
+  - action: send
+    name: send change event to trigger patch
+    message:
+      type: aup_event
+      nodeId: input-name
+      event: change
+      data:
+        value: "Alice"
+
+  - action: expect
+    name: receive event result
+    messageType: aup_event_result
+    timeoutMs: 3000
+
+  - action: expect
+    name: receive patch
+    messageType: aup
+    messageAction: patch
+    timeoutMs: 5000
+    match:
+      type: aup
+      action: patch
+      ops:
+        type: array
+      treeVersion:
+        gte: 2
+
+---
+
+name: "AUP session disconnect"
+transport: ws
+description: >
+  Client cleanly closes the WebSocket connection after a session.
+  The harness verifies that the connection closes without error.
+steps:
+  - action: send
+    name: send join_session
+    message:
+      type: join_session
+      caps:
+        platform: web
+        formFactor: desktop
+        primitives:
+          view: native
+          text: native
+          input: native
+          action: native
+
+  - action: expect
+    name: receive session ack
+    messageType: session
+    timeoutMs: 3000
+    match:
+      type: session
+      sessionId: "$exists"
+
+  # The harness automatically closes the connection after steps complete.
+  # This spec verifies the handshake + clean teardown path.
+
+---
+
+name: "AUP join_session with reconnect token"
+transport: ws
+description: >
+  Client reconnects to an existing session by providing sessionId
+  and treeVersion. Server should acknowledge with the same sessionId.
+steps:
+  - action: send
+    name: send join_session with session ID
+    message:
+      type: join_session
+      sessionId: "test-reconnect-session"
+      treeVersion: 0
+      caps:
+        platform: web
+        formFactor: desktop
+        primitives:
+          view: native
+          text: native
+
+  - action: expect
+    name: receive session ack
+    messageType: session
+    timeoutMs: 3000
+    match:
+      type: session
+      sessionId: "$exists"
+
+---
+
+name: "AUP join_channel read-only"
+transport: ws
+description: >
+  Client joins a broadcast channel. Server acknowledges with
+  a channel message. Channel clients receive render/patch
+  but cannot send events.
+steps:
+  - action: send
+    name: send join_channel
+    message:
+      type: join_channel
+      channelId: "test-channel"
+
+  - action: expect
+    name: receive channel ack
+    messageType: channel
+    timeoutMs: 3000
+    match:
+      type: channel
+      channelId: test-channel
